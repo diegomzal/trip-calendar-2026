@@ -1,0 +1,477 @@
+[
+    {
+        "start": "2026-08-03T10:15:00",
+        "end": "2026-08-03T11:30:00",
+        "title": "Trámites de llegada en CDG",
+        "color": "blue",
+        "location": "Aeropuerto Charles de Gaulle, París",
+        "type": "event",
+        "timezone": "Europe/Paris",
+        "notes": "Inmigración y equipaje"
+    },
+    {
+        "start": "2026-08-03T11:30:00",
+        "end": "2026-08-03T12:15:00",
+        "title": "Transporte al Airbnb",
+        "color": "orange",
+        "location": "París",
+        "type": "event",
+        "timezone": "Europe/Paris",
+        "notes": "45 min aprox. en Taxi/RER"
+    },
+    {
+        "start": "2026-08-03T12:15:00",
+        "end": "2026-08-03T13:30:00",
+        "title": "Check-in y almuerzo rápido",
+        "color": "green",
+        "location": "Airbnb, París",
+        "type": "event",
+        "timezone": "Europe/Paris"
+    },
+    {
+        "start": "2026-08-03T13:30:00",
+        "end": "2026-08-03T14:05:00",
+        "title": "Transporte al centro de París",
+        "color": "orange",
+        "type": "event",
+        "timezone": "Europe/Paris",
+        "notes": "35 min"
+    },
+    {
+        "start": "2026-08-03T14:05:00",
+        "end": "2026-08-03T17:00:00",
+        "title": "Torre Eiffel (P1)",
+        "color": "indigo",
+        "location": "Tour Eiffel, Paris, France",
+        "type": "event",
+        "timezone": "Europe/Paris"
+    },
+    {
+        "start": "2026-08-03T17:00:00",
+        "end": "2026-08-03T20:30:00",
+        "title": "Tiempo libre y cena - Campo de Marte",
+        "color": "emerald",
+        "location": "Campo de Marte, París",
+        "type": "event",
+        "timezone": "Europe/Paris"
+    },
+    {
+        "start": "2026-08-03T20:30:00",
+        "end": "2026-08-03T21:00:00",
+        "title": "Transporte a Pont Neuf",
+        "color": "orange",
+        "type": "event",
+        "timezone": "Europe/Paris"
+    },
+    {
+        "start": "2026-08-03T21:00:00",
+        "end": "2026-08-03T22:30:00",
+        "title": "Paseo nocturno en el Río Sena (P1)",
+        "color": "cyan",
+        "location": "Río Sena, París",
+        "type": "event",
+        "timezone": "Europe/Paris"
+    },
+    {
+        "start": "2026-08-04T08:40:00",
+        "end": "2026-08-04T09:15:00",
+        "title": "Transporte a Cité des Sciences",
+        "color": "orange",
+        "type": "event",
+        "timezone": "Europe/Paris",
+        "notes": "35 min"
+    },
+    {
+        "start": "2026-08-04T09:15:00",
+        "end": "2026-08-04T13:30:00",
+        "title": "Cité des Sciences et de l'Industrie (P1)",
+        "color": "purple",
+        "location": "Cité des Sciences et de l'Industrie, París",
+        "type": "event",
+        "timezone": "Europe/Paris"
+    },
+    {
+        "start": "2026-08-04T13:30:00",
+        "end": "2026-08-04T14:00:00",
+        "title": "Transporte al 6º Arrondissement",
+        "color": "orange",
+        "type": "event",
+        "timezone": "Europe/Paris"
+    },
+    {
+        "start": "2026-08-04T14:00:00",
+        "end": "2026-08-04T16:00:00",
+        "title": "Musée d'histoire de la médecine (P2)",
+        "color": "purple",
+        "location": "6º Arrondissement, París",
+        "type": "event",
+        "timezone": "Europe/Paris"
+    },
+    {
+        "start": "2026-08-04T16:00:00",
+        "end": "2026-08-04T16:15:00",
+        "title": "Caminata a Rue de Rivoli",
+        "color": "orange",
+        "type": "event",
+        "timezone": "Europe/Paris"
+    },
+    {
+        "start": "2026-08-04T16:15:00",
+        "end": "2026-08-04T18:00:00",
+        "title": "Musée des Arts Décoratifs (P3)",
+        "color": "purple",
+        "location": "Rue de Rivoli, París",
+        "type": "event",
+        "timezone": "Europe/Paris"
+    },
+    {
+        "date": "2026-08-04T18:00:00",
+        "title": "Regreso al Airbnb",
+        "color": "green",
+        "type": "marker",
+        "timezone": "Europe/Paris"
+    },
+    {
+        "start": "2026-08-05T08:25:00",
+        "end": "2026-08-05T09:00:00",
+        "title": "Transporte al Museo del Louvre",
+        "color": "orange",
+        "type": "event",
+        "timezone": "Europe/Paris",
+        "notes": "35 min"
+    },
+    {
+        "start": "2026-08-05T09:00:00",
+        "end": "2026-08-05T13:30:00",
+        "title": "Museo del Louvre (P1)",
+        "color": "indigo",
+        "location": "Musée du Louvre, Paris, France",
+        "type": "event",
+        "timezone": "Europe/Paris"
+    },
+    {
+        "start": "2026-08-05T13:30:00",
+        "end": "2026-08-05T14:00:00",
+        "title": "Transporte a Place de Fontenoy",
+        "color": "orange",
+        "type": "event",
+        "timezone": "Europe/Paris"
+    },
+    {
+        "start": "2026-08-05T14:00:00",
+        "end": "2026-08-05T15:30:00",
+        "title": "Sede UNESCO - Visita guiada (P3)",
+        "color": "blue",
+        "location": "Place de Fontenoy, París",
+        "type": "event",
+        "timezone": "Europe/Paris"
+    },
+    {
+        "start": "2026-08-05T15:30:00",
+        "end": "2026-08-05T18:00:00",
+        "title": "Tiempo libre / Cena - Barrio Latino",
+        "color": "emerald",
+        "location": "Barrio Latino, París",
+        "type": "event",
+        "timezone": "Europe/Paris"
+    },
+    {
+        "start": "2026-08-06T08:00:00",
+        "end": "2026-08-06T09:00:00",
+        "title": "Transporte a Marne-la-Vallée",
+        "color": "orange",
+        "type": "event",
+        "timezone": "Europe/Paris",
+        "notes": "RER A"
+    },
+    {
+        "start": "2026-08-06T09:00:00",
+        "end": "2026-08-06T22:00:00",
+        "title": "Disneyland Paris (P1 - 2 parques)",
+        "color": "pink",
+        "location": "Disneyland Paris, Marne-la-Vallée",
+        "type": "event",
+        "timezone": "Europe/Paris"
+    },
+    {
+        "date": "2026-08-06T22:00:00",
+        "title": "Regreso al Airbnb (RER A)",
+        "color": "orange",
+        "type": "marker",
+        "timezone": "Europe/Paris"
+    },
+    {
+        "start": "2026-08-07T08:15:00",
+        "end": "2026-08-07T09:00:00",
+        "title": "Transporte a Versalles",
+        "color": "orange",
+        "type": "event",
+        "timezone": "Europe/Paris",
+        "notes": "RER C"
+    },
+    {
+        "start": "2026-08-07T09:00:00",
+        "end": "2026-08-07T15:00:00",
+        "title": "Palacio de Versalles (P1)",
+        "color": "indigo",
+        "location": "Palacio de Versalles, Versalles",
+        "type": "event",
+        "timezone": "Europe/Paris"
+    },
+    {
+        "start": "2026-08-07T15:00:00",
+        "end": "2026-08-07T15:45:00",
+        "title": "Transporte a Roland-Garros",
+        "color": "orange",
+        "type": "event",
+        "timezone": "Europe/Paris",
+        "notes": "Línea 10"
+    },
+    {
+        "start": "2026-08-07T15:45:00",
+        "end": "2026-08-07T17:15:00",
+        "title": "Roland-Garros Stadium - Tour guiado (P3)",
+        "color": "amber",
+        "location": "Roland-Garros, París",
+        "type": "event",
+        "timezone": "Europe/Paris"
+    },
+    {
+        "date": "2026-08-07T17:15:00",
+        "title": "Regreso al Airbnb / Tarde flexible",
+        "color": "green",
+        "type": "marker",
+        "timezone": "Europe/Paris"
+    },
+    {
+        "start": "2026-08-09T09:00:00",
+        "end": "2026-08-09T09:40:00",
+        "title": "Transporte a Gare du Nord",
+        "color": "orange",
+        "type": "event",
+        "timezone": "Europe/Paris"
+    },
+    {
+        "start": "2026-08-09T09:40:00",
+        "end": "2026-08-09T11:10:00",
+        "title": "Check-in y controles Eurostar",
+        "color": "red",
+        "location": "Gare du Nord, París",
+        "type": "event",
+        "timezone": "Europe/Paris",
+        "notes": "90 min para controles fronterizos"
+    },
+    {
+        "start": "2026-08-09T11:13:00",
+        "end": "2026-08-09T12:30:00",
+        "title": "Eurostar París → Londres St Pancras",
+        "color": "blue",
+        "location": "Eurostar",
+        "type": "event",
+        "timezone": "Europe/London",
+        "notes": "Sale 11:13 hora París, llega 12:30 hora Londres"
+    },
+    {
+        "start": "2026-08-09T12:30:00",
+        "end": "2026-08-09T13:30:00",
+        "title": "Drop bags en Airbnb Centro Londres",
+        "color": "green",
+        "location": "Centro de Londres",
+        "type": "event",
+        "timezone": "Europe/London"
+    },
+    {
+        "start": "2026-08-09T13:30:00",
+        "end": "2026-08-09T16:00:00",
+        "title": "London Bridge (P1) y South Bank",
+        "color": "indigo",
+        "location": "London Bridge, Londres",
+        "type": "event",
+        "timezone": "Europe/London",
+        "notes": "Caminata por el South Bank"
+    },
+    {
+        "start": "2026-08-09T16:00:00",
+        "end": "2026-08-09T18:00:00",
+        "title": "Big Ben y Parlamento (P1)",
+        "color": "indigo",
+        "location": "Westminster, Londres",
+        "type": "event",
+        "timezone": "Europe/London"
+    },
+    {
+        "start": "2026-08-10T09:45:00",
+        "end": "2026-08-10T10:20:00",
+        "title": "Transporte a St James's Palace",
+        "color": "orange",
+        "type": "event",
+        "timezone": "Europe/London"
+    },
+    {
+        "start": "2026-08-10T10:20:00",
+        "end": "2026-08-10T12:00:00",
+        "title": "Ceremonia Cambio de Guardia (P1)",
+        "color": "red",
+        "location": "St James's Palace, Londres",
+        "type": "event",
+        "timezone": "Europe/London"
+    },
+    {
+        "start": "2026-08-10T12:00:00",
+        "end": "2026-08-10T13:30:00",
+        "title": "Almuerzo en Westminster",
+        "color": "emerald",
+        "location": "Westminster, Londres",
+        "type": "event",
+        "timezone": "Europe/London"
+    },
+    {
+        "start": "2026-08-10T13:30:00",
+        "end": "2026-08-10T15:00:00",
+        "title": "Museo Florence Nightingale (P1)",
+        "color": "purple",
+        "location": "Westminster, Londres",
+        "type": "event",
+        "timezone": "Europe/London"
+    },
+    {
+        "start": "2026-08-10T15:30:00",
+        "end": "2026-08-10T18:00:00",
+        "title": "British Museum (P2)",
+        "color": "purple",
+        "location": "Great Russell Street, Londres",
+        "type": "event",
+        "timezone": "Europe/London"
+    },
+    {
+        "start": "2026-08-11T09:30:00",
+        "end": "2026-08-11T10:00:00",
+        "title": "Transporte a South Kensington",
+        "color": "orange",
+        "type": "event",
+        "timezone": "Europe/London"
+    },
+    {
+        "start": "2026-08-11T10:00:00",
+        "end": "2026-08-11T13:30:00",
+        "title": "Science Museum London (P1)",
+        "color": "purple",
+        "location": "South Kensington, Londres",
+        "type": "event",
+        "timezone": "Europe/London"
+    },
+    {
+        "start": "2026-08-11T13:30:00",
+        "end": "2026-08-11T14:30:00",
+        "title": "Almuerzo y transporte a Kensington",
+        "color": "emerald",
+        "type": "event",
+        "timezone": "Europe/London"
+    },
+    {
+        "start": "2026-08-11T14:30:00",
+        "end": "2026-08-11T17:00:00",
+        "title": "Design Museum (P1)",
+        "color": "cyan",
+        "location": "Kensington High Street, Londres",
+        "type": "event",
+        "timezone": "Europe/London"
+    },
+    {
+        "start": "2026-08-12T09:15:00",
+        "end": "2026-08-12T10:00:00",
+        "title": "Transporte a Wimbledon",
+        "color": "orange",
+        "type": "event",
+        "timezone": "Europe/London",
+        "notes": "District Line"
+    },
+    {
+        "start": "2026-08-12T10:00:00",
+        "end": "2026-08-12T12:00:00",
+        "title": "Wimbledon Stadium - Museo y Tour (P1)",
+        "color": "amber",
+        "location": "Wimbledon, Londres",
+        "type": "event",
+        "timezone": "Europe/London"
+    },
+    {
+        "start": "2026-08-12T12:00:00",
+        "end": "2026-08-12T13:15:00",
+        "title": "Transporte a la City de Londres",
+        "color": "orange",
+        "type": "event",
+        "timezone": "Europe/London"
+    },
+    {
+        "start": "2026-08-12T13:15:00",
+        "end": "2026-08-12T15:45:00",
+        "title": "Catedral de San Pablo (P2)",
+        "color": "indigo",
+        "location": "City of London, Londres",
+        "type": "event",
+        "timezone": "Europe/London"
+    },
+    {
+        "date": "2026-08-12T15:45:00",
+        "title": "Regreso al alojamiento",
+        "color": "green",
+        "type": "marker",
+        "timezone": "Europe/London"
+    },
+    {
+        "start": "2026-08-13T10:15:00",
+        "end": "2026-08-13T11:00:00",
+        "title": "Transporte a Wembley Park",
+        "color": "orange",
+        "type": "event",
+        "timezone": "Europe/London"
+    },
+    {
+        "start": "2026-08-13T11:00:00",
+        "end": "2026-08-13T12:30:00",
+        "title": "Wembley Stadium Tour (P2)",
+        "color": "amber",
+        "location": "Wembley Park, Londres",
+        "type": "event",
+        "timezone": "Europe/London"
+    },
+    {
+        "start": "2026-08-13T12:30:00",
+        "end": "2026-08-13T18:00:00",
+        "title": "Compras - Regent St y Oxford St",
+        "color": "pink",
+        "location": "Regent Street / Oxford Street, Londres",
+        "type": "event",
+        "timezone": "Europe/London",
+        "notes": "Tiempo libre para compras"
+    },
+    {
+        "start": "2026-08-14T05:00:00",
+        "end": "2026-08-14T05:30:00",
+        "title": "Transporte a St Pancras International",
+        "color": "orange",
+        "type": "event",
+        "timezone": "Europe/London"
+    },
+    {
+        "start": "2026-08-14T05:30:00",
+        "end": "2026-08-14T06:10:00",
+        "title": "Check-in Eurostar",
+        "color": "red",
+        "location": "St Pancras International, Londres",
+        "type": "event",
+        "timezone": "Europe/London",
+        "notes": "60-90 min recomendado"
+    },
+    {
+        "start": "2026-08-14T06:16:00",
+        "end": "2026-08-14T11:20:00",
+        "title": "Eurostar Londres → Ámsterdam Centraal",
+        "color": "blue",
+        "location": "Eurostar",
+        "type": "event",
+        "timezone": "Europe/Amsterdam",
+        "notes": "Sale 6:16 hora Londres, llega 11:20 hora Ámsterdam"
+    }
+]
