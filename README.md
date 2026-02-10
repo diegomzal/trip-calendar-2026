@@ -1,73 +1,66 @@
-# React + TypeScript + Vite
+# Trip Calendar 2026 🗺️
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A family trip planner web app for our 2026 Europe trip. View the full itinerary, event details, and locations — all from any device.
 
-Currently, two official plugins are available:
+## Tech Stack
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **React 19** + **TypeScript** — via Vite 7
+- **Tailwind CSS 4** — utility-first styling
+- **shadcn/ui** (New York style) — pre-built accessible components
+- **Lucide React** — icons
 
-## React Compiler
+## Features
 
-The React Compiler is currently not compatible with SWC. See [this issue](https://github.com/vitejs/vite-plugin-react/issues/428) for tracking the progress.
+- 📱 Mobile-first, responsive design
+- 🗓️ Calendar view reading events from a local JSON
+- 📍 Map integration for events with location data
+- 🪟 Apple-inspired glassmorphism UI (soft shadows, ultra-thin borders)
+- 🔓 No auth required — open access for the family
 
-## Expanding the ESLint configuration
+## Getting Started
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+```bash
+# Install dependencies
+npm install
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+# Start dev server
+npm run dev
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## Scripts
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+| Command             | Description                |
+| ------------------- | -------------------------- |
+| `npm run dev`       | Start Vite dev server      |
+| `npm run build`     | Type-check & build for prod|
+| `npm run lint`      | Run ESLint                 |
+| `npm run preview`   | Preview production build   |
 
-export default defineConfig([
-  globalIgnores(['dist']),
+## Event Data
+
+Events live in `public/` as a JSON file. Two event types are supported:
+
+```jsonc
+[
   {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
+    "start": "2026-09-03T14:30:00Z",
+    "end": "2026-09-03T16:00:00Z",
+    "title": "Museo",
+    "color": "blue",
+    "location": "lat,lng or Google Maps format",
+    "type": "event",
+    "notes": "entrar por entrada B"
   },
-])
+  {
+    "date": "2026-09-04T07:30:00Z",
+    "title": "Check-out",
+    "color": "red",
+    "location": "lat,lng or Google Maps format",
+    "type": "marker",
+    "notes": "dejar llaves en puerta"
+  }
+]
 ```
+
+- **`event`** — has `start` and `end` times (time range)
+- **`marker`** — single point in time (`date`)
