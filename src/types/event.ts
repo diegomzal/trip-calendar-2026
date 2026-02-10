@@ -4,6 +4,7 @@ export interface CalendarEvent {
     title: string;
     color: string;
     location?: string;
+    coordinates?: { lat: number; lng: number };
     type: "event";
     timezone: string;
     notes?: string;
@@ -14,6 +15,7 @@ export interface CalendarMarker {
     title: string;
     color: string;
     location?: string;
+    coordinates?: { lat: number; lng: number };
     type: "marker";
     timezone: string;
     notes?: string;

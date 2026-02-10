@@ -6,7 +6,7 @@ import {
     DialogDescription,
 } from "@/components/ui/dialog";
 import type { CalendarItem } from "@/types/event";
-import { MapPin, Clock, StickyNote } from "lucide-react";
+import { MapPin, Clock, StickyNote, Map, TrainFront } from "lucide-react";
 import { formatTimeInTz, formatDateInTz, getTimezoneLabel } from "@/lib/timezone";
 import { EVENT_STYLES } from "@/lib/colors";
 import { cn } from "@/lib/utils";
@@ -26,6 +26,20 @@ function getEmbedUrl(location: string): string {
     return `https://www.google.com/maps/embed/v1/place?key=${MAPS_API_KEY}&q=${encodeURIComponent(location)}`;
 }
 
+function getAppleMapsUrl(location: string, coordinates?: { lat: number; lng: number }): string {
+    if (coordinates) {
+        return `http://maps.apple.com/?ll=${coordinates.lat},${coordinates.lng}&q=${encodeURIComponent(location)}`;
+    }
+    return `http://maps.apple.com/?q=${encodeURIComponent(location)}`;
+}
+
+function getCitymapperUrl(location: string, coordinates?: { lat: number; lng: number }): string {
+    if (coordinates) {
+        return `https://citymapper.com/directions?endcoord=${coordinates.lat}%2C${coordinates.lng}&endname=${encodeURIComponent(location)}&endaddress=${encodeURIComponent(location)}`;
+    }
+    return `https://citymapper.com/directions?endname=${encodeURIComponent(location)}&endaddress=${encodeURIComponent(location)}`;
+}
+
 export function EventDetailModal({ event, onClose }: EventDetailModalProps) {
     if (!event) return null;
 
@@ -37,7 +51,7 @@ export function EventDetailModal({ event, onClose }: EventDetailModalProps) {
 
     return (
         <Dialog open={!!event} onOpenChange={(open) => !open && onClose()}>
-            <DialogContent className="bg-[#1c1c1e]/80 backdrop-blur-2xl border border-white/[0.12] shadow-2xl rounded-2xl max-w-md mx-auto text-white p-0 overflow-hidden">
+            <DialogContent className="bg-[#1c1c1e]/80 backdrop-blur-2xl border border-white/[0.12] shadow-2xl rounded-2xl w-full max-w-md md:max-w-2xl lg:max-w-3xl mx-auto text-white p-0 overflow-hidden md:min-h-[500px] flex flex-col">
                 <DialogHeader className="px-6 pt-6 pb-2">
                     <div className="flex items-center gap-3">
                         <div className={cn("w-3 h-3 rounded-full shrink-0", styles.dot)} />
@@ -106,6 +120,29 @@ export function EventDetailModal({ event, onClose }: EventDetailModalProps) {
                                 loading="lazy"
                                 referrerPolicy="no-referrer-when-downgrade"
                             />
+                        </div>
+                    )}
+
+                    {event.location && (
+                        <div className="grid grid-cols-2 gap-2">
+                            <a
+                                href={getAppleMapsUrl(event.location, event.coordinates)}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="flex flex-col items-center justify-center gap-2 p-3 rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 transition-colors group"
+                            >
+                                <Map className="w-5 h-5 text-gray-400 group-hover:text-white transition-colors" />
+                                <span className="text-xs font-medium text-gray-400 group-hover:text-white transition-colors">Apple Maps</span>
+                            </a>
+                            <a
+                                href={getCitymapperUrl(event.location, event.coordinates)}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="flex flex-col items-center justify-center gap-2 p-3 rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 transition-colors group"
+                            >
+                                <TrainFront className="w-5 h-5 text-green-500 group-hover:text-green-400 transition-colors" />
+                                <span className="text-xs font-medium text-green-500 group-hover:text-green-400 transition-colors">Citymapper</span>
+                            </a>
                         </div>
                     )}
 

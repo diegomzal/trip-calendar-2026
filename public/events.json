@@ -5,6 +5,10 @@
         "title": "Trámites de llegada en CDG",
         "color": "blue",
         "location": "Paris Charles de Gaulle Airport",
+        "coordinates": {
+            "lat": 49.009724,
+            "lng": 2.547778
+        },
         "type": "event",
         "timezone": "Europe/Paris",
         "notes": "Inmigración y equipaje"
@@ -43,6 +47,10 @@
         "title": "Torre Eiffel (P1)",
         "color": "indigo",
         "location": "Tour Eiffel, Paris, France",
+        "coordinates": {
+            "lat": 48.85837,
+            "lng": 2.294481
+        },
         "type": "event",
         "timezone": "Europe/Paris"
     },
@@ -52,6 +60,10 @@
         "title": "Tiempo libre y cena - Campo de Marte",
         "color": "emerald",
         "location": "Champ de Mars, Paris, France",
+        "coordinates": {
+            "lat": 48.855648,
+            "lng": 2.29863
+        },
         "type": "event",
         "timezone": "Europe/Paris"
     },
@@ -69,6 +81,10 @@
         "title": "Paseo nocturno en el Río Sena (P1)",
         "color": "cyan",
         "location": "Seine River, Paris, France",
+        "coordinates": {
+            "lat": 48.85705,
+            "lng": 2.341325
+        },
         "type": "event",
         "timezone": "Europe/Paris"
     },
@@ -87,6 +103,10 @@
         "title": "Cité des Sciences et de l'Industrie (P1)",
         "color": "purple",
         "location": "Cité des Sciences et de l'Industrie, Paris, France",
+        "coordinates": {
+            "lat": 48.895556,
+            "lng": 2.388056
+        },
         "type": "event",
         "timezone": "Europe/Paris"
     },
@@ -104,6 +124,10 @@
         "title": "Musée d'histoire de la médecine (P2)",
         "color": "purple",
         "location": "Musée d'Histoire de la Médecine, Paris, France",
+        "coordinates": {
+            "lat": 48.850575,
+            "lng": 2.339798
+        },
         "type": "event",
         "timezone": "Europe/Paris"
     },
@@ -121,6 +145,10 @@
         "title": "Musée des Arts Décoratifs (P3)",
         "color": "purple",
         "location": "Musée des Arts Décoratifs, Paris, France",
+        "coordinates": {
+            "lat": 48.863486,
+            "lng": 2.333331
+        },
         "type": "event",
         "timezone": "Europe/Paris"
     },
@@ -146,6 +174,10 @@
         "title": "Museo del Louvre (P1)",
         "color": "indigo",
         "location": "Musée du Louvre, Paris, France",
+        "coordinates": {
+            "lat": 48.860611,
+            "lng": 2.337644
+        },
         "type": "event",
         "timezone": "Europe/Paris"
     },
@@ -163,6 +195,10 @@
         "title": "Sede UNESCO - Visita guiada (P3)",
         "color": "blue",
         "location": "UNESCO Headquarters, Paris, France",
+        "coordinates": {
+            "lat": 48.848529,
+            "lng": 2.308709
+        },
         "type": "event",
         "timezone": "Europe/Paris"
     },
@@ -172,6 +208,10 @@
         "title": "Tiempo libre / Cena - Barrio Latino",
         "color": "emerald",
         "location": "Quartier Latin, Paris, France",
+        "coordinates": {
+            "lat": 48.851667,
+            "lng": 2.343333
+        },
         "type": "event",
         "timezone": "Europe/Paris"
     },
@@ -190,6 +230,10 @@
         "title": "Disneyland Paris (P1 - 2 parques)",
         "color": "pink",
         "location": "Disneyland Paris, Marne-la-Vallée, France",
+        "coordinates": {
+            "lat": 48.867374,
+            "lng": 2.784018
+        },
         "type": "event",
         "timezone": "Europe/Paris"
     },
@@ -215,6 +259,10 @@
         "title": "Palacio de Versalles (P1)",
         "color": "indigo",
         "location": "Palace of Versailles, Versailles, France",
+        "coordinates": {
+            "lat": 48.804865,
+            "lng": 2.120355
+        },
         "type": "event",
         "timezone": "Europe/Paris"
     },
@@ -233,6 +281,10 @@
         "title": "Roland-Garros Stadium - Tour guiado (P3)",
         "color": "amber",
         "location": "Stade Roland-Garros, Paris, France",
+        "coordinates": {
+            "lat": 48.847222,
+            "lng": 2.251111
+        },
         "type": "event",
         "timezone": "Europe/Paris"
     },
@@ -257,6 +309,10 @@
         "title": "Check-in y controles Eurostar",
         "color": "red",
         "location": "Gare du Nord, Paris, France",
+        "coordinates": {
+            "lat": 48.880931,
+            "lng": 2.355323
+        },
         "type": "event",
         "timezone": "Europe/Paris",
         "notes": "90 min para controles fronterizos"
@@ -267,6 +323,10 @@
         "title": "Eurostar París → Londres St Pancras",
         "color": "blue",
         "location": "Eurostar",
+        "coordinates": {
+            "lat": 48.880931,
+            "lng": 2.355323
+        },
         "type": "event",
         "timezone": "Europe/London",
         "notes": "Sale 11:13 hora París, llega 12:30 hora Londres"
@@ -286,6 +346,10 @@
         "title": "London Bridge (P1) y South Bank",
         "color": "indigo",
         "location": "London Bridge, London, United Kingdom",
+        "coordinates": {
+            "lat": 51.507879,
+            "lng": -0.087732
+        },
         "type": "event",
         "timezone": "Europe/London",
         "notes": "Caminata por el South Bank"
@@ -296,6 +360,10 @@
         "title": "Big Ben y Parlamento (P1)",
         "color": "indigo",
         "location": "Palace of Westminster, London, United Kingdom",
+        "coordinates": {
+            "lat": 51.500729,
+            "lng": -0.124625
+        },
         "type": "event",
         "timezone": "Europe/London"
     },
@@ -313,6 +381,10 @@
         "title": "Ceremonia Cambio de Guardia (P1)",
         "color": "red",
         "location": "St James's Palace, London, United Kingdom",
+        "coordinates": {
+            "lat": 51.504722,
+            "lng": -0.1375
+        },
         "type": "event",
         "timezone": "Europe/London"
     },
@@ -331,6 +403,10 @@
         "title": "Museo Florence Nightingale (P1)",
         "color": "purple",
         "location": "Florence Nightingale Museum, London, United Kingdom",
+        "coordinates": {
+            "lat": 51.500278,
+            "lng": -0.117222
+        },
         "type": "event",
         "timezone": "Europe/London"
     },
@@ -340,6 +416,10 @@
         "title": "British Museum (P2)",
         "color": "purple",
         "location": "British Museum, London, United Kingdom",
+        "coordinates": {
+            "lat": 51.519413,
+            "lng": -0.126957
+        },
         "type": "event",
         "timezone": "Europe/London"
     },
@@ -357,6 +437,10 @@
         "title": "Science Museum London (P1)",
         "color": "purple",
         "location": "Science Museum, London, United Kingdom",
+        "coordinates": {
+            "lat": 51.4975,
+            "lng": -0.174722
+        },
         "type": "event",
         "timezone": "Europe/London"
     },
@@ -374,6 +458,10 @@
         "title": "Design Museum (P1)",
         "color": "cyan",
         "location": "Design Museum, London, United Kingdom",
+        "coordinates": {
+            "lat": 51.499722,
+            "lng": -0.200833
+        },
         "type": "event",
         "timezone": "Europe/London"
     },
@@ -392,6 +480,10 @@
         "title": "Wimbledon Stadium - Museo y Tour (P1)",
         "color": "amber",
         "location": "Wimbledon Lawn Tennis Museum, London, United Kingdom",
+        "coordinates": {
+            "lat": 51.434722,
+            "lng": -0.214722
+        },
         "type": "event",
         "timezone": "Europe/London"
     },
@@ -409,6 +501,10 @@
         "title": "Catedral de San Pablo (P2)",
         "color": "indigo",
         "location": "St Paul's Cathedral, London, United Kingdom",
+        "coordinates": {
+            "lat": 51.513839,
+            "lng": -0.098351
+        },
         "type": "event",
         "timezone": "Europe/London"
     },
@@ -433,6 +529,10 @@
         "title": "Wembley Stadium Tour (P2)",
         "color": "amber",
         "location": "Wembley Stadium, London, United Kingdom",
+        "coordinates": {
+            "lat": 51.556021,
+            "lng": -0.279519
+        },
         "type": "event",
         "timezone": "Europe/London"
     },
@@ -442,6 +542,10 @@
         "title": "Compras - Regent St y Oxford St",
         "color": "pink",
         "location": "Regent Street, London, United Kingdom",
+        "coordinates": {
+            "lat": 51.513611,
+            "lng": -0.140833
+        },
         "type": "event",
         "timezone": "Europe/London",
         "notes": "Tiempo libre para compras"
@@ -460,6 +564,10 @@
         "title": "Check-in Eurostar",
         "color": "red",
         "location": "St Pancras International, London, United Kingdom",
+        "coordinates": {
+            "lat": 51.53,
+            "lng": -0.125278
+        },
         "type": "event",
         "timezone": "Europe/London",
         "notes": "60-90 min recomendado"
