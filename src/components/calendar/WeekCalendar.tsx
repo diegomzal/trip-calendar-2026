@@ -16,10 +16,11 @@ export function WeekCalendar() {
         timedEvents,
         nextWeek,
         prevWeek,
-        goToday,
         selectDay,
         selectEvent,
         closeEvent,
+        canGoPrev,
+        canGoNext,
     } = useCalendar();
 
     if (loading) {
@@ -36,7 +37,8 @@ export function WeekCalendar() {
                 currentWeekStart={currentWeekStart}
                 onPrev={prevWeek}
                 onNext={nextWeek}
-                onToday={goToday}
+                canGoPrev={canGoPrev}
+                canGoNext={canGoNext}
             />
 
             <WeekDayHeader

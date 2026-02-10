@@ -64,8 +64,9 @@ export function CalendarEventBlock({ event, onClick }: CalendarEventBlockProps) 
     const duration = endHour - startHour;
     const HOUR_HEIGHT = 60;
     const top = (startHour - 4) * HOUR_HEIGHT;
-    const height = Math.max(duration * HOUR_HEIGHT - 2, 20);
+    const height = Math.max(duration * HOUR_HEIGHT - 2, 14);
     const tzLabel = getTimezoneLabel(tz);
+    const isCompact = height <= 28;
 
     return (
         <button
@@ -79,21 +80,37 @@ export function CalendarEventBlock({ event, onClick }: CalendarEventBlockProps) 
                 color: colors.text,
             }}
         >
-            <div className="px-1.5 md:px-2 py-1 h-full flex flex-col">
-                <span className="text-[10px] md:text-xs font-semibold leading-tight truncate">
-                    {event.title}
-                </span>
-                {height > 35 && (
-                    <span className="text-[9px] md:text-[10px] opacity-70 mt-0.5">
-                        {formatTimeInTz(event.start, tz)} – {formatTimeInTz(event.end, tz)}
+            {isCompact ? (
+                <div className="px-1.5 md:px-2 h-full flex items-center gap-1.5 overflow-hidden">
+                    <span className="text-[8px] md:text-[10px] font-semibold leading-none truncate">
+                        {event.title}
                     </span>
-                )}
-                {height > 55 && (
-                    <span className="text-[8px] md:text-[9px] opacity-50 mt-0.5">
-                        {tzLabel}
+                    <span className="text-[7px] md:text-[8px] opacity-60 leading-none whitespace-nowrap shrink-0">
+                        {formatTimeInTz(event.start, tz)}
                     </span>
-                )}
-            </div>
+                </div>
+            ) : (
+                <div className="px-1.5 md:px-2 py-1 h-full flex flex-col">
+                    <span className="text-[10px] md:text-xs font-semibold leading-tight truncate">
+                        {event.title}
+                    </span>
+                    {height > 35 && (
+                        <span className="text-[9px] md:text-[10px] opacity-70 mt-0.5">
+                            {formatTimeInTz(event.start, tz)} – {formatTimeInTz(event.end, tz)}
+                        </span>
+                    )}
+                    {height > 60 && event.notes && (
+                        <span className="mt-1 text-[9px] md:text-[10px] opacity-80 italic leading-tight line-clamp-2">
+                            {event.notes}
+                        </span>
+                    )}
+                    {height > 80 && (
+                        <span className="text-[8px] md:text-[9px] opacity-50 mt-0.5">
+                            {tzLabel}
+                        </span>
+                    )}
+                </div>
+            )}
         </button>
     );
 }

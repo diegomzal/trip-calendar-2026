@@ -2,7 +2,8 @@ import { useReducer, useEffect, useCallback, useMemo } from "react";
 import type { CalendarState, CalendarAction, CalendarItem } from "@/types/event";
 import { isSameDayInTz } from "@/lib/timezone";
 
-const AUGUST_FIRST_WEEK = new Date(2026, 7, 3);
+const TRIP_START = new Date(2026, 7, 3); // Aug 3, 2026
+const TRIP_END = new Date(2026, 7, 16); // Aug 16, 2026
 
 function getWeekStart(date: Date): Date {
     const d = new Date(date);
@@ -21,15 +22,14 @@ function calendarReducer(
         case "NEXT_WEEK": {
             const next = new Date(state.currentWeekStart);
             next.setDate(next.getDate() + 7);
+            if (next > TRIP_END) return state;
             return { ...state, currentWeekStart: next };
         }
         case "PREV_WEEK": {
             const prev = new Date(state.currentWeekStart);
             prev.setDate(prev.getDate() - 7);
+            if (prev < getWeekStart(TRIP_START)) return state;
             return { ...state, currentWeekStart: prev };
-        }
-        case "GO_TODAY": {
-            return { ...state, currentWeekStart: getWeekStart(new Date()), selectedDayIndex: 0 };
         }
         case "SELECT_DAY":
             return { ...state, selectedDayIndex: action.payload };
@@ -45,7 +45,7 @@ function calendarReducer(
 }
 
 const initialState: CalendarState = {
-    currentWeekStart: getWeekStart(AUGUST_FIRST_WEEK),
+    currentWeekStart: getWeekStart(TRIP_START),
     selectedDayIndex: 0,
     selectedEvent: null,
     events: [],
@@ -105,7 +105,6 @@ export function useCalendar() {
 
     const nextWeek = useCallback(() => dispatch({ type: "NEXT_WEEK" }), []);
     const prevWeek = useCallback(() => dispatch({ type: "PREV_WEEK" }), []);
-    const goToday = useCallback(() => dispatch({ type: "GO_TODAY" }), []);
     const selectDay = useCallback(
         (index: number) => dispatch({ type: "SELECT_DAY", payload: index }),
         []
@@ -117,6 +116,9 @@ export function useCalendar() {
     );
     const closeEvent = useCallback(() => dispatch({ type: "CLOSE_EVENT" }), []);
 
+    const canGoPrev = state.currentWeekStart.getTime() > getWeekStart(TRIP_START).getTime();
+    const canGoNext = new Date(state.currentWeekStart.getTime() + 7 * 24 * 60 * 60 * 1000) <= TRIP_END;
+
     return {
         ...state,
         weekDays,
@@ -126,7 +128,8 @@ export function useCalendar() {
         eventsForDay,
         nextWeek,
         prevWeek,
-        goToday,
+        canGoPrev,
+        canGoNext,
         selectDay,
         selectEvent,
         closeEvent,

@@ -64,3 +64,37 @@ Events live in `public/` as a JSON file. Two event types are supported:
 
 - **`event`** — has `start` and `end` times (time range)
 - **`marker`** — single point in time (`date`)
+
+## Deployment
+
+### Firebase Hosting & GitHub Actions
+
+This project is configured to deploy to **Firebase Hosting** using **GitHub Actions**.
+
+#### Prerequisites
+
+1.  **Firebase Project**: Create a project in the [Firebase Console](https://console.firebase.google.com/).
+2.  **Service Account**:
+    - Go to **Project Settings** > **Service accounts**.
+    - Click **Generate new private key**.
+    - This will download a JSON file. **Keep this file safe and do not commit it.**
+
+#### Configuration
+
+1.  **Update Project ID**:
+    - Open `.firebaserc` in the root directory.
+    - Replace the project alias with your actual Firebase Project ID (if you haven't already).
+
+2.  **Configure GitHub Secrets**:
+    - Go to your GitHub repository > **Settings** > **Secrets and variables** > **Actions**.
+    - Click **New repository secret**.
+    - **Name**: `FIREBASE_SERVICE_ACCOUNT_KEY`
+    - **Value**: Paste the *entire content* of the JSON file you downloaded.
+
+#### How it Works
+
+The `.github/workflows/deploy.yml` workflow triggers on every push to `main`. It will:
+1.  Install dependencies.
+2.  Build the project.
+3.  Create a temporary credentials file from your `FIREBASE_SERVICE_ACCOUNT_KEY` secret.
+4.  Run `npx firebase-tools deploy --only hosting` to deploy the site.

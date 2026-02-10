@@ -9,8 +9,10 @@ const END_HOUR = 24;
 const TOTAL_HOURS = END_HOUR - START_HOUR;
 
 function formatHourLabel(hour: number): string {
-    if (hour === 0 || hour === 24) return "0:00";
-    return `${hour}:00`;
+    const h = hour % 24;
+    if (h === 0) return "12 AM";
+    if (h === 12) return "12 PM";
+    return h < 12 ? `${h} AM` : `${h - 12} PM`;
 }
 
 function isSameLocalDay(d1: Date, d2: Date): boolean {

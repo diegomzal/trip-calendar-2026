@@ -14,10 +14,14 @@ interface EventDetailModalProps {
     onClose: () => void;
 }
 
-
+const MAPS_API_KEY = import.meta.env.VITE_GOOGLE_MAPS_API_KEY as string;
 
 function getGoogleMapsUrl(location: string): string {
     return `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(location)}`;
+}
+
+function getEmbedUrl(location: string): string {
+    return `https://www.google.com/maps/embed/v1/place?key=${MAPS_API_KEY}&q=${encodeURIComponent(location)}`;
 }
 
 const COLOR_DOTS: Record<string, string> = {
@@ -40,6 +44,7 @@ export function EventDetailModal({ event, onClose }: EventDetailModalProps) {
     const isEvent = event.type === "event";
     const tz = event.timezone;
     const tzLabel = getTimezoneLabel(tz);
+    const showMap = !!event.location && !!MAPS_API_KEY;
 
     return (
         <Dialog open={!!event} onOpenChange={(open) => !open && onClose()}>
@@ -101,6 +106,19 @@ export function EventDetailModal({ event, onClose }: EventDetailModalProps) {
                         </div>
                     )}
 
+                    {showMap && (
+                        <div className="rounded-xl overflow-hidden border border-white/[0.08]">
+                            <iframe
+                                title={`Mapa de ${event.location}`}
+                                src={getEmbedUrl(event.location!)}
+                                className="w-full aspect-video"
+                                style={{ border: 0 }}
+                                allowFullScreen
+                                loading="lazy"
+                                referrerPolicy="no-referrer-when-downgrade"
+                            />
+                        </div>
+                    )}
 
                     {event.notes && (
                         <div className="flex items-start gap-3 text-white/70">
