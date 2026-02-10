@@ -49,15 +49,36 @@ export function TimeGrid({
     const currentHour = now.getHours() + now.getMinutes() / 60;
     const currentTimeTop = (currentHour - START_HOUR) * HOUR_HEIGHT;
 
+    const daysData = useMemo(() => {
+        return weekDays.map((day) => {
+            const dayEvents = timedEvents.filter((e) => {
+                if (e.type !== "event") return false;
+                return isSameDayInTz(e.start, day, e.timezone);
+            }) as CalendarEvent[];
 
-    const mobileDays = [weekDays[selectedDayIndex]];
+            const dayMarkers = markers.filter((m) => {
+                if (m.type !== "marker") return false;
+                return isSameDayInTz(m.date, day, m.timezone);
+            }) as CalendarMarker[];
+
+            return { day, dayEvents, dayMarkers };
+        });
+    }, [weekDays, timedEvents, markers]);
+
+    const mobileDays = [daysData[selectedDayIndex]];
     const mobileTodayIndex = isSameLocalDay(weekDays[selectedDayIndex], now) ? 0 : -1;
+
+    const gridBackgroundStyle = {
+        height: `${TOTAL_HOURS * HOUR_HEIGHT}px`,
+        backgroundImage: `linear-gradient(to bottom, rgba(255, 255, 255, 0.06) 1px, transparent 1px)`,
+        backgroundSize: `100% ${HOUR_HEIGHT}px`,
+    };
 
     return (
         <div className="flex-1 overflow-y-auto overflow-x-hidden relative">
             <div
                 className="hidden md:grid grid-cols-[72px_repeat(7,1fr)] relative"
-                style={{ height: `${TOTAL_HOURS * HOUR_HEIGHT}px` }}
+                style={gridBackgroundStyle}
             >
                 <div className="relative">
                     {hours.map((hour) => (
@@ -76,45 +97,27 @@ export function TimeGrid({
                     ))}
                 </div>
 
-                {weekDays.map((day, colIndex) => {
-                    const dayEvents = timedEvents.filter((e) => {
-                        if (e.type !== "event") return false;
-                        return isSameDayInTz(e.start, day, e.timezone);
-                    }) as CalendarEvent[];
-                    const dayMarkers = markers.filter((m) => {
-                        if (m.type !== "marker") return false;
-                        return isSameDayInTz(m.date, day, m.timezone);
-                    }) as CalendarMarker[];
-
-                    return (
-                        <div
-                            key={colIndex}
-                            className="relative border-r border-white/[0.06] last:border-r-0"
-                        >
-                            {hours.map((hour) => (
-                                <div
-                                    key={hour}
-                                    className="absolute w-full border-t border-white/[0.06]"
-                                    style={{ top: `${(hour - START_HOUR) * HOUR_HEIGHT}px` }}
-                                />
-                            ))}
-                            {dayEvents.map((event, j) => (
-                                <CalendarEventBlock
-                                    key={`e-${j}`}
-                                    event={event}
-                                    onClick={onEventClick}
-                                />
-                            ))}
-                            {dayMarkers.map((marker, j) => (
-                                <CalendarEventBlock
-                                    key={`m-${j}`}
-                                    event={marker}
-                                    onClick={onEventClick}
-                                />
-                            ))}
-                        </div>
-                    );
-                })}
+                {daysData.map(({ dayEvents, dayMarkers }, colIndex) => (
+                    <div
+                        key={colIndex}
+                        className="relative border-r border-white/[0.06] last:border-r-0"
+                    >
+                        {dayEvents.map((event, j) => (
+                            <CalendarEventBlock
+                                key={`e-${j}`}
+                                event={event}
+                                onClick={onEventClick}
+                            />
+                        ))}
+                        {dayMarkers.map((marker, j) => (
+                            <CalendarEventBlock
+                                key={`m-${j}`}
+                                event={marker}
+                                onClick={onEventClick}
+                            />
+                        ))}
+                    </div>
+                ))}
 
                 {currentWeekHasToday &&
                     todayIndex >= 0 &&
@@ -140,7 +143,7 @@ export function TimeGrid({
 
             <div
                 className="grid md:hidden grid-cols-[56px_1fr] relative"
-                style={{ height: `${TOTAL_HOURS * HOUR_HEIGHT}px` }}
+                style={gridBackgroundStyle}
             >
                 <div className="relative">
                     {hours.map((hour) => (
@@ -159,42 +162,24 @@ export function TimeGrid({
                     ))}
                 </div>
 
-                {mobileDays.map((day, colIndex) => {
-                    const dayEvents = timedEvents.filter((e) => {
-                        if (e.type !== "event") return false;
-                        return isSameDayInTz(e.start, day, e.timezone);
-                    }) as CalendarEvent[];
-                    const dayMarkers = markers.filter((m) => {
-                        if (m.type !== "marker") return false;
-                        return isSameDayInTz(m.date, day, m.timezone);
-                    }) as CalendarMarker[];
-
-                    return (
-                        <div key={colIndex} className="relative">
-                            {hours.map((hour) => (
-                                <div
-                                    key={hour}
-                                    className="absolute w-full border-t border-white/[0.06]"
-                                    style={{ top: `${(hour - START_HOUR) * HOUR_HEIGHT}px` }}
-                                />
-                            ))}
-                            {dayEvents.map((event, j) => (
-                                <CalendarEventBlock
-                                    key={`e-${j}`}
-                                    event={event}
-                                    onClick={onEventClick}
-                                />
-                            ))}
-                            {dayMarkers.map((marker, j) => (
-                                <CalendarEventBlock
-                                    key={`m-${j}`}
-                                    event={marker}
-                                    onClick={onEventClick}
-                                />
-                            ))}
-                        </div>
-                    );
-                })}
+                {mobileDays.map(({ dayEvents, dayMarkers }, colIndex) => (
+                    <div key={colIndex} className="relative">
+                        {dayEvents.map((event, j) => (
+                            <CalendarEventBlock
+                                key={`e-${j}`}
+                                event={event}
+                                onClick={onEventClick}
+                            />
+                        ))}
+                        {dayMarkers.map((marker, j) => (
+                            <CalendarEventBlock
+                                key={`m-${j}`}
+                                event={marker}
+                                onClick={onEventClick}
+                            />
+                        ))}
+                    </div>
+                ))}
 
                 {mobileTodayIndex >= 0 &&
                     currentHour >= START_HOUR &&

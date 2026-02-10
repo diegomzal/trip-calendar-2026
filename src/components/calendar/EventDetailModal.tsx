@@ -8,6 +8,8 @@ import {
 import type { CalendarItem } from "@/types/event";
 import { MapPin, Clock, StickyNote } from "lucide-react";
 import { formatTimeInTz, formatDateInTz, getTimezoneLabel } from "@/lib/timezone";
+import { EVENT_STYLES } from "@/lib/colors";
+import { cn } from "@/lib/utils";
 
 interface EventDetailModalProps {
     event: CalendarItem | null;
@@ -24,23 +26,10 @@ function getEmbedUrl(location: string): string {
     return `https://www.google.com/maps/embed/v1/place?key=${MAPS_API_KEY}&q=${encodeURIComponent(location)}`;
 }
 
-const COLOR_DOTS: Record<string, string> = {
-    blue: "bg-blue-400",
-    red: "bg-red-400",
-    green: "bg-green-400",
-    purple: "bg-purple-400",
-    orange: "bg-orange-400",
-    emerald: "bg-emerald-400",
-    cyan: "bg-cyan-400",
-    amber: "bg-amber-400",
-    pink: "bg-pink-400",
-    indigo: "bg-indigo-400",
-};
-
 export function EventDetailModal({ event, onClose }: EventDetailModalProps) {
     if (!event) return null;
 
-    const dotColor = COLOR_DOTS[event.color] || "bg-slate-400";
+    const styles = EVENT_STYLES[event.color] || EVENT_STYLES.default;
     const isEvent = event.type === "event";
     const tz = event.timezone;
     const tzLabel = getTimezoneLabel(tz);
@@ -51,7 +40,7 @@ export function EventDetailModal({ event, onClose }: EventDetailModalProps) {
             <DialogContent className="bg-[#1c1c1e]/80 backdrop-blur-2xl border border-white/[0.12] shadow-2xl rounded-2xl max-w-md mx-auto text-white p-0 overflow-hidden">
                 <DialogHeader className="px-6 pt-6 pb-2">
                     <div className="flex items-center gap-3">
-                        <div className={`w-3 h-3 rounded-full ${dotColor} shrink-0`} />
+                        <div className={cn("w-3 h-3 rounded-full shrink-0", styles.dot)} />
                         <DialogTitle className="text-xl font-semibold text-white tracking-tight">
                             {event.title}
                         </DialogTitle>
