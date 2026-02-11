@@ -2,12 +2,9 @@ import { useMemo } from "react";
 import type { CalendarEvent, CalendarMarker } from "@/types/event";
 import { CalendarEventBlock } from "./CalendarEvent";
 import { isSameDayInTz } from "@/lib/timezone";
+import { isSameLocalDay } from "@/lib/date";
 import { useCalendarContext } from "@/context/CalendarContext";
-
-const HOUR_HEIGHT = 60;
-const START_HOUR = 4;
-const END_HOUR = 24;
-const TOTAL_HOURS = END_HOUR - START_HOUR;
+import { HOUR_HEIGHT, START_HOUR, END_HOUR, TOTAL_HOURS } from "@/lib/constants";
 
 function formatHourLabel(hour: number): string {
     const h = hour % 24;
@@ -16,11 +13,38 @@ function formatHourLabel(hour: number): string {
     return h < 12 ? `${h} AM` : `${h - 12} PM`;
 }
 
-function isSameLocalDay(d1: Date, d2: Date): boolean {
+function HourLabels({ hours, textClass }: { hours: number[]; textClass: string }) {
     return (
-        d1.getFullYear() === d2.getFullYear() &&
-        d1.getMonth() === d2.getMonth() &&
-        d1.getDate() === d2.getDate()
+        <div className="relative">
+            {hours.map((hour) => (
+                <div
+                    key={hour}
+                    className="absolute right-2 flex items-start"
+                    style={{
+                        top: `${(hour - START_HOUR) * HOUR_HEIGHT}px`,
+                        transform: "translateY(-50%)",
+                    }}
+                >
+                    <span className={`${textClass} text-white/30 font-light whitespace-nowrap`}>
+                        {formatHourLabel(hour)}
+                    </span>
+                </div>
+            ))}
+        </div>
+    );
+}
+
+function CurrentTimeIndicator({ gutterWidth, currentTimeTop }: { gutterWidth: string; currentTimeTop: number }) {
+    return (
+        <div
+            className="absolute pointer-events-none z-20 flex items-center"
+            style={{ top: `${currentTimeTop}px`, left: 0, right: 0 }}
+        >
+            <div className={`w-[${gutterWidth}] flex items-center justify-end pr-1 shrink-0`}>
+                <div className="w-2 h-2 rounded-full bg-red-500" />
+            </div>
+            <div className="flex-1 border-t-2 border-red-500 border-dotted opacity-50" />
+        </div>
     );
 }
 
@@ -38,6 +62,7 @@ export function TimeGrid() {
     const todayIndex = weekDays.findIndex((d) => isSameLocalDay(d, now));
     const currentHour = now.getHours() + now.getMinutes() / 60;
     const currentTimeTop = (currentHour - START_HOUR) * HOUR_HEIGHT;
+    const showTimeLine = currentHour >= START_HOUR && currentHour <= END_HOUR;
 
     const daysData = useMemo(() => {
         return weekDays.map((day) => {
@@ -70,22 +95,7 @@ export function TimeGrid() {
                 className="hidden md:grid grid-cols-[72px_repeat(7,1fr)] relative"
                 style={gridBackgroundStyle}
             >
-                <div className="relative">
-                    {hours.map((hour) => (
-                        <div
-                            key={hour}
-                            className="absolute right-2 flex items-start"
-                            style={{
-                                top: `${(hour - START_HOUR) * HOUR_HEIGHT}px`,
-                                transform: "translateY(-50%)",
-                            }}
-                        >
-                            <span className="text-xs text-white/30 font-light whitespace-nowrap">
-                                {formatHourLabel(hour)}
-                            </span>
-                        </div>
-                    ))}
-                </div>
+                <HourLabels hours={hours} textClass="text-xs" />
 
                 {daysData.map(({ dayEvents, dayMarkers }, colIndex) => (
                     <div
@@ -107,42 +117,16 @@ export function TimeGrid() {
                     </div>
                 ))}
 
-                {currentWeekHasToday &&
-                    todayIndex >= 0 &&
-                    currentHour >= START_HOUR &&
-                    currentHour <= END_HOUR && (
-                        <div
-                            className="absolute pointer-events-none z-20 flex items-center"
-                            style={{ top: `${currentTimeTop}px`, left: 0, right: 0 }}
-                        >
-                            <div className="w-[72px] flex items-center justify-end pr-1 shrink-0">
-                                <div className="w-2 h-2 rounded-full bg-red-500" />
-                            </div>
-                            <div className="flex-1 border-t-2 border-red-500 border-dotted opacity-50" />
-                        </div>
-                    )}
+                {currentWeekHasToday && todayIndex >= 0 && showTimeLine && (
+                    <CurrentTimeIndicator gutterWidth="72px" currentTimeTop={currentTimeTop} />
+                )}
             </div>
 
             <div
                 className="grid md:hidden grid-cols-[56px_1fr] relative"
                 style={gridBackgroundStyle}
             >
-                <div className="relative">
-                    {hours.map((hour) => (
-                        <div
-                            key={hour}
-                            className="absolute right-2 flex items-start"
-                            style={{
-                                top: `${(hour - START_HOUR) * HOUR_HEIGHT}px`,
-                                transform: "translateY(-50%)",
-                            }}
-                        >
-                            <span className="text-[10px] text-white/30 font-light whitespace-nowrap">
-                                {formatHourLabel(hour)}
-                            </span>
-                        </div>
-                    ))}
-                </div>
+                <HourLabels hours={hours} textClass="text-[10px]" />
 
                 {mobileDays.map(({ dayEvents, dayMarkers }, colIndex) => (
                     <div key={colIndex} className="relative">
@@ -161,20 +145,11 @@ export function TimeGrid() {
                     </div>
                 ))}
 
-                {mobileTodayIndex >= 0 &&
-                    currentHour >= START_HOUR &&
-                    currentHour <= END_HOUR && (
-                        <div
-                            className="absolute pointer-events-none z-20 flex items-center"
-                            style={{ top: `${currentTimeTop}px`, left: 0, right: 0 }}
-                        >
-                            <div className="w-[56px] flex items-center justify-end pr-1 shrink-0">
-                                <div className="w-2 h-2 rounded-full bg-red-500" />
-                            </div>
-                            <div className="flex-1 border-t-2 border-red-500 border-dotted opacity-50" />
-                        </div>
-                    )}
+                {mobileTodayIndex >= 0 && showTimeLine && (
+                    <CurrentTimeIndicator gutterWidth="56px" currentTimeTop={currentTimeTop} />
+                )}
             </div>
         </div>
     );
 }
+

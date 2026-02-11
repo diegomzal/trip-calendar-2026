@@ -1,6 +1,7 @@
 import { useReducer, useEffect, useCallback, useMemo } from "react";
 import type { CalendarState, CalendarAction, CalendarItem } from "@/types/event";
 import { isSameDayInTz } from "@/lib/timezone";
+import { getEventDateStr } from "@/lib/date";
 
 const TRIP_START = new Date(2026, 7, 3); // Aug 3, 2026
 const TRIP_END = new Date(2026, 7, 16); // Aug 16, 2026
@@ -53,36 +54,23 @@ const initialState: CalendarState = {
 };
 
 export function useCalendar(initialDate: Date = new Date()) {
-    const [state, dispatch] = useReducer(calendarReducer, {
-        ...initialState,
-        currentWeekStart: (() => {
-            const week1Start = getWeekStart(TRIP_START);
-            const week2Start = new Date(week1Start);
-            week2Start.setDate(week2Start.getDate() + 7);
+    const [state, dispatch] = useReducer(calendarReducer, undefined, () => {
+        const week1Start = getWeekStart(TRIP_START);
+        const week2Start = new Date(week1Start);
+        week2Start.setDate(week2Start.getDate() + 7);
 
-            if (initialDate >= week2Start && initialDate <= TRIP_END) {
-                return week2Start;
-            }
-            return week1Start;
-        })(),
-        selectedDayIndex: (() => {
-            const week1Start = getWeekStart(TRIP_START);
-            const week2Start = new Date(week1Start);
-            week2Start.setDate(week2Start.getDate() + 7);
+        const isWeek2 = initialDate >= week2Start && initialDate <= TRIP_END;
+        const weekStart = isWeek2 ? week2Start : week1Start;
 
-            let start = week1Start;
-            if (initialDate >= week2Start && initialDate <= TRIP_END) {
-                start = week2Start;
-            }
+        const diffTime = initialDate.getTime() - weekStart.getTime();
+        const diffDays = Math.floor(diffTime / (1000 * 60 * 60 * 24));
+        const dayIndex = diffDays >= 0 && diffDays < 7 ? diffDays : 0;
 
-            const diffTime = initialDate.getTime() - start.getTime();
-            const diffDays = Math.floor(diffTime / (1000 * 60 * 60 * 24));
-
-            if (diffDays >= 0 && diffDays < 7) {
-                return diffDays;
-            }
-            return 0;
-        })(),
+        return {
+            ...initialState,
+            currentWeekStart: weekStart,
+            selectedDayIndex: dayIndex,
+        };
     });
 
     useEffect(() => {
@@ -107,10 +95,9 @@ export function useCalendar(initialDate: Date = new Date()) {
         return days;
     }, [state.currentWeekStart]);
 
-
     const weekEvents = useMemo(() => {
         return state.events.filter((item) => {
-            const dateStr = item.type === "event" ? item.start : item.date;
+            const dateStr = getEventDateStr(item);
             return weekDays.some((day) => isSameDayInTz(dateStr, day, item.timezone));
         });
     }, [state.events, weekDays]);
@@ -118,8 +105,7 @@ export function useCalendar(initialDate: Date = new Date()) {
     const eventsForDay = useCallback(
         (day: Date): CalendarItem[] => {
             return weekEvents.filter((item) => {
-                const dateStr = item.type === "event" ? item.start : item.date;
-                return isSameDayInTz(dateStr, day, item.timezone);
+                return isSameDayInTz(getEventDateStr(item), day, item.timezone);
             });
         },
         [weekEvents]

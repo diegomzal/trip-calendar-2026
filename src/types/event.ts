@@ -34,7 +34,6 @@ export interface CalendarState {
 export type CalendarAction =
     | { type: "NEXT_WEEK" }
     | { type: "PREV_WEEK" }
-    | { type: "GO_TODAY" }
     | { type: "SELECT_DAY"; payload: number }
     | { type: "SELECT_EVENT"; payload: CalendarItem }
     | { type: "CLOSE_EVENT" }

@@ -3,6 +3,7 @@ import { getLocalParts, formatTimeInTz, getTimezoneLabel } from "@/lib/timezone"
 import { EVENT_STYLES } from "@/lib/colors";
 import { cn } from "@/lib/utils";
 import { useCalendarContext } from "@/context/CalendarContext";
+import { HOUR_HEIGHT, START_HOUR } from "@/lib/constants";
 
 interface CalendarEventBlockProps {
     event: CalendarItem;
@@ -15,8 +16,7 @@ export function CalendarEventBlock({ event }: CalendarEventBlockProps) {
 
     if (event.type === "marker") {
         const { fractional: markerHour } = getLocalParts(event.date, tz);
-        const HOUR_HEIGHT = 60;
-        const top = (markerHour - 4) * HOUR_HEIGHT;
+        const top = (markerHour - START_HOUR) * HOUR_HEIGHT;
 
         return (
             <button
@@ -53,8 +53,7 @@ export function CalendarEventBlock({ event }: CalendarEventBlockProps) {
     const { fractional: startHour } = getLocalParts(event.start, tz);
     const { fractional: endHour } = getLocalParts(event.end, tz);
     const duration = endHour - startHour;
-    const HOUR_HEIGHT = 60;
-    const top = (startHour - 4) * HOUR_HEIGHT;
+    const top = (startHour - START_HOUR) * HOUR_HEIGHT;
     const height = Math.max(duration * HOUR_HEIGHT - 2, 14);
     const tzLabel = getTimezoneLabel(tz);
     const isCompact = height <= 28;

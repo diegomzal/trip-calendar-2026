@@ -12,6 +12,13 @@ import type { Phrase } from "@/data/phrases";
 
 const ALL_CATEGORY_ID = "all";
 
+function getCategoryBtnClass(isActive: boolean): string {
+    return `shrink-0 px-3 py-1.5 rounded-full text-xs font-medium transition-all ${isActive
+            ? "bg-blue-500/20 text-blue-400 border border-blue-500/30"
+            : "bg-white/[0.05] text-white/50 border border-white/[0.08] hover:bg-white/[0.08] hover:text-white/70"
+        }`;
+}
+
 function PhraseCard({ phrase }: { phrase: Phrase }) {
     return (
         <div className="rounded-xl border border-white/[0.08] bg-white/[0.03] p-4 space-y-3 hover:bg-white/[0.06] transition-colors">
@@ -132,10 +139,7 @@ export function Phrasebook() {
                     <div className="flex gap-2 mt-3 pb-3 overflow-x-auto scrollbar-hide">
                         <button
                             onClick={() => setActiveCategory(ALL_CATEGORY_ID)}
-                            className={`shrink-0 px-3 py-1.5 rounded-full text-xs font-medium transition-all ${activeCategory === ALL_CATEGORY_ID
-                                ? "bg-blue-500/20 text-blue-400 border border-blue-500/30"
-                                : "bg-white/[0.05] text-white/50 border border-white/[0.08] hover:bg-white/[0.08] hover:text-white/70"
-                                }`}
+                            className={getCategoryBtnClass(activeCategory === ALL_CATEGORY_ID)}
                         >
                             Todas
                         </button>
@@ -143,10 +147,7 @@ export function Phrasebook() {
                             <button
                                 key={cat.id}
                                 onClick={() => setActiveCategory(cat.id)}
-                                className={`shrink-0 px-3 py-1.5 rounded-full text-xs font-medium transition-all ${activeCategory === cat.id
-                                    ? "bg-blue-500/20 text-blue-400 border border-blue-500/30"
-                                    : "bg-white/[0.05] text-white/50 border border-white/[0.08] hover:bg-white/[0.08] hover:text-white/70"
-                                    }`}
+                                className={getCategoryBtnClass(activeCategory === cat.id)}
                             >
                                 {cat.emoji} {cat.label}
                             </button>
