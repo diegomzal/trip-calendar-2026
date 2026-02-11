@@ -1,7 +1,8 @@
 import { useMemo } from "react";
-import type { CalendarItem, CalendarEvent, CalendarMarker } from "@/types/event";
+import type { CalendarEvent, CalendarMarker } from "@/types/event";
 import { CalendarEventBlock } from "./CalendarEvent";
 import { isSameDayInTz } from "@/lib/timezone";
+import { useCalendarContext } from "@/context/CalendarContext";
 
 const HOUR_HEIGHT = 60;
 const START_HOUR = 4;
@@ -23,23 +24,10 @@ function isSameLocalDay(d1: Date, d2: Date): boolean {
     );
 }
 
-interface TimeGridProps {
-    weekDays: Date[];
-    timedEvents: CalendarItem[];
-    markers: CalendarItem[];
-    selectedDayIndex: number;
-    onEventClick: (event: CalendarItem) => void;
-    currentDate: Date;
-}
+export function TimeGrid() {
+    const { weekDays, timedEvents, markers, selectedDayIndex, currentDate } =
+        useCalendarContext();
 
-export function TimeGrid({
-    weekDays,
-    timedEvents,
-    markers,
-    selectedDayIndex,
-    onEventClick,
-    currentDate,
-}: TimeGridProps) {
     const hours = useMemo(
         () => Array.from({ length: TOTAL_HOURS }, (_, i) => START_HOUR + i),
         []
@@ -108,14 +96,12 @@ export function TimeGrid({
                             <CalendarEventBlock
                                 key={`e-${j}`}
                                 event={event}
-                                onClick={onEventClick}
                             />
                         ))}
                         {dayMarkers.map((marker, j) => (
                             <CalendarEventBlock
                                 key={`m-${j}`}
                                 event={marker}
-                                onClick={onEventClick}
                             />
                         ))}
                     </div>
@@ -164,14 +150,12 @@ export function TimeGrid({
                             <CalendarEventBlock
                                 key={`e-${j}`}
                                 event={event}
-                                onClick={onEventClick}
                             />
                         ))}
                         {dayMarkers.map((marker, j) => (
                             <CalendarEventBlock
                                 key={`m-${j}`}
                                 event={marker}
-                                onClick={onEventClick}
                             />
                         ))}
                     </div>

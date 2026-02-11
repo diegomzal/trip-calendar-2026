@@ -1,11 +1,6 @@
-const DAY_NAMES_SHORT = ["Lun", "Mar", "Mié", "Jue", "Vie", "Sáb", "Dom"];
+import { useCalendarContext } from "@/context/CalendarContext";
 
-interface WeekDayHeaderProps {
-    weekDays: Date[];
-    selectedDayIndex: number;
-    onSelectDay: (index: number) => void;
-    currentDate: Date;
-}
+const DAY_NAMES_SHORT = ["Lun", "Mar", "Mié", "Jue", "Vie", "Sáb", "Dom"];
 
 function isToday(date: Date, now: Date): boolean {
     return (
@@ -15,12 +10,10 @@ function isToday(date: Date, now: Date): boolean {
     );
 }
 
-export function WeekDayHeader({
-    weekDays,
-    selectedDayIndex,
-    onSelectDay,
-    currentDate,
-}: WeekDayHeaderProps) {
+export function WeekDayHeader() {
+    const { weekDays, selectedDayIndex, selectDay, currentDate } =
+        useCalendarContext();
+
     return (
         <div className="border-b border-white/[0.08]">
             <div className="hidden md:grid grid-cols-[72px_repeat(7,1fr)]">
@@ -56,7 +49,7 @@ export function WeekDayHeader({
                     return (
                         <button
                             key={i}
-                            onClick={() => onSelectDay(i)}
+                            onClick={() => selectDay(i)}
                             className={`flex flex-col items-center shrink-0 px-3 py-1.5 rounded-xl transition-all ${selected
                                 ? "bg-white/15 backdrop-blur-xl"
                                 : "hover:bg-white/5"

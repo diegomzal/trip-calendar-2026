@@ -2,13 +2,14 @@ import type { CalendarItem } from "@/types/event";
 import { getLocalParts, formatTimeInTz, getTimezoneLabel } from "@/lib/timezone";
 import { EVENT_STYLES } from "@/lib/colors";
 import { cn } from "@/lib/utils";
+import { useCalendarContext } from "@/context/CalendarContext";
 
 interface CalendarEventBlockProps {
     event: CalendarItem;
-    onClick: (event: CalendarItem) => void;
 }
 
-export function CalendarEventBlock({ event, onClick }: CalendarEventBlockProps) {
+export function CalendarEventBlock({ event }: CalendarEventBlockProps) {
+    const { selectEvent } = useCalendarContext();
     const styles = EVENT_STYLES[event.color] || EVENT_STYLES.default;
     const tz = event.timezone;
 
@@ -19,7 +20,7 @@ export function CalendarEventBlock({ event, onClick }: CalendarEventBlockProps) 
 
         return (
             <button
-                onClick={() => onClick(event)}
+                onClick={() => selectEvent(event)}
                 className="absolute left-0 right-0 flex items-center cursor-pointer z-10 group transition-opacity hover:opacity-100"
                 style={{ top: `${top}px`, transform: "translateY(-50%)" }}
             >
@@ -60,7 +61,7 @@ export function CalendarEventBlock({ event, onClick }: CalendarEventBlockProps) 
 
     return (
         <button
-            onClick={() => onClick(event)}
+            onClick={() => selectEvent(event)}
             className={cn(
                 "absolute left-0.5 right-0.5 md:left-1 md:right-1 rounded-sm overflow-hidden transition-all hover:scale-[1.02] active:scale-[0.98] cursor-pointer backdrop-blur-xl text-left z-10 border-l-[3px]",
                 styles.bg,

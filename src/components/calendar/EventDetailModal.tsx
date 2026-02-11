@@ -5,16 +5,11 @@ import {
     DialogTitle,
     DialogDescription,
 } from "@/components/ui/dialog";
-import type { CalendarItem } from "@/types/event";
 import { MapPin, Clock, StickyNote, Map, TrainFront } from "lucide-react";
 import { formatTimeInTz, formatDateInTz, getTimezoneLabel } from "@/lib/timezone";
 import { EVENT_STYLES } from "@/lib/colors";
 import { cn } from "@/lib/utils";
-
-interface EventDetailModalProps {
-    event: CalendarItem | null;
-    onClose: () => void;
-}
+import { useCalendarContext } from "@/context/CalendarContext";
 
 const MAPS_API_KEY = import.meta.env.VITE_GOOGLE_MAPS_API_KEY as string;
 
@@ -40,7 +35,8 @@ function getCitymapperUrl(location: string, coordinates?: { lat: number; lng: nu
     return `https://citymapper.com/directions?endname=${encodeURIComponent(location)}&endaddress=${encodeURIComponent(location)}`;
 }
 
-export function EventDetailModal({ event, onClose }: EventDetailModalProps) {
+export function EventDetailModal() {
+    const { selectedEvent: event, closeEvent: onClose } = useCalendarContext();
     if (!event) return null;
 
     const styles = EVENT_STYLES[event.color] || EVENT_STYLES.default;

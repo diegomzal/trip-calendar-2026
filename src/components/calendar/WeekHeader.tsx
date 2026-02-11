@@ -1,26 +1,16 @@
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { CountdownTimer } from "@/components/CountdownTimer";
+import { useCalendarContext } from "@/context/CalendarContext";
 
 const MONTH_NAMES = [
     "Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio",
     "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre",
 ];
 
-interface WeekHeaderProps {
-    currentWeekStart: Date;
-    onPrev: () => void;
-    onNext: () => void;
-    canGoPrev: boolean;
-    canGoNext: boolean;
-}
+export function WeekHeader() {
+    const { currentWeekStart, prevWeek, nextWeek, canGoPrev, canGoNext } =
+        useCalendarContext();
 
-export function WeekHeader({
-    currentWeekStart,
-    onPrev,
-    onNext,
-    canGoPrev,
-    canGoNext,
-}: WeekHeaderProps) {
     const weekEnd = new Date(currentWeekStart);
     weekEnd.setDate(weekEnd.getDate() + 6);
 
@@ -69,7 +59,7 @@ export function WeekHeader({
             <CountdownTimer className="ml-auto mr-4" />
             <div className="flex items-center gap-1">
                 <button
-                    onClick={onPrev}
+                    onClick={prevWeek}
                     disabled={!canGoPrev}
                     className="p-2 rounded-full hover:bg-white/10 active:bg-white/15 transition-colors disabled:opacity-30 disabled:pointer-events-none"
                     aria-label="Semana anterior"
@@ -77,7 +67,7 @@ export function WeekHeader({
                     <ChevronLeft className="w-5 h-5 text-white/70" />
                 </button>
                 <button
-                    onClick={onNext}
+                    onClick={nextWeek}
                     disabled={!canGoNext}
                     className="p-2 rounded-full hover:bg-white/10 active:bg-white/15 transition-colors disabled:opacity-30 disabled:pointer-events-none"
                     aria-label="Semana siguiente"

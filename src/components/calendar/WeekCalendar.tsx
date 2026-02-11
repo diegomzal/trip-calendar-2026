@@ -1,30 +1,11 @@
-import { useCalendar } from "@/hooks/useCalendar";
-import { useCurrentDate } from "@/hooks/useCurrentDate";
+import { CalendarProvider, useCalendarContext } from "@/context/CalendarContext";
 import { WeekHeader } from "./WeekHeader";
 import { WeekDayHeader } from "./WeekDayHeader";
-
 import { TimeGrid } from "./TimeGrid";
 import { EventDetailModal } from "./EventDetailModal";
 
-
-export function WeekCalendar() {
-    const currentDate = useCurrentDate();
-    const {
-        currentWeekStart,
-        selectedDayIndex,
-        selectedEvent,
-        loading,
-        weekDays,
-        markers,
-        timedEvents,
-        nextWeek,
-        prevWeek,
-        selectDay,
-        selectEvent,
-        closeEvent,
-        canGoPrev,
-        canGoNext,
-    } = useCalendar(currentDate);
+function WeekCalendarContent() {
+    const { loading } = useCalendarContext();
 
     if (loading) {
         return (
@@ -36,31 +17,18 @@ export function WeekCalendar() {
 
     return (
         <div className="h-screen flex flex-col bg-[#0a0a0a]">
-            <WeekHeader
-                currentWeekStart={currentWeekStart}
-                onPrev={prevWeek}
-                onNext={nextWeek}
-                canGoPrev={canGoPrev}
-                canGoNext={canGoNext}
-            />
-
-            <WeekDayHeader
-                weekDays={weekDays}
-                selectedDayIndex={selectedDayIndex}
-                onSelectDay={selectDay}
-                currentDate={currentDate}
-            />
-
-            <TimeGrid
-                weekDays={weekDays}
-                timedEvents={timedEvents}
-                markers={markers}
-                selectedDayIndex={selectedDayIndex}
-                onEventClick={selectEvent}
-                currentDate={currentDate}
-            />
-
-            <EventDetailModal event={selectedEvent} onClose={closeEvent} />
+            <WeekHeader />
+            <WeekDayHeader />
+            <TimeGrid />
+            <EventDetailModal />
         </div>
+    );
+}
+
+export function WeekCalendar() {
+    return (
+        <CalendarProvider>
+            <WeekCalendarContent />
+        </CalendarProvider>
     );
 }
