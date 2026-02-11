@@ -52,8 +52,38 @@ const initialState: CalendarState = {
     loading: true,
 };
 
-export function useCalendar() {
-    const [state, dispatch] = useReducer(calendarReducer, initialState);
+export function useCalendar(initialDate: Date = new Date()) {
+    const [state, dispatch] = useReducer(calendarReducer, {
+        ...initialState,
+        currentWeekStart: (() => {
+            const week1Start = getWeekStart(TRIP_START);
+            const week2Start = new Date(week1Start);
+            week2Start.setDate(week2Start.getDate() + 7);
+
+            if (initialDate >= week2Start && initialDate <= TRIP_END) {
+                return week2Start;
+            }
+            return week1Start;
+        })(),
+        selectedDayIndex: (() => {
+            const week1Start = getWeekStart(TRIP_START);
+            const week2Start = new Date(week1Start);
+            week2Start.setDate(week2Start.getDate() + 7);
+
+            let start = week1Start;
+            if (initialDate >= week2Start && initialDate <= TRIP_END) {
+                start = week2Start;
+            }
+
+            const diffTime = initialDate.getTime() - start.getTime();
+            const diffDays = Math.floor(diffTime / (1000 * 60 * 60 * 24));
+
+            if (diffDays >= 0 && diffDays < 7) {
+                return diffDays;
+            }
+            return 0;
+        })(),
+    });
 
     useEffect(() => {
         fetch("/events.json")

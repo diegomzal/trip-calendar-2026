@@ -29,6 +29,7 @@ interface TimeGridProps {
     markers: CalendarItem[];
     selectedDayIndex: number;
     onEventClick: (event: CalendarItem) => void;
+    currentDate: Date;
 }
 
 export function TimeGrid({
@@ -37,13 +38,14 @@ export function TimeGrid({
     markers,
     selectedDayIndex,
     onEventClick,
+    currentDate,
 }: TimeGridProps) {
     const hours = useMemo(
         () => Array.from({ length: TOTAL_HOURS }, (_, i) => START_HOUR + i),
         []
     );
 
-    const now = new Date();
+    const now = currentDate;
     const currentWeekHasToday = weekDays.some((d) => isSameLocalDay(d, now));
     const todayIndex = weekDays.findIndex((d) => isSameLocalDay(d, now));
     const currentHour = now.getHours() + now.getMinutes() / 60;
@@ -124,19 +126,13 @@ export function TimeGrid({
                     currentHour >= START_HOUR &&
                     currentHour <= END_HOUR && (
                         <div
-                            className="absolute pointer-events-none z-20"
+                            className="absolute pointer-events-none z-20 flex items-center"
                             style={{ top: `${currentTimeTop}px`, left: 0, right: 0 }}
                         >
-                            <div className="grid grid-cols-[72px_repeat(7,1fr)]">
-                                <div className="flex items-center justify-end pr-1">
-                                    <div className="w-2 h-2 rounded-full bg-red-500" />
-                                </div>
-                                {weekDays.map((_, i) => (
-                                    <div key={i} className={i === todayIndex ? "" : "opacity-0"}>
-                                        <div className="h-[2px] bg-red-500 w-full" />
-                                    </div>
-                                ))}
+                            <div className="w-[72px] flex items-center justify-end pr-1 shrink-0">
+                                <div className="w-2 h-2 rounded-full bg-red-500" />
                             </div>
+                            <div className="flex-1 border-t-2 border-red-500 border-dotted opacity-50" />
                         </div>
                     )}
             </div>
@@ -185,15 +181,13 @@ export function TimeGrid({
                     currentHour >= START_HOUR &&
                     currentHour <= END_HOUR && (
                         <div
-                            className="absolute pointer-events-none z-20"
+                            className="absolute pointer-events-none z-20 flex items-center"
                             style={{ top: `${currentTimeTop}px`, left: 0, right: 0 }}
                         >
-                            <div className="grid grid-cols-[56px_1fr]">
-                                <div className="flex items-center justify-end pr-1">
-                                    <div className="w-2 h-2 rounded-full bg-red-500" />
-                                </div>
-                                <div className="h-[2px] bg-red-500 w-full" />
+                            <div className="w-[56px] flex items-center justify-end pr-1 shrink-0">
+                                <div className="w-2 h-2 rounded-full bg-red-500" />
                             </div>
+                            <div className="flex-1 border-t-2 border-red-500 border-dotted opacity-50" />
                         </div>
                     )}
             </div>

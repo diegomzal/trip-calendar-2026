@@ -1,11 +1,14 @@
 import { useCalendar } from "@/hooks/useCalendar";
+import { useCurrentDate } from "@/hooks/useCurrentDate";
 import { WeekHeader } from "./WeekHeader";
 import { WeekDayHeader } from "./WeekDayHeader";
 
 import { TimeGrid } from "./TimeGrid";
 import { EventDetailModal } from "./EventDetailModal";
 
+
 export function WeekCalendar() {
+    const currentDate = useCurrentDate();
     const {
         currentWeekStart,
         selectedDayIndex,
@@ -21,7 +24,7 @@ export function WeekCalendar() {
         closeEvent,
         canGoPrev,
         canGoNext,
-    } = useCalendar();
+    } = useCalendar(currentDate);
 
     if (loading) {
         return (
@@ -45,6 +48,7 @@ export function WeekCalendar() {
                 weekDays={weekDays}
                 selectedDayIndex={selectedDayIndex}
                 onSelectDay={selectDay}
+                currentDate={currentDate}
             />
 
             <TimeGrid
@@ -53,6 +57,7 @@ export function WeekCalendar() {
                 markers={markers}
                 selectedDayIndex={selectedDayIndex}
                 onEventClick={selectEvent}
+                currentDate={currentDate}
             />
 
             <EventDetailModal event={selectedEvent} onClose={closeEvent} />

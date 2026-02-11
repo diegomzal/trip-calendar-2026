@@ -1,4 +1,5 @@
 import { ChevronLeft, ChevronRight } from "lucide-react";
+import { CountdownTimer } from "@/components/CountdownTimer";
 
 const MONTH_NAMES = [
     "Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio",
@@ -65,6 +66,7 @@ export function WeekHeader({
             <h1 className="text-2xl md:text-3xl tracking-tight text-white">
                 {title}
             </h1>
+            <CountdownTimer className="ml-auto mr-4" />
             <div className="flex items-center gap-1">
                 <button
                     onClick={onPrev}

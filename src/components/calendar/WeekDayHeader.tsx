@@ -4,10 +4,10 @@ interface WeekDayHeaderProps {
     weekDays: Date[];
     selectedDayIndex: number;
     onSelectDay: (index: number) => void;
+    currentDate: Date;
 }
 
-function isToday(date: Date): boolean {
-    const now = new Date();
+function isToday(date: Date, now: Date): boolean {
     return (
         date.getFullYear() === now.getFullYear() &&
         date.getMonth() === now.getMonth() &&
@@ -19,13 +19,14 @@ export function WeekDayHeader({
     weekDays,
     selectedDayIndex,
     onSelectDay,
+    currentDate,
 }: WeekDayHeaderProps) {
     return (
         <div className="border-b border-white/[0.08]">
             <div className="hidden md:grid grid-cols-[72px_repeat(7,1fr)]">
                 <div className="border-r border-white/[0.08]" />
                 {weekDays.map((day, i) => {
-                    const today = isToday(day);
+                    const today = isToday(day, currentDate);
                     return (
                         <div
                             key={i}
@@ -50,7 +51,7 @@ export function WeekDayHeader({
 
             <div className="flex md:hidden gap-1 px-3 py-2 overflow-x-auto scrollbar-none">
                 {weekDays.map((day, i) => {
-                    const today = isToday(day);
+                    const today = isToday(day, currentDate);
                     const selected = i === selectedDayIndex;
                     return (
                         <button
