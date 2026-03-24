@@ -4,7 +4,7 @@ import { isSameDayInTz } from "@/lib/timezone";
 import { getEventDateStr } from "@/lib/date";
 
 const TRIP_START = new Date(2026, 7, 3); // Aug 3, 2026
-const TRIP_END = new Date(2026, 7, 16); // Aug 16, 2026
+const TRIP_END = new Date(2026, 7, 30); // Aug 30, 2026
 
 function getWeekStart(date: Date): Date {
     const d = new Date(date);
@@ -55,12 +55,12 @@ const initialState: CalendarState = {
 
 export function useCalendar(initialDate: Date = new Date()) {
     const [state, dispatch] = useReducer(calendarReducer, undefined, () => {
-        const week1Start = getWeekStart(TRIP_START);
-        const week2Start = new Date(week1Start);
-        week2Start.setDate(week2Start.getDate() + 7);
-
-        const isWeek2 = initialDate >= week2Start && initialDate <= TRIP_END;
-        const weekStart = isWeek2 ? week2Start : week1Start;
+        let weekStart = getWeekStart(initialDate);
+        if (initialDate < TRIP_START) {
+            weekStart = getWeekStart(TRIP_START);
+        } else if (initialDate > TRIP_END) {
+            weekStart = getWeekStart(TRIP_END);
+        }
 
         const diffTime = initialDate.getTime() - weekStart.getTime();
         const diffDays = Math.floor(diffTime / (1000 * 60 * 60 * 24));
