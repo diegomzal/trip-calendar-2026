@@ -29,7 +29,6 @@ export interface CalendarState {
     selectedEvent: CalendarItem | null;
     events: CalendarItem[];
     loading: boolean;
-    selectedTraveler: string | null;
 }
 
 export type CalendarAction =
@@ -38,5 +37,4 @@ export type CalendarAction =
     | { type: "SELECT_DAY"; payload: number }
     | { type: "SELECT_EVENT"; payload: CalendarItem }
     | { type: "CLOSE_EVENT" }
-    | { type: "SET_EVENTS"; payload: CalendarItem[] }
-    | { type: "SET_TRAVELER"; payload: string | null };
+    | { type: "SET_EVENTS"; payload: CalendarItem[] };
