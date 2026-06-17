@@ -82,8 +82,9 @@ export function formatDateInTz(dateStr: string, timezone: string): string {
 
 const TZ_LABELS: Record<string, string> = {
     "Europe/Paris": "🇫🇷 París",
-    "Europe/London": "🇬🇧 Londres",
+    "Europe/Brussels": "🇧🇪 Bélgica",
     "Europe/Amsterdam": "🇳🇱 Ámsterdam",
+    "Europe/Rome": "🇮🇹 Italia",
 };
 
 export function getTimezoneLabel(timezone: string): string {

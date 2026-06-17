@@ -1,562 +1,999 @@
 [
     {
-        "start": "2026-08-03T10:15:00",
-        "end": "2026-08-03T11:30:00",
-        "title": "Trámites de llegada en CDG",
+        "type": "event",
+        "title": "Llegada y trámites en CDG",
+        "start": "2026-08-03T09:00:00",
+        "end": "2026-08-03T11:00:00",
         "color": "blue",
-        "location": "Paris Charles de Gaulle Airport",
+        "location": "Aeropuerto Charles de Gaulle (CDG)",
         "coordinates": {
-            "lat": 49.009724,
-            "lng": 2.547778
+            "lat": 49.0097,
+            "lng": 2.5478
         },
-        "type": "event",
-        "timezone": "Europe/Paris",
-        "notes": "Inmigración y equipaje"
-    },
-    {
-        "start": "2026-08-03T11:30:00",
-        "end": "2026-08-03T12:15:00",
-        "title": "Transporte al Airbnb",
-        "color": "orange",
-        "location": "Paris, France",
-        "type": "event",
-        "timezone": "Europe/Paris",
-        "notes": "45 min aprox. en Taxi/RER"
-    },
-    {
-        "start": "2026-08-03T12:15:00",
-        "end": "2026-08-03T13:30:00",
-        "title": "Check-in y almuerzo rápido",
-        "color": "green",
-        "location": "Paris, France",
-        "type": "event",
+        "notes": "Inmigración y equipaje",
         "timezone": "Europe/Paris"
     },
     {
+        "type": "event",
+        "title": "Traslado y check-in en el Airbnb",
+        "start": "2026-08-03T11:00:00",
+        "end": "2026-08-03T12:30:00",
+        "color": "green",
+        "location": "París",
+        "coordinates": {
+            "lat": 48.8566,
+            "lng": 2.3522
+        },
+        "timezone": "Europe/Paris"
+    },
+    {
+        "type": "event",
+        "title": "Île de la Cité, Notre-Dame y Barrio Latino",
         "start": "2026-08-03T13:30:00",
-        "end": "2026-08-03T14:05:00",
-        "title": "Transporte al centro de París",
-        "color": "orange",
-        "type": "event",
-        "timezone": "Europe/Paris",
-        "notes": "35 min"
-    },
-    {
-        "start": "2026-08-03T14:05:00",
-        "end": "2026-08-03T17:00:00",
-        "title": "Torre Eiffel (P1)",
+        "end": "2026-08-03T18:00:00",
         "color": "indigo",
-        "location": "Tour Eiffel, Paris, France",
+        "location": "Île de la Cité, París",
         "coordinates": {
-            "lat": 48.85837,
-            "lng": 2.294481
+            "lat": 48.855,
+            "lng": 2.3475
         },
-        "type": "event",
+        "notes": "Tarde suave tras el vuelo: exterior de Notre-Dame (reabierta; reserva gratis si entran), Sainte-Chapelle, Barrio Latino, orillas del Sena",
         "timezone": "Europe/Paris"
     },
     {
-        "start": "2026-08-03T17:00:00",
+        "type": "event",
+        "title": "Atardecer en Sacré-Cœur (Montmartre)",
+        "start": "2026-08-03T18:30:00",
         "end": "2026-08-03T20:30:00",
-        "title": "Tiempo libre y cena - Campo de Marte",
-        "color": "emerald",
-        "location": "Champ de Mars, Paris, France",
+        "color": "indigo",
+        "location": "Basílica del Sacré-Cœur, París",
         "coordinates": {
-            "lat": 48.855648,
-            "lng": 2.29863
+            "lat": 48.8867,
+            "lng": 2.3431
         },
-        "type": "event",
+        "notes": "Opcional si hay energía; si no, otro día",
         "timezone": "Europe/Paris"
     },
     {
-        "start": "2026-08-03T20:30:00",
-        "end": "2026-08-03T21:00:00",
-        "title": "Transporte a Pont Neuf",
-        "color": "orange",
         "type": "event",
-        "timezone": "Europe/Paris"
-    },
-    {
-        "start": "2026-08-03T21:00:00",
-        "end": "2026-08-03T22:30:00",
-        "title": "Paseo nocturno en el Río Sena (P1)",
-        "color": "cyan",
-        "location": "Seine River, Paris, France",
+        "title": "Tour del Estadio Roland Garros",
+        "start": "2026-08-04T10:00:00",
+        "end": "2026-08-04T12:00:00",
+        "color": "amber",
+        "location": "Stade Roland-Garros, París",
         "coordinates": {
-            "lat": 48.85705,
-            "lng": 2.341325
+            "lat": 48.8472,
+            "lng": 2.2511
         },
-        "type": "event",
+        "notes": "🎟️ Reservar el tour del estadio (no el museo). Canchas Philippe-Chatrier y Lenglen. ⭐ Diego, Omar, Lucy y Adriana (tenis)",
         "timezone": "Europe/Paris"
     },
     {
-        "start": "2026-08-04T08:40:00",
-        "end": "2026-08-04T09:15:00",
-        "title": "Transporte a Cité des Sciences",
-        "color": "orange",
         "type": "event",
-        "timezone": "Europe/Paris",
-        "notes": "35 min"
-    },
-    {
-        "start": "2026-08-04T09:15:00",
-        "end": "2026-08-04T13:30:00",
-        "title": "Cité des Sciences et de l'Industrie (P1)",
-        "color": "purple",
-        "location": "Cité des Sciences et de l'Industrie, Paris, France",
-        "coordinates": {
-            "lat": 48.895556,
-            "lng": 2.388056
-        },
-        "type": "event",
-        "timezone": "Europe/Paris"
-    },
-    {
-        "start": "2026-08-04T13:30:00",
-        "end": "2026-08-04T14:00:00",
-        "title": "Transporte al 6º Arrondissement",
-        "color": "orange",
-        "type": "event",
-        "timezone": "Europe/Paris"
-    },
-    {
-        "start": "2026-08-04T14:00:00",
+        "title": "Torre Eiffel, Trocadéro y Campo de Marte",
+        "start": "2026-08-04T13:00:00",
         "end": "2026-08-04T16:00:00",
-        "title": "Musée d'histoire de la médecine (P2)",
-        "color": "purple",
-        "location": "Musée d'Histoire de la Médecine, Paris, France",
-        "coordinates": {
-            "lat": 48.850575,
-            "lng": 2.339798
-        },
-        "type": "event",
-        "timezone": "Europe/Paris"
-    },
-    {
-        "start": "2026-08-04T16:00:00",
-        "end": "2026-08-04T16:15:00",
-        "title": "Caminata a Rue de Rivoli",
-        "color": "orange",
-        "type": "event",
-        "timezone": "Europe/Paris"
-    },
-    {
-        "start": "2026-08-04T16:15:00",
-        "end": "2026-08-04T18:00:00",
-        "title": "Musée des Arts Décoratifs (P3)",
-        "color": "purple",
-        "location": "Musée des Arts Décoratifs, Paris, France",
-        "coordinates": {
-            "lat": 48.863486,
-            "lng": 2.333331
-        },
-        "type": "event",
-        "timezone": "Europe/Paris"
-    },
-    {
-        "date": "2026-08-04T18:00:00",
-        "title": "Regreso al Airbnb",
-        "color": "green",
-        "type": "marker",
-        "timezone": "Europe/Paris"
-    },
-    {
-        "start": "2026-08-05T08:25:00",
-        "end": "2026-08-05T09:00:00",
-        "title": "Transporte al Museo del Louvre",
-        "color": "orange",
-        "type": "event",
-        "timezone": "Europe/Paris",
-        "notes": "35 min"
-    },
-    {
-        "start": "2026-08-05T09:00:00",
-        "end": "2026-08-05T13:30:00",
-        "title": "Museo del Louvre (P1)",
         "color": "indigo",
-        "location": "Musée du Louvre, Paris, France",
+        "location": "Torre Eiffel, París",
         "coordinates": {
-            "lat": 48.860611,
-            "lng": 2.337644
+            "lat": 48.8584,
+            "lng": 2.2945
         },
-        "type": "event",
+        "notes": "🎟️ Reservar acceso. Fotos en Trocadéro. (El Louvre cierra los martes)",
         "timezone": "Europe/Paris"
     },
     {
-        "start": "2026-08-05T13:30:00",
-        "end": "2026-08-05T14:00:00",
-        "title": "Transporte a Place de Fontenoy",
-        "color": "orange",
         "type": "event",
-        "timezone": "Europe/Paris"
-    },
-    {
-        "start": "2026-08-05T14:00:00",
-        "end": "2026-08-05T15:30:00",
-        "title": "Sede UNESCO - Visita guiada (P3)",
-        "color": "blue",
-        "location": "UNESCO Headquarters, Paris, France",
-        "coordinates": {
-            "lat": 48.848529,
-            "lng": 2.308709
-        },
-        "type": "event",
-        "timezone": "Europe/Paris"
-    },
-    {
-        "start": "2026-08-05T15:30:00",
-        "end": "2026-08-05T18:00:00",
-        "title": "Tiempo libre / Cena - Barrio Latino",
-        "color": "emerald",
-        "location": "Quartier Latin, Paris, France",
-        "coordinates": {
-            "lat": 48.851667,
-            "lng": 2.343333
-        },
-        "type": "event",
-        "timezone": "Europe/Paris"
-    },
-    {
-        "start": "2026-08-06T08:00:00",
-        "end": "2026-08-06T09:00:00",
-        "title": "Transporte a Marne-la-Vallée",
-        "color": "orange",
-        "type": "event",
-        "timezone": "Europe/Paris",
-        "notes": "RER A"
-    },
-    {
-        "start": "2026-08-06T09:00:00",
-        "end": "2026-08-06T22:00:00",
-        "title": "Disneyland Paris (P1 - 2 parques)",
-        "color": "pink",
-        "location": "Disneyland Paris, Marne-la-Vallée, France",
-        "coordinates": {
-            "lat": 48.867374,
-            "lng": 2.784018
-        },
-        "type": "event",
-        "timezone": "Europe/Paris"
-    },
-    {
-        "date": "2026-08-06T22:00:00",
-        "title": "Regreso al Airbnb (RER A)",
-        "color": "orange",
-        "type": "marker",
-        "timezone": "Europe/Paris"
-    },
-    {
-        "start": "2026-08-07T08:15:00",
-        "end": "2026-08-07T09:00:00",
-        "title": "Transporte a Versalles",
-        "color": "orange",
-        "type": "event",
-        "timezone": "Europe/Paris",
-        "notes": "RER C"
-    },
-    {
-        "start": "2026-08-07T09:00:00",
-        "end": "2026-08-07T15:00:00",
-        "title": "Palacio de Versalles (P1)",
+        "title": "Arco del Triunfo y Campos Elíseos",
+        "start": "2026-08-04T16:30:00",
+        "end": "2026-08-04T18:30:00",
         "color": "indigo",
-        "location": "Palace of Versailles, Versailles, France",
+        "location": "Arco del Triunfo, París",
         "coordinates": {
-            "lat": 48.804865,
-            "lng": 2.120355
+            "lat": 48.8738,
+            "lng": 2.295
         },
-        "type": "event",
         "timezone": "Europe/Paris"
     },
     {
-        "start": "2026-08-07T15:00:00",
-        "end": "2026-08-07T15:45:00",
-        "title": "Transporte a Roland-Garros",
-        "color": "orange",
         "type": "event",
-        "timezone": "Europe/Paris",
-        "notes": "Línea 10"
-    },
-    {
-        "start": "2026-08-07T15:45:00",
-        "end": "2026-08-07T17:15:00",
-        "title": "Roland-Garros Stadium - Tour guiado (P3)",
-        "color": "amber",
-        "location": "Stade Roland-Garros, Paris, France",
-        "coordinates": {
-            "lat": 48.847222,
-            "lng": 2.251111
-        },
-        "type": "event",
-        "timezone": "Europe/Paris"
-    },
-    {
-        "date": "2026-08-07T17:15:00",
-        "title": "Regreso al Airbnb / Tarde flexible",
-        "color": "green",
-        "type": "marker",
-        "timezone": "Europe/Paris"
-    },
-    {
-        "start": "2026-08-09T09:00:00",
-        "end": "2026-08-09T09:40:00",
-        "title": "Transporte a Gare du Nord",
-        "color": "orange",
-        "type": "event",
-        "timezone": "Europe/Paris"
-    },
-    {
-        "start": "2026-08-09T09:40:00",
-        "end": "2026-08-09T11:10:00",
-        "title": "Check-in y controles Eurostar",
-        "color": "red",
-        "location": "Gare du Nord, Paris, France",
-        "coordinates": {
-            "lat": 48.880931,
-            "lng": 2.355323
-        },
-        "type": "event",
-        "timezone": "Europe/Paris",
-        "notes": "90 min para controles fronterizos"
-    },
-    {
-        "start": "2026-08-09T11:13:00",
-        "end": "2026-08-09T12:30:00",
-        "title": "Eurostar París → Londres St Pancras",
-        "color": "blue",
-        "location": "Eurostar",
-        "coordinates": {
-            "lat": 48.880931,
-            "lng": 2.355323
-        },
-        "type": "event",
-        "timezone": "Europe/London",
-        "notes": "Sale 11:13 hora París, llega 12:30 hora Londres"
-    },
-    {
-        "start": "2026-08-09T12:30:00",
-        "end": "2026-08-09T13:30:00",
-        "title": "Drop bags en Airbnb Centro Londres",
-        "color": "green",
-        "location": "Central London, United Kingdom",
-        "type": "event",
-        "timezone": "Europe/London"
-    },
-    {
-        "start": "2026-08-09T13:30:00",
-        "end": "2026-08-09T16:00:00",
-        "title": "London Bridge (P1) y South Bank",
-        "color": "indigo",
-        "location": "London Bridge, London, United Kingdom",
-        "coordinates": {
-            "lat": 51.507879,
-            "lng": -0.087732
-        },
-        "type": "event",
-        "timezone": "Europe/London",
-        "notes": "Caminata por el South Bank"
-    },
-    {
-        "start": "2026-08-09T16:00:00",
-        "end": "2026-08-09T18:00:00",
-        "title": "Big Ben y Parlamento (P1)",
-        "color": "indigo",
-        "location": "Palace of Westminster, London, United Kingdom",
-        "coordinates": {
-            "lat": 51.500729,
-            "lng": -0.124625
-        },
-        "type": "event",
-        "timezone": "Europe/London"
-    },
-    {
-        "start": "2026-08-10T09:45:00",
-        "end": "2026-08-10T10:20:00",
-        "title": "Transporte a St James's Palace",
-        "color": "orange",
-        "type": "event",
-        "timezone": "Europe/London"
-    },
-    {
-        "start": "2026-08-10T10:20:00",
-        "end": "2026-08-10T12:00:00",
-        "title": "Ceremonia Cambio de Guardia (P1)",
-        "color": "red",
-        "location": "St James's Palace, London, United Kingdom",
-        "coordinates": {
-            "lat": 51.504722,
-            "lng": -0.1375
-        },
-        "type": "event",
-        "timezone": "Europe/London"
-    },
-    {
-        "start": "2026-08-10T12:00:00",
-        "end": "2026-08-10T13:30:00",
-        "title": "Almuerzo en Westminster",
-        "color": "emerald",
-        "location": "Westminster, London, United Kingdom",
-        "type": "event",
-        "timezone": "Europe/London"
-    },
-    {
-        "start": "2026-08-10T13:30:00",
-        "end": "2026-08-10T15:00:00",
-        "title": "Museo Florence Nightingale (P1)",
-        "color": "purple",
-        "location": "Florence Nightingale Museum, London, United Kingdom",
-        "coordinates": {
-            "lat": 51.500278,
-            "lng": -0.117222
-        },
-        "type": "event",
-        "timezone": "Europe/London"
-    },
-    {
-        "start": "2026-08-10T15:30:00",
-        "end": "2026-08-10T18:00:00",
-        "title": "British Museum (P2)",
-        "color": "purple",
-        "location": "British Museum, London, United Kingdom",
-        "coordinates": {
-            "lat": 51.519413,
-            "lng": -0.126957
-        },
-        "type": "event",
-        "timezone": "Europe/London"
-    },
-    {
-        "start": "2026-08-11T09:30:00",
-        "end": "2026-08-11T10:00:00",
-        "title": "Transporte a South Kensington",
-        "color": "orange",
-        "type": "event",
-        "timezone": "Europe/London"
-    },
-    {
-        "start": "2026-08-11T10:00:00",
-        "end": "2026-08-11T13:30:00",
-        "title": "Science Museum London (P1)",
-        "color": "purple",
-        "location": "Science Museum, London, United Kingdom",
-        "coordinates": {
-            "lat": 51.4975,
-            "lng": -0.174722
-        },
-        "type": "event",
-        "timezone": "Europe/London"
-    },
-    {
-        "start": "2026-08-11T13:30:00",
-        "end": "2026-08-11T14:30:00",
-        "title": "Almuerzo y transporte a Kensington",
-        "color": "emerald",
-        "type": "event",
-        "timezone": "Europe/London"
-    },
-    {
-        "start": "2026-08-11T14:30:00",
-        "end": "2026-08-11T17:00:00",
-        "title": "Design Museum (P1)",
+        "title": "Paseo en barco por el Sena (Bateaux-Mouches)",
+        "start": "2026-08-04T20:30:00",
+        "end": "2026-08-04T22:00:00",
         "color": "cyan",
-        "location": "Design Museum, London, United Kingdom",
+        "location": "Bateaux-Mouches, París",
         "coordinates": {
-            "lat": 51.499722,
-            "lng": -0.200833
+            "lat": 48.8637,
+            "lng": 2.3045
         },
-        "type": "event",
-        "timezone": "Europe/London"
+        "timezone": "Europe/Paris"
     },
     {
-        "start": "2026-08-12T09:15:00",
-        "end": "2026-08-12T10:00:00",
-        "title": "Transporte a Wimbledon",
-        "color": "orange",
         "type": "event",
-        "timezone": "Europe/London",
-        "notes": "District Line"
-    },
-    {
-        "start": "2026-08-12T10:00:00",
-        "end": "2026-08-12T12:00:00",
-        "title": "Wimbledon Stadium - Museo y Tour (P1)",
-        "color": "amber",
-        "location": "Wimbledon Lawn Tennis Museum, London, United Kingdom",
+        "title": "Museo del Louvre",
+        "start": "2026-08-05T09:30:00",
+        "end": "2026-08-05T13:00:00",
+        "color": "purple",
+        "location": "Museo del Louvre, París",
         "coordinates": {
-            "lat": 51.434722,
-            "lng": -0.214722
+            "lat": 48.8606,
+            "lng": 2.3376
         },
-        "type": "event",
-        "timezone": "Europe/London"
+        "notes": "🎟️ Ruta de imprescindibles: Gioconda, Victoria de Samotracia, Venus de Milo. Audioguía en español. ⭐ Yessenia (arte)",
+        "timezone": "Europe/Paris"
     },
     {
-        "start": "2026-08-12T12:00:00",
-        "end": "2026-08-12T13:15:00",
-        "title": "Transporte a la City de Londres",
-        "color": "orange",
         "type": "event",
-        "timezone": "Europe/London"
-    },
-    {
-        "start": "2026-08-12T13:15:00",
-        "end": "2026-08-12T15:45:00",
-        "title": "Catedral de San Pablo (P2)",
-        "color": "indigo",
-        "location": "St Paul's Cathedral, London, United Kingdom",
+        "title": "Musée d'Histoire de la Médecine",
+        "start": "2026-08-05T14:30:00",
+        "end": "2026-08-05T16:00:00",
+        "color": "purple",
+        "location": "Musée d'Histoire de la Médecine, París",
         "coordinates": {
-            "lat": 51.513839,
-            "lng": -0.098351
+            "lat": 48.8525,
+            "lng": 2.3399
         },
+        "notes": "Solo tardes, abre miércoles. ⭐ Omar y Lucy (medicina). ~1h",
+        "timezone": "Europe/Paris"
+    },
+    {
         "type": "event",
-        "timezone": "Europe/London"
-    },
-    {
-        "date": "2026-08-12T15:45:00",
-        "title": "Regreso al alojamiento",
-        "color": "green",
-        "type": "marker",
-        "timezone": "Europe/London"
-    },
-    {
-        "start": "2026-08-13T10:15:00",
-        "end": "2026-08-13T11:00:00",
-        "title": "Transporte a Wembley Park",
-        "color": "orange",
-        "type": "event",
-        "timezone": "Europe/London"
-    },
-    {
-        "start": "2026-08-13T11:00:00",
-        "end": "2026-08-13T12:30:00",
-        "title": "Wembley Stadium Tour (P2)",
-        "color": "amber",
-        "location": "Wembley Stadium, London, United Kingdom",
-        "coordinates": {
-            "lat": 51.556021,
-            "lng": -0.279519
-        },
-        "type": "event",
-        "timezone": "Europe/London"
-    },
-    {
-        "start": "2026-08-13T12:30:00",
-        "end": "2026-08-13T18:00:00",
-        "title": "Compras - Regent St y Oxford St",
+        "title": "Le Marais y Musée d'Orsay",
+        "start": "2026-08-05T16:30:00",
+        "end": "2026-08-05T18:30:00",
         "color": "pink",
-        "location": "Regent Street, London, United Kingdom",
+        "location": "Le Marais, París",
         "coordinates": {
-            "lat": 51.513611,
-            "lng": -0.140833
+            "lat": 48.859,
+            "lng": 2.362
         },
-        "type": "event",
-        "timezone": "Europe/London",
-        "notes": "Tiempo libre para compras"
+        "notes": "⭐ Yessenia (moda/arte): boutiques y vintage + impresionistas en Orsay (opcional)",
+        "timezone": "Europe/Paris"
     },
     {
-        "start": "2026-08-26T12:00:00",
-        "end": "2026-08-26T13:00:00",
-        "title": "Check In Polimi Housing",
-        "color": "blue",
-        "location": "Milan, Italy",
         "type": "event",
+        "title": "Palacio de Versalles (día completo)",
+        "start": "2026-08-06T09:00:00",
+        "end": "2026-08-06T16:00:00",
+        "color": "indigo",
+        "location": "Palacio de Versalles",
+        "coordinates": {
+            "lat": 48.8049,
+            "lng": 2.1204
+        },
+        "notes": "🎟️ RER C (~40 min). Salón de los Espejos, Jardines (fuentes), Trianón, finca de María Antonieta. ⭐ Omar (historia). Cierra lunes. Ir temprano (alta temporada)",
+        "timezone": "Europe/Paris"
+    },
+    {
+        "type": "event",
+        "title": "Cena tranquila en París",
+        "start": "2026-08-06T18:30:00",
+        "end": "2026-08-06T20:30:00",
+        "color": "emerald",
+        "location": "París",
+        "coordinates": {
+            "lat": 48.8566,
+            "lng": 2.3522
+        },
+        "timezone": "Europe/Paris"
+    },
+    {
+        "type": "event",
+        "title": "Check-out del Airbnb",
+        "start": "2026-08-07T06:00:00",
+        "end": "2026-08-07T06:30:00",
+        "color": "green",
+        "location": "París",
+        "coordinates": {
+            "lat": 48.8566,
+            "lng": 2.3522
+        },
+        "notes": "Hasta las 9:00",
+        "timezone": "Europe/Paris"
+    },
+    {
+        "type": "event",
+        "title": "Tren París → Bruselas",
+        "start": "2026-08-07T07:00:00",
+        "end": "2026-08-07T08:25:00",
+        "color": "orange",
+        "location": "Gare du Nord, París",
+        "coordinates": {
+            "lat": 48.8809,
+            "lng": 2.3553
+        },
+        "notes": "🎟️ Eurostar/TGV (~1h25). Llega a Bruxelles-Midi",
+        "timezone": "Europe/Paris"
+    },
+    {
+        "type": "event",
+        "title": "Check-in y dejar maletas en Bruselas",
+        "color": "green",
+        "timezone": "Europe/Brussels",
+        "location": "Bruselas",
+        "start": "2026-08-07T09:00:00",
+        "end": "2026-08-07T10:00:00",
+        "coordinates": {
+            "lat": 50.8503,
+            "lng": 4.3517
+        }
+    },
+    {
+        "type": "event",
+        "title": "Grand-Place, Manneken Pis y Galerías Saint-Hubert",
+        "color": "indigo",
+        "timezone": "Europe/Brussels",
+        "location": "Grand-Place, Bruselas",
+        "start": "2026-08-07T10:30:00",
+        "end": "2026-08-07T14:00:00",
+        "coordinates": {
+            "lat": 50.8467,
+            "lng": 4.3525
+        },
+        "notes": "Waffles y chocolate"
+    },
+    {
+        "type": "event",
+        "title": "Barrio Europeo: Parlamentarium y Casa de la Historia Europea",
+        "color": "purple",
+        "timezone": "Europe/Brussels",
+        "location": "Parlamentarium, Bruselas",
+        "start": "2026-08-07T15:00:00",
+        "end": "2026-08-07T18:00:00",
+        "coordinates": {
+            "lat": 50.8385,
+            "lng": 4.3776
+        },
+        "notes": "Gratis (hasta 18:00). Museos interactivos del Parlamento Europeo. ⭐ Lucy (política)"
+    },
+    {
+        "type": "event",
+        "title": "Tren Bruselas → Brujas",
+        "color": "orange",
+        "timezone": "Europe/Brussels",
+        "location": "Bruxelles-Midi",
+        "start": "2026-08-08T09:00:00",
+        "end": "2026-08-08T10:00:00",
+        "coordinates": {
+            "lat": 50.8358,
+            "lng": 4.3367
+        },
+        "notes": "~1h, cada hora, sin reserva"
+    },
+    {
+        "type": "event",
+        "title": "Brujas: canales, Markt y Belfort",
+        "color": "indigo",
+        "timezone": "Europe/Brussels",
+        "location": "Markt, Brujas",
+        "start": "2026-08-08T10:00:00",
+        "end": "2026-08-08T17:00:00",
+        "coordinates": {
+            "lat": 51.2086,
+            "lng": 3.2247
+        },
+        "notes": "Paseo en bote por los canales, campanario Belfort, Basílica de la Santa Sangre, Begijnhof, chocolate (Dumon, The Chocolate Line). Día tranquilo"
+    },
+    {
+        "type": "event",
+        "title": "Regreso a Bruselas",
+        "color": "orange",
+        "timezone": "Europe/Brussels",
+        "location": "Brujas",
+        "start": "2026-08-08T17:30:00",
+        "end": "2026-08-08T18:30:00",
+        "coordinates": {
+            "lat": 51.1972,
+            "lng": 3.2169
+        }
+    },
+    {
+        "type": "event",
+        "title": "Tren Bruselas → Ámsterdam",
+        "color": "orange",
+        "timezone": "Europe/Brussels",
+        "location": "Bruxelles-Midi",
+        "start": "2026-08-09T09:00:00",
+        "end": "2026-08-09T11:00:00",
+        "coordinates": {
+            "lat": 50.8358,
+            "lng": 4.3367
+        },
+        "notes": "🎟️ Eurostar/Intercity (~2h)"
+    },
+    {
+        "type": "event",
+        "title": "Check-in en Ámsterdam",
+        "color": "green",
+        "timezone": "Europe/Amsterdam",
+        "start": "2026-08-09T11:30:00",
+        "end": "2026-08-09T12:30:00",
+        "location": "Ámsterdam",
+        "coordinates": {
+            "lat": 52.3676,
+            "lng": 4.9041
+        }
+    },
+    {
+        "type": "event",
+        "title": "Paseo en barco por los canales",
+        "color": "cyan",
+        "timezone": "Europe/Amsterdam",
+        "start": "2026-08-09T13:30:00",
+        "end": "2026-08-09T15:00:00",
+        "location": "Canales de Ámsterdam",
+        "coordinates": {
+            "lat": 52.3676,
+            "lng": 4.9041
+        }
+    },
+    {
+        "type": "event",
+        "title": "Jordaan, Dam y vintage",
+        "color": "pink",
+        "timezone": "Europe/Amsterdam",
+        "start": "2026-08-09T15:00:00",
+        "end": "2026-08-09T18:00:00",
+        "location": "Jordaan, Ámsterdam",
+        "coordinates": {
+            "lat": 52.3747,
+            "lng": 4.8807
+        },
+        "notes": "⭐ Yessenia (vintage): Vintage of Amsterdam (Elandsgracht 41), Vindit Vintage. Begijnhof"
+    },
+    {
+        "type": "event",
+        "title": "Casa de Ana Frank",
+        "color": "purple",
+        "timezone": "Europe/Amsterdam",
+        "start": "2026-08-10T09:00:00",
+        "end": "2026-08-10T10:00:00",
+        "location": "Casa de Ana Frank, Ámsterdam",
+        "coordinates": {
+            "lat": 52.3752,
+            "lng": 4.884
+        },
+        "notes": "🎟️ Horario fijo, reservar ~6 semanas antes (se agota en minutos)"
+    },
+    {
+        "type": "event",
+        "title": "Rijksmuseum y/o Museo Van Gogh",
+        "color": "purple",
+        "timezone": "Europe/Amsterdam",
+        "start": "2026-08-10T10:30:00",
+        "end": "2026-08-10T13:30:00",
+        "location": "Rijksmuseum, Ámsterdam",
+        "coordinates": {
+            "lat": 52.36,
+            "lng": 4.8852
+        },
+        "notes": "⭐ Yessenia (arte). Pueden hacer los dos (día cargado)"
+    },
+    {
+        "type": "event",
+        "title": "Museum Vrolik (anatómico)",
+        "color": "purple",
+        "timezone": "Europe/Amsterdam",
+        "start": "2026-08-10T14:30:00",
+        "end": "2026-08-10T16:00:00",
+        "location": "Museum Vrolik, Ámsterdam",
+        "coordinates": {
+            "lat": 52.294,
+            "lng": 4.956
+        },
+        "notes": "Lun–Vie 11:00–17:00. ⭐ Omar y Lucy (medicina)"
+    },
+    {
+        "type": "event",
+        "title": "Moco Museum, De Pijp y Vondelpark",
+        "color": "pink",
+        "timezone": "Europe/Amsterdam",
+        "start": "2026-08-10T16:30:00",
+        "end": "2026-08-10T19:00:00",
+        "location": "Moco Museum, Ámsterdam",
+        "coordinates": {
+            "lat": 52.3586,
+            "lng": 4.8816
+        },
+        "notes": "⭐ Yessenia: arte urbano/Banksy + vintage en De Pijp"
+    },
+    {
+        "type": "event",
+        "title": "Vuelo Ámsterdam (AMS) → Milán",
+        "color": "orange",
+        "timezone": "Europe/Amsterdam",
+        "start": "2026-08-11T08:00:00",
+        "end": "2026-08-11T10:00:00",
+        "location": "Aeropuerto de Schiphol (AMS)",
+        "coordinates": {
+            "lat": 52.3105,
+            "lng": 4.7683
+        },
+        "notes": "🎟️ KLM/easyJet/ITA. 🛂 Guardar pases de abordar (prueba de ingreso a Italia). Aterrizan Linate o Malpensa"
+    },
+    {
+        "type": "event",
+        "title": "Check-in en Milán",
+        "color": "green",
+        "timezone": "Europe/Rome",
+        "start": "2026-08-11T12:00:00",
+        "end": "2026-08-11T13:00:00",
+        "location": "Milán",
+        "coordinates": {
+            "lat": 45.4642,
+            "lng": 9.19
+        }
+    },
+    {
+        "type": "marker",
+        "title": "🛂 Inicio del plazo del permesso di soggiorno",
+        "color": "blue",
+        "timezone": "Europe/Rome",
+        "date": "2026-08-11T13:00:00",
+        "location": "Milán",
+        "coordinates": {
+            "lat": 45.4642,
+            "lng": 9.19
+        },
+        "notes": "Diego y Adriana: el plazo de 8 días laborables corre desde el ingreso a Italia (hoy). Guarden los pases AMS→Milán como prueba"
+    },
+    {
+        "type": "event",
+        "title": "Duomo, terrazas y Galería Vittorio Emanuele II",
+        "color": "indigo",
+        "timezone": "Europe/Rome",
+        "start": "2026-08-11T15:00:00",
+        "end": "2026-08-11T18:00:00",
+        "location": "Duomo de Milán",
+        "coordinates": {
+            "lat": 45.4641,
+            "lng": 9.1919
+        },
+        "notes": "🎟️ Suban a las terrazas del Duomo. Piazza della Scala"
+    },
+    {
+        "type": "event",
+        "title": "Cena de bienvenida (cocina milanesa)",
+        "color": "emerald",
+        "timezone": "Europe/Rome",
+        "start": "2026-08-11T20:00:00",
+        "end": "2026-08-11T22:00:00",
+        "location": "Milán",
+        "coordinates": {
+            "lat": 45.4642,
+            "lng": 9.19
+        },
+        "notes": "Al Matarel o Trattoria Milanese (ossobuco + risotto allo zafferano). Reservar. ⭐ Adriana (gastronomía)"
+    },
+    {
+        "type": "event",
+        "title": "Trámite del permesso di soggiorno (kit postal)",
+        "color": "blue",
+        "timezone": "Europe/Rome",
+        "start": "2026-08-12T09:00:00",
+        "end": "2026-08-12T10:30:00",
+        "location": "Oficina de Correos con Sportello Amico, Milán",
+        "coordinates": {
+            "lat": 45.4654,
+            "lng": 9.1866
+        },
+        "notes": "🛂 Diego y Adriana presentan el kit postal (busta gialla). Lleven: pasaporte+visa, codice fiscale, 4 fotos, constancia Polimi, prueba de alojamiento, seguro médico, marca da bollo €16 y tasas. Plan B: 14 temprano o 20"
+    },
+    {
+        "type": "event",
+        "title": "Basílica de Santa Maria delle Grazie",
+        "color": "indigo",
+        "timezone": "Europe/Rome",
+        "start": "2026-08-12T11:00:00",
+        "end": "2026-08-12T11:30:00",
+        "location": "Santa Maria delle Grazie, Milán",
+        "coordinates": {
+            "lat": 45.4659,
+            "lng": 9.1709
+        },
+        "notes": "Iglesia del Cenacolo. Ábside y claustro de Bramante. Gratis (~20–30 min)"
+    },
+    {
+        "type": "event",
+        "title": "Museo de la Ciencia y la Tecnología Leonardo da Vinci",
+        "color": "purple",
+        "timezone": "Europe/Rome",
+        "start": "2026-08-12T11:45:00",
+        "end": "2026-08-12T13:45:00",
+        "location": "Museo Leonardo da Vinci, Milán",
+        "coordinates": {
+            "lat": 45.462,
+            "lng": 9.1709
+        },
+        "notes": "🎟️ El más grande de Italia: máquinas de Leonardo, submarino. ⭐ Diego (tech)"
+    },
+    {
+        "type": "event",
+        "title": "Castello Sforzesco y Parque Sempione",
+        "color": "indigo",
+        "timezone": "Europe/Rome",
+        "start": "2026-08-12T14:30:00",
+        "end": "2026-08-12T16:00:00",
+        "location": "Castello Sforzesco, Milán",
+        "coordinates": {
+            "lat": 45.4705,
+            "lng": 9.1791
+        }
+    },
+    {
+        "type": "event",
+        "title": "Pinacoteca di Brera y Quadrilatero della Moda",
+        "color": "pink",
+        "timezone": "Europe/Rome",
+        "start": "2026-08-12T16:00:00",
+        "end": "2026-08-12T18:00:00",
+        "location": "Pinacoteca di Brera, Milán",
+        "coordinates": {
+            "lat": 45.4719,
+            "lng": 9.1881
+        },
+        "notes": "⭐ Yessenia (arte + moda): vintage en Brera (Urzì, Cavalli e Nastri). Alternativa: Museo del Novecento"
+    },
+    {
+        "type": "event",
+        "title": "Aperitivo en los Navigli",
+        "color": "emerald",
+        "timezone": "Europe/Rome",
+        "start": "2026-08-12T19:00:00",
+        "end": "2026-08-12T21:00:00",
+        "location": "Navigli, Milán",
+        "coordinates": {
+            "lat": 45.4509,
+            "lng": 9.173
+        },
+        "notes": "⭐ Adriana"
+    },
+    {
+        "type": "event",
+        "title": "Tren Milán → Varenna",
+        "color": "orange",
+        "timezone": "Europe/Rome",
+        "start": "2026-08-13T08:30:00",
+        "end": "2026-08-13T09:30:00",
+        "location": "Milano Centrale",
+        "coordinates": {
+            "lat": 45.4863,
+            "lng": 9.2049
+        },
+        "notes": "~1h. Excursión al Lago de Como"
+    },
+    {
+        "type": "event",
+        "title": "Lago de Como: Varenna, Bellagio y ferry",
+        "color": "cyan",
+        "timezone": "Europe/Rome",
+        "start": "2026-08-13T09:30:00",
+        "end": "2026-08-13T17:00:00",
+        "location": "Bellagio, Lago de Como",
+        "coordinates": {
+            "lat": 45.9866,
+            "lng": 9.261
+        },
+        "notes": "Varenna (Villa Monastero) → ferry → Bellagio → opcional Menaggio. ⭐ Omar (geografía). Día tranquilo"
+    },
+    {
+        "type": "event",
+        "title": "Regreso a Milán",
+        "color": "orange",
+        "timezone": "Europe/Rome",
+        "start": "2026-08-13T17:30:00",
+        "end": "2026-08-13T18:30:00",
+        "location": "Varenna",
+        "coordinates": {
+            "lat": 46.0102,
+            "lng": 9.2849
+        }
+    },
+    {
+        "type": "event",
+        "title": "Tren Milán → Florencia",
+        "color": "orange",
+        "timezone": "Europe/Rome",
+        "start": "2026-08-14T07:00:00",
+        "end": "2026-08-14T09:00:00",
+        "location": "Milano Centrale",
+        "coordinates": {
+            "lat": 45.4863,
+            "lng": 9.2049
+        },
+        "notes": "🎟️ Frecciarossa/Italo (~1h50). Diego y Adriana dejan sus maletas grandes en Milán"
+    },
+    {
+        "type": "event",
+        "title": "Check-in y dejar maletas en Florencia",
+        "color": "green",
+        "timezone": "Europe/Rome",
+        "start": "2026-08-14T09:15:00",
+        "end": "2026-08-14T10:00:00",
+        "location": "Florencia",
+        "coordinates": {
+            "lat": 43.7696,
+            "lng": 11.2558
+        }
+    },
+    {
+        "type": "event",
+        "title": "Galería Uffizi",
+        "color": "purple",
+        "timezone": "Europe/Rome",
+        "start": "2026-08-14T10:00:00",
+        "end": "2026-08-14T12:30:00",
+        "location": "Galería Uffizi, Florencia",
+        "coordinates": {
+            "lat": 43.7678,
+            "lng": 11.2553
+        },
+        "notes": "🎟️ Botticelli (El nacimiento de Venus, La primavera), Da Vinci, Caravaggio. ⭐ Yessenia. Cierra lunes"
+    },
+    {
+        "type": "event",
+        "title": "Galería de la Accademia (el David)",
+        "color": "purple",
+        "timezone": "Europe/Rome",
+        "start": "2026-08-14T13:30:00",
+        "end": "2026-08-14T14:30:00",
+        "location": "Galería de la Accademia, Florencia",
+        "coordinates": {
+            "lat": 43.777,
+            "lng": 11.2594
+        },
+        "notes": "🎟️ El David de Miguel Ángel (~1h). Cierra lunes"
+    },
+    {
+        "type": "event",
+        "title": "Duomo, Piazza della Signoria y Ponte Vecchio",
+        "color": "indigo",
+        "timezone": "Europe/Rome",
+        "start": "2026-08-14T15:00:00",
+        "end": "2026-08-14T18:30:00",
+        "location": "Duomo de Florencia",
+        "coordinates": {
+            "lat": 43.7731,
+            "lng": 11.256
+        },
+        "notes": "Exterior + cúpula de Brunelleschi. Ponte Vecchio al atardecer. ⭐ Yessenia: mercado de cuero de San Lorenzo / Mercato Nuovo (regatear)"
+    },
+    {
+        "type": "event",
+        "title": "Cena bistecca alla fiorentina",
+        "color": "emerald",
+        "timezone": "Europe/Rome",
+        "start": "2026-08-14T20:00:00",
+        "end": "2026-08-14T22:00:00",
+        "location": "Florencia",
+        "coordinates": {
+            "lat": 43.771,
+            "lng": 11.2535
+        },
+        "notes": "Trattoria Dall'Oste o La Bistecca Osteria Fiorentina. ⭐ Adriana"
+    },
+    {
+        "type": "event",
+        "title": "Tren Florencia → Pisa",
+        "color": "orange",
+        "timezone": "Europe/Rome",
+        "start": "2026-08-15T09:00:00",
+        "end": "2026-08-15T10:00:00",
+        "location": "Firenze Santa Maria Novella",
+        "coordinates": {
+            "lat": 43.7766,
+            "lng": 11.248
+        },
+        "notes": "~1h. ⚠️ 15 ago = Ferragosto: multitudes y horarios de tren reducidos"
+    },
+    {
+        "type": "event",
+        "title": "Piazza dei Miracoli y Torre de Pisa",
+        "color": "indigo",
+        "timezone": "Europe/Rome",
+        "start": "2026-08-15T10:00:00",
+        "end": "2026-08-15T13:00:00",
+        "location": "Piazza dei Miracoli, Pisa",
+        "coordinates": {
+            "lat": 43.723,
+            "lng": 10.3966
+        },
+        "notes": "Torre inclinada (subida opcional), Catedral, Baptisterio. ~2–3h. Al aire libre, aguanta el feriado"
+    },
+    {
+        "type": "event",
+        "title": "Regreso a Florencia",
+        "color": "orange",
+        "timezone": "Europe/Rome",
+        "start": "2026-08-15T13:30:00",
+        "end": "2026-08-15T14:30:00",
+        "location": "Pisa Centrale",
+        "coordinates": {
+            "lat": 43.7085,
+            "lng": 10.3985
+        }
+    },
+    {
+        "type": "event",
+        "title": "Tarde en Florencia: cúpula, Boboli y Oltrarno",
+        "color": "indigo",
+        "timezone": "Europe/Rome",
+        "start": "2026-08-15T15:00:00",
+        "end": "2026-08-15T18:30:00",
+        "location": "Florencia",
+        "coordinates": {
+            "lat": 43.7696,
+            "lng": 11.2558
+        },
+        "notes": "Cúpula del Duomo o Campanile, Jardines de Boboli / Palazzo Pitti, Oltrarno (talleres + vintage)"
+    },
+    {
+        "type": "event",
+        "title": "Tren Florencia → Venecia",
+        "color": "orange",
+        "timezone": "Europe/Rome",
+        "start": "2026-08-16T07:30:00",
+        "end": "2026-08-16T09:45:00",
+        "location": "Firenze Santa Maria Novella",
+        "coordinates": {
+            "lat": 43.7766,
+            "lng": 11.248
+        },
+        "notes": "🎟️ Frecciarossa (~2h–2h15)"
+    },
+    {
+        "type": "event",
+        "title": "Venecia: San Marcos, Palacio Ducal y Rialto",
+        "color": "indigo",
+        "timezone": "Europe/Rome",
+        "start": "2026-08-16T10:00:00",
+        "end": "2026-08-16T17:00:00",
+        "location": "Plaza San Marcos, Venecia",
+        "coordinates": {
+            "lat": 45.4341,
+            "lng": 12.3388
+        },
+        "notes": "🎟️ Palacio Ducal. Basílica, Puente de Rialto, vaporetto por el Gran Canal. ⭐ Yessenia (arte/Murano). Día tranquilo"
+    },
+    {
+        "type": "event",
+        "title": "Regreso a Florencia",
+        "color": "orange",
+        "timezone": "Europe/Rome",
+        "start": "2026-08-16T18:00:00",
+        "end": "2026-08-16T20:15:00",
+        "location": "Venezia Santa Lucia",
+        "coordinates": {
+            "lat": 45.441,
+            "lng": 12.3208
+        }
+    },
+    {
+        "type": "event",
+        "title": "Tren Florencia → Roma",
+        "color": "orange",
+        "timezone": "Europe/Rome",
+        "start": "2026-08-17T07:00:00",
+        "end": "2026-08-17T08:40:00",
+        "location": "Firenze Santa Maria Novella",
+        "coordinates": {
+            "lat": 43.7766,
+            "lng": 11.248
+        },
+        "notes": "🎟️ Frecciarossa (~1h35). Llegan ~08:40"
+    },
+    {
+        "type": "event",
+        "title": "Check-in y dejar maletas en Roma",
+        "start": "2026-08-17T08:45:00",
+        "end": "2026-08-17T09:30:00",
+        "color": "green",
+        "location": "Roma",
         "timezone": "Europe/Rome"
+    },
+    {
+        "type": "event",
+        "title": "Coliseo, Foro Romano y Palatino",
+        "start": "2026-08-17T10:00:00",
+        "end": "2026-08-17T13:30:00",
+        "color": "indigo",
+        "location": "Coliseo, Roma",
+        "coordinates": {
+            "lat": 41.8902,
+            "lng": 12.4922
+        },
+        "notes": "🎟️ Entrada combinada con horario (reservar). ⭐ Omar (historia). Gorra y agua (agosto pega fuerte)",
+        "timezone": "Europe/Rome"
+    },
+    {
+        "type": "event",
+        "title": "Panteón, Piazza Navona y Campo de' Fiori",
+        "start": "2026-08-17T16:00:00",
+        "end": "2026-08-17T20:00:00",
+        "color": "indigo",
+        "location": "Panteón, Roma",
+        "coordinates": {
+            "lat": 41.8986,
+            "lng": 12.4769
+        },
+        "notes": "A pie, tarde/noche",
+        "timezone": "Europe/Rome"
+    },
+    {
+        "type": "event",
+        "title": "Museos Vaticanos y Capilla Sixtina",
+        "start": "2026-08-18T08:30:00",
+        "end": "2026-08-18T12:00:00",
+        "color": "purple",
+        "location": "Museos Vaticanos, Ciudad del Vaticano",
+        "coordinates": {
+            "lat": 41.9065,
+            "lng": 12.4536
+        },
+        "notes": "🎟️ Reserva imprescindible, entrar temprano. ⭐ Yessenia (arte)",
+        "timezone": "Europe/Rome"
+    },
+    {
+        "type": "event",
+        "title": "Basílica de San Pedro",
+        "start": "2026-08-18T12:00:00",
+        "end": "2026-08-18T13:30:00",
+        "color": "indigo",
+        "location": "Basílica de San Pedro, Ciudad del Vaticano",
+        "coordinates": {
+            "lat": 41.9022,
+            "lng": 12.4539
+        },
+        "notes": "Cúpula si hay ánimo",
+        "timezone": "Europe/Rome"
+    },
+    {
+        "type": "event",
+        "title": "Castel Sant'Angelo y orilla del Tíber",
+        "start": "2026-08-18T15:30:00",
+        "end": "2026-08-18T18:00:00",
+        "color": "indigo",
+        "location": "Castel Sant'Angelo, Roma",
+        "coordinates": {
+            "lat": 41.9031,
+            "lng": 12.4663
+        },
+        "notes": "Tarde suave",
+        "timezone": "Europe/Rome"
+    },
+    {
+        "type": "event",
+        "title": "Fontana di Trevi y Plaza de España",
+        "start": "2026-08-19T09:30:00",
+        "end": "2026-08-19T11:30:00",
+        "color": "indigo",
+        "location": "Fontana di Trevi, Roma",
+        "coordinates": {
+            "lat": 41.9009,
+            "lng": 12.4833
+        },
+        "notes": "Día relajado. Tiren la moneda",
+        "timezone": "Europe/Rome"
+    },
+    {
+        "type": "event",
+        "title": "Galería Borghese",
+        "start": "2026-08-19T13:00:00",
+        "end": "2026-08-19T15:00:00",
+        "color": "purple",
+        "location": "Galería Borghese, Roma",
+        "coordinates": {
+            "lat": 41.9142,
+            "lng": 12.492
+        },
+        "notes": "🎟️ Reserva obligatoria con horario. Bernini, Caravaggio. ⭐ Yessenia (arte)",
+        "timezone": "Europe/Rome"
+    },
+    {
+        "type": "event",
+        "title": "Vintage en Monti",
+        "start": "2026-08-19T15:30:00",
+        "end": "2026-08-19T18:00:00",
+        "color": "pink",
+        "location": "Barrio Monti, Roma",
+        "coordinates": {
+            "lat": 41.8951,
+            "lng": 12.4944
+        },
+        "notes": "⭐ Yessenia: Blue Goose, Pifebo (streetwear), Humana Vintage Monti",
+        "timezone": "Europe/Rome"
+    },
+    {
+        "type": "event",
+        "title": "Cena en Trastevere",
+        "start": "2026-08-19T20:00:00",
+        "end": "2026-08-19T22:00:00",
+        "color": "emerald",
+        "location": "Trastevere, Roma",
+        "coordinates": {
+            "lat": 41.8896,
+            "lng": 12.4694
+        },
+        "notes": "Nannarella (cacio e pepe/carbonara) o Trattoria Da Enzo. ⭐ Adriana",
+        "timezone": "Europe/Rome"
+    },
+    {
+        "type": "event",
+        "title": "Tren Roma → Milán",
+        "start": "2026-08-20T08:00:00",
+        "end": "2026-08-20T11:00:00",
+        "color": "orange",
+        "location": "Roma Termini",
+        "coordinates": {
+            "lat": 41.901,
+            "lng": 12.5018
+        },
+        "notes": "🎟️ Frecciarossa (~3h). Llegan ~11:00",
+        "timezone": "Europe/Rome"
+    },
+    {
+        "type": "event",
+        "title": "Instalación final y almuerzo de despedida en Milán",
+        "start": "2026-08-20T12:00:00",
+        "end": "2026-08-20T16:00:00",
+        "color": "emerald",
+        "location": "Milán",
+        "coordinates": {
+            "lat": 45.4642,
+            "lng": 9.19
+        },
+        "notes": "Dejan todo listo en el depa de Diego y Adriana. Fotos, despedida",
+        "timezone": "Europe/Rome"
+    },
+    {
+        "type": "event",
+        "title": "Traslado al aeropuerto de Milán",
+        "start": "2026-08-20T16:30:00",
+        "end": "2026-08-20T17:30:00",
+        "color": "orange",
+        "location": "Milán",
+        "timezone": "Europe/Rome"
+    },
+    {
+        "type": "event",
+        "title": "Vuelo Milán → París (CDG)",
+        "start": "2026-08-20T18:30:00",
+        "end": "2026-08-20T20:15:00",
+        "color": "orange",
+        "location": "Aeropuerto de Milán",
+        "coordinates": {
+            "lat": 45.6306,
+            "lng": 8.7281
+        },
+        "notes": "🎟️ Omar, Lucy y Yessenia (~1h45). Idealmente llega a CDG",
+        "timezone": "Europe/Rome"
+    },
+    {
+        "type": "event",
+        "title": "Llegada a CDG y hotel en la terminal",
+        "color": "green",
+        "timezone": "Europe/Paris",
+        "start": "2026-08-20T20:30:00",
+        "end": "2026-08-20T21:30:00",
+        "location": "Aeropuerto Charles de Gaulle (CDG)",
+        "coordinates": {
+            "lat": 49.0097,
+            "lng": 2.5478
+        },
+        "notes": "🏨 Duermen en el hotel dentro de la misma terminal de CDG (no salen del aeropuerto)"
+    },
+    {
+        "type": "event",
+        "title": "Vuelo CDG → Lima",
+        "color": "red",
+        "timezone": "Europe/Paris",
+        "start": "2026-08-21T05:00:00",
+        "end": "2026-08-21T05:30:00",
+        "location": "Aeropuerto Charles de Gaulle (CDG)",
+        "coordinates": {
+            "lat": 49.0097,
+            "lng": 2.5478
+        },
+        "notes": "🎟️ Counter ~3:00 AM. Fin del viaje para Omar, Lucy y Yessenia. Diego y Adriana se quedan en Milán 🎉"
     }
 ]

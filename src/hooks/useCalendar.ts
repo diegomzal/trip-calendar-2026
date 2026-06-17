@@ -4,7 +4,7 @@ import { isSameDayInTz } from "@/lib/timezone";
 import { getEventDateStr } from "@/lib/date";
 
 const TRIP_START = new Date(2026, 7, 3); // Aug 3, 2026
-const TRIP_END = new Date(2026, 7, 30); // Aug 30, 2026
+const TRIP_END = new Date(2026, 7, 21); // Aug 21, 2026
 
 function getWeekStart(date: Date): Date {
     const d = new Date(date);
