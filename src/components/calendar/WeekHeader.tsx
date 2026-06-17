@@ -1,5 +1,6 @@
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { CountdownTimer } from "@/components/CountdownTimer";
+import { LocalClocks } from "@/components/LocalClocks";
 import { Phrasebook } from "@/components/Phrasebook";
 import { useCalendarContext } from "@/context/CalendarContext";
 
@@ -57,7 +58,10 @@ export function WeekHeader() {
             <h1 className="text-2xl md:text-3xl tracking-tight text-white">
                 {title}
             </h1>
-            <CountdownTimer className="ml-auto mr-4" />
+            <div className="ml-auto mr-3 flex items-center gap-3">
+                <CountdownTimer />
+                <LocalClocks />
+            </div>
             <div className="flex items-center gap-1">
                 <Phrasebook />
                 <button

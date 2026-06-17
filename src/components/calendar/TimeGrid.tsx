@@ -1,8 +1,7 @@
 import { useMemo } from "react";
 import type { CalendarEvent, CalendarMarker } from "@/types/event";
 import { CalendarEventBlock } from "./CalendarEvent";
-import { isSameDayInTz } from "@/lib/timezone";
-import { isSameLocalDay } from "@/lib/date";
+import { isSameDayInTz, getFractionalHourInTz, getDatePartsInTz } from "@/lib/timezone";
 import { useCalendarContext } from "@/context/CalendarContext";
 import { HOUR_HEIGHT, START_HOUR, END_HOUR, TOTAL_HOURS } from "@/lib/constants";
 
@@ -49,7 +48,7 @@ function CurrentTimeIndicator({ gutterWidth, currentTimeTop }: { gutterWidth: st
 }
 
 export function TimeGrid() {
-    const { weekDays, timedEvents, markers, selectedDayIndex, currentDate } =
+    const { weekDays, timedEvents, markers, selectedDayIndex, currentDate, activeTimezone } =
         useCalendarContext();
 
     const hours = useMemo(
@@ -58,9 +57,14 @@ export function TimeGrid() {
     );
 
     const now = currentDate;
-    const currentWeekHasToday = weekDays.some((d) => isSameLocalDay(d, now));
-    const todayIndex = weekDays.findIndex((d) => isSameLocalDay(d, now));
-    const currentHour = now.getHours() + now.getMinutes() / 60;
+    const nowParts = getDatePartsInTz(now, activeTimezone);
+    const isToday = (d: Date) =>
+        d.getFullYear() === nowParts.year &&
+        d.getMonth() + 1 === nowParts.month &&
+        d.getDate() === nowParts.day;
+    const currentWeekHasToday = weekDays.some(isToday);
+    const todayIndex = weekDays.findIndex(isToday);
+    const currentHour = getFractionalHourInTz(now, activeTimezone);
     const currentTimeTop = (currentHour - START_HOUR) * HOUR_HEIGHT;
     const showTimeLine = currentHour >= START_HOUR && currentHour <= END_HOUR;
 
@@ -81,7 +85,7 @@ export function TimeGrid() {
     }, [weekDays, timedEvents, markers]);
 
     const mobileDays = [daysData[selectedDayIndex]];
-    const mobileTodayIndex = isSameLocalDay(weekDays[selectedDayIndex], now) ? 0 : -1;
+    const mobileTodayIndex = isToday(weekDays[selectedDayIndex]) ? 0 : -1;
 
     const gridBackgroundStyle = {
         height: `${TOTAL_HOURS * HOUR_HEIGHT}px`,

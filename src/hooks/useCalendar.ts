@@ -1,7 +1,8 @@
 import { useReducer, useEffect, useCallback, useMemo } from "react";
 import type { CalendarState, CalendarAction, CalendarItem } from "@/types/event";
-import { isSameDayInTz } from "@/lib/timezone";
+import { isSameDayInTz, dominantTimezone } from "@/lib/timezone";
 import { getEventDateStr } from "@/lib/date";
+import { TRAVELER_KEYS } from "@/lib/travelers";
 
 const TRIP_START = new Date(2026, 7, 3); // Aug 3, 2026
 const TRIP_END = new Date(2026, 7, 21); // Aug 21, 2026
@@ -40,6 +41,8 @@ function calendarReducer(
             return { ...state, selectedEvent: null };
         case "SET_EVENTS":
             return { ...state, events: action.payload, loading: false };
+        case "SET_TRAVELER":
+            return { ...state, selectedTraveler: action.payload };
         default:
             return state;
     }
@@ -51,6 +54,7 @@ const initialState: CalendarState = {
     selectedEvent: null,
     events: [],
     loading: true,
+    selectedTraveler: null,
 };
 
 export function useCalendar(initialDate: Date = new Date()) {
@@ -66,10 +70,22 @@ export function useCalendar(initialDate: Date = new Date()) {
         const diffDays = Math.floor(diffTime / (1000 * 60 * 60 * 24));
         const dayIndex = diffDays >= 0 && diffDays < 7 ? diffDays : 0;
 
+        let selectedTraveler: string | null = null;
+        try {
+            const params = new URLSearchParams(window.location.search);
+            const t =
+                params.get("traveler") ||
+                localStorage.getItem("selectedTraveler");
+            if (t && TRAVELER_KEYS.includes(t)) selectedTraveler = t;
+        } catch {
+            // localStorage / URL unavailable — ignore
+        }
+
         return {
             ...initialState,
             currentWeekStart: weekStart,
             selectedDayIndex: dayIndex,
+            selectedTraveler,
         };
     });
 
@@ -119,6 +135,16 @@ export function useCalendar(initialDate: Date = new Date()) {
         return weekEvents.filter((item) => item.type === "event");
     }, [weekEvents]);
 
+    const activeTimezone = useMemo(() => {
+        const day = weekDays[state.selectedDayIndex];
+        const dayItems = day
+            ? weekEvents.filter((it) =>
+                  isSameDayInTz(getEventDateStr(it), day, it.timezone)
+              )
+            : [];
+        return dominantTimezone(dayItems.length ? dayItems : weekEvents);
+    }, [weekDays, state.selectedDayIndex, weekEvents]);
+
     const nextWeek = useCallback(() => dispatch({ type: "NEXT_WEEK" }), []);
     const prevWeek = useCallback(() => dispatch({ type: "PREV_WEEK" }), []);
     const selectDay = useCallback(
@@ -131,6 +157,15 @@ export function useCalendar(initialDate: Date = new Date()) {
         []
     );
     const closeEvent = useCallback(() => dispatch({ type: "CLOSE_EVENT" }), []);
+    const setTraveler = useCallback((traveler: string | null) => {
+        try {
+            if (traveler) localStorage.setItem("selectedTraveler", traveler);
+            else localStorage.removeItem("selectedTraveler");
+        } catch {
+            // localStorage unavailable — ignore
+        }
+        dispatch({ type: "SET_TRAVELER", payload: traveler });
+    }, []);
 
     const canGoPrev = state.currentWeekStart.getTime() > getWeekStart(TRIP_START).getTime();
     const canGoNext = new Date(state.currentWeekStart.getTime() + 7 * 24 * 60 * 60 * 1000) <= TRIP_END;
@@ -141,6 +176,7 @@ export function useCalendar(initialDate: Date = new Date()) {
         weekEvents,
         markers,
         timedEvents,
+        activeTimezone,
         eventsForDay,
         nextWeek,
         prevWeek,
@@ -149,5 +185,6 @@ export function useCalendar(initialDate: Date = new Date()) {
         selectDay,
         selectEvent,
         closeEvent,
+        setTraveler,
     };
 }

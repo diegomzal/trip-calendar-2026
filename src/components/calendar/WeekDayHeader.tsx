@@ -1,18 +1,24 @@
 import { useCalendarContext } from "@/context/CalendarContext";
-import { isSameLocalDay } from "@/lib/date";
+import { getDatePartsInTz } from "@/lib/timezone";
 
 const DAY_NAMES_SHORT = ["Lun", "Mar", "Mié", "Jue", "Vie", "Sáb", "Dom"];
 
 export function WeekDayHeader() {
-    const { weekDays, selectedDayIndex, selectDay, currentDate } =
+    const { weekDays, selectedDayIndex, selectDay, currentDate, activeTimezone } =
         useCalendarContext();
+
+    const nowParts = getDatePartsInTz(currentDate, activeTimezone);
+    const isToday = (day: Date) =>
+        day.getFullYear() === nowParts.year &&
+        day.getMonth() + 1 === nowParts.month &&
+        day.getDate() === nowParts.day;
 
     return (
         <div className="border-b border-white/[0.08]">
             <div className="hidden md:grid grid-cols-[72px_repeat(7,1fr)]">
                 <div className="border-r border-white/[0.08]" />
                 {weekDays.map((day, i) => {
-                    const today = isSameLocalDay(day, currentDate);
+                    const today = isToday(day);
                     return (
                         <div
                             key={i}
@@ -37,7 +43,7 @@ export function WeekDayHeader() {
 
             <div className="flex md:hidden gap-1 px-3 py-2 overflow-x-auto scrollbar-none">
                 {weekDays.map((day, i) => {
-                    const today = isSameLocalDay(day, currentDate);
+                    const today = isToday(day);
                     const selected = i === selectedDayIndex;
                     return (
                         <button

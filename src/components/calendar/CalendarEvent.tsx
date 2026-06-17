@@ -3,6 +3,7 @@ import { getLocalParts, formatTimeInTz, getTimezoneLabel } from "@/lib/timezone"
 import { EVENT_STYLES } from "@/lib/colors";
 import { cn } from "@/lib/utils";
 import { useCalendarContext } from "@/context/CalendarContext";
+import { eventMatchesTraveler } from "@/lib/travelers";
 import { HOUR_HEIGHT, START_HOUR } from "@/lib/constants";
 
 interface CalendarEventBlockProps {
@@ -10,9 +11,10 @@ interface CalendarEventBlockProps {
 }
 
 export function CalendarEventBlock({ event }: CalendarEventBlockProps) {
-    const { selectEvent } = useCalendarContext();
+    const { selectEvent, selectedTraveler } = useCalendarContext();
     const styles = EVENT_STYLES[event.color] || EVENT_STYLES.default;
     const tz = event.timezone;
+    const dimmed = !eventMatchesTraveler(event, selectedTraveler);
 
     if (event.type === "marker") {
         const { fractional: markerHour } = getLocalParts(event.date, tz);
@@ -21,7 +23,10 @@ export function CalendarEventBlock({ event }: CalendarEventBlockProps) {
         return (
             <button
                 onClick={() => selectEvent(event)}
-                className="absolute left-0 right-0 flex items-center cursor-pointer z-10 group transition-opacity hover:opacity-100"
+                className={cn(
+                    "absolute left-0 right-0 flex items-center cursor-pointer z-10 group transition-opacity hover:opacity-100",
+                    dimmed && "opacity-30"
+                )}
                 style={{ top: `${top}px`, transform: "translateY(-50%)" }}
             >
                 <div
@@ -65,7 +70,8 @@ export function CalendarEventBlock({ event }: CalendarEventBlockProps) {
                 "absolute left-0.5 right-0.5 md:left-1 md:right-1 rounded-sm overflow-hidden transition-all hover:scale-[1.02] active:scale-[0.98] cursor-pointer backdrop-blur-xl text-left z-10 border-l-[3px]",
                 styles.bg,
                 styles.border,
-                styles.text
+                styles.text,
+                dimmed && "opacity-30 hover:opacity-100"
             )}
             style={{
                 top: `${top}px`,

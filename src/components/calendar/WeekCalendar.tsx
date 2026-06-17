@@ -3,6 +3,10 @@ import { WeekHeader } from "./WeekHeader";
 import { WeekDayHeader } from "./WeekDayHeader";
 import { TimeGrid } from "./TimeGrid";
 import { EventDetailModal } from "./EventDetailModal";
+import { DayMap } from "./DayMap";
+import { OfflineBanner } from "@/components/OfflineBanner";
+import { TravelerFilter } from "@/components/TravelerFilter";
+import { NowNextBanner } from "@/components/NowNextBanner";
 
 function WeekCalendarContent() {
     const { loading } = useCalendarContext();
@@ -17,8 +21,14 @@ function WeekCalendarContent() {
 
     return (
         <div className="h-screen flex flex-col bg-[#0a0a0a]">
+            <OfflineBanner />
             <WeekHeader />
             <WeekDayHeader />
+            <div className="flex items-center gap-2 px-3 py-2 border-b border-white/[0.08]">
+                <TravelerFilter />
+                <DayMap />
+            </div>
+            <NowNextBanner />
             <TimeGrid />
             <EventDetailModal />
         </div>
