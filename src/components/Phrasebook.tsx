@@ -26,11 +26,6 @@ function PhraseCard({ phrase }: { phrase: Phrase }) {
 
             <div className="space-y-2">
                 <div className="flex items-start gap-2">
-                    <span className="text-base leading-none mt-0.5 shrink-0">🇬🇧</span>
-                    <p className="text-sm text-white/70">{phrase.english}</p>
-                </div>
-
-                <div className="flex items-start gap-2">
                     <span className="text-base leading-none mt-0.5 shrink-0">🇫🇷</span>
                     <div>
                         <p className="text-sm text-white/70">{phrase.french}</p>
@@ -46,6 +41,16 @@ function PhraseCard({ phrase }: { phrase: Phrase }) {
                         <p className="text-sm text-white/70">{phrase.dutch}</p>
                         <p className="text-xs text-orange-400/70 italic mt-0.5">
                             /{phrase.dutchPronunciation}/
+                        </p>
+                    </div>
+                </div>
+
+                <div className="flex items-start gap-2">
+                    <span className="text-base leading-none mt-0.5 shrink-0">🇮🇹</span>
+                    <div>
+                        <p className="text-sm text-white/70">{phrase.italian}</p>
+                        <p className="text-xs text-green-400/70 italic mt-0.5">
+                            /{phrase.italianPronunciation}/
                         </p>
                     </div>
                 </div>
@@ -74,9 +79,9 @@ export function Phrasebook() {
                 phrases: cat.phrases.filter(
                     (p) =>
                         p.spanish.toLowerCase().includes(q) ||
-                        p.english.toLowerCase().includes(q) ||
                         p.french.toLowerCase().includes(q) ||
-                        p.dutch.toLowerCase().includes(q)
+                        p.dutch.toLowerCase().includes(q) ||
+                        p.italian.toLowerCase().includes(q)
                 ),
             }))
             .filter((cat) => cat.phrases.length > 0);
@@ -114,7 +119,7 @@ export function Phrasebook() {
                         </button>
                     </div>
                     <DialogDescription className="text-white/50 text-sm mt-1">
-                        Frases comunes en inglés, francés y neerlandés
+                        Frases comunes en francés, neerlandés e italiano
                     </DialogDescription>
 
                     <div className="relative mt-3">

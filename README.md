@@ -38,25 +38,27 @@ npm run dev
 
 ## Event Data
 
-Events live in `public/` as a JSON file. Two event types are supported:
+Events live in `public/events.json`. Two item types are supported:
 
 ```jsonc
 [
   {
-    "start": "2026-09-03T14:30:00Z",
-    "end": "2026-09-03T16:00:00Z",
+    "start": "2026-09-03T14:30:00",
+    "end": "2026-09-03T16:00:00",
     "title": "Museo",
     "color": "blue",
-    "location": "lat,lng or Google Maps format",
+    "location": "Musée du Louvre, Paris",
+    "coordinates": { "lat": 48.860611, "lng": 2.337644 },
     "type": "event",
+    "timezone": "Europe/Paris",
     "notes": "entrar por entrada B"
   },
   {
-    "date": "2026-09-04T07:30:00Z",
+    "date": "2026-09-04T07:30:00",
     "title": "Check-out",
     "color": "red",
-    "location": "lat,lng or Google Maps format",
     "type": "marker",
+    "timezone": "Europe/Paris",
     "notes": "dejar llaves en puerta"
   }
 ]
@@ -64,6 +66,10 @@ Events live in `public/` as a JSON file. Two event types are supported:
 
 - **`event`** — has `start` and `end` times (time range)
 - **`marker`** — single point in time (`date`)
+
+Datetime fields are **naive wall-clock times** (no `Z`, no offset), interpreted in the item's
+`timezone` (an IANA zone such as `Europe/Paris`). `timezone` is required on every item.
+`location`, `coordinates`, and `notes` are optional.
 
 ## Deployment
 

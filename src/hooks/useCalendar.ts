@@ -1,10 +1,10 @@
 import { useReducer, useEffect, useCallback, useMemo } from "react";
 import type { CalendarState, CalendarAction, CalendarItem } from "@/types/event";
-import { isSameDayInTz } from "@/lib/timezone";
+import { isSameDayInTz, dominantTimezone } from "@/lib/timezone";
 import { getEventDateStr } from "@/lib/date";
 
 const TRIP_START = new Date(2026, 7, 3); // Aug 3, 2026
-const TRIP_END = new Date(2026, 7, 30); // Aug 30, 2026
+const TRIP_END = new Date(2026, 7, 21); // Aug 21, 2026
 
 function getWeekStart(date: Date): Date {
     const d = new Date(date);
@@ -119,6 +119,16 @@ export function useCalendar(initialDate: Date = new Date()) {
         return weekEvents.filter((item) => item.type === "event");
     }, [weekEvents]);
 
+    const activeTimezone = useMemo(() => {
+        const day = weekDays[state.selectedDayIndex];
+        const dayItems = day
+            ? weekEvents.filter((it) =>
+                  isSameDayInTz(getEventDateStr(it), day, it.timezone)
+              )
+            : [];
+        return dominantTimezone(dayItems.length ? dayItems : weekEvents);
+    }, [weekDays, state.selectedDayIndex, weekEvents]);
+
     const nextWeek = useCallback(() => dispatch({ type: "NEXT_WEEK" }), []);
     const prevWeek = useCallback(() => dispatch({ type: "PREV_WEEK" }), []);
     const selectDay = useCallback(
@@ -141,6 +151,7 @@ export function useCalendar(initialDate: Date = new Date()) {
         weekEvents,
         markers,
         timedEvents,
+        activeTimezone,
         eventsForDay,
         nextWeek,
         prevWeek,
