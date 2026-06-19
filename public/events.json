@@ -439,6 +439,20 @@
     },
     {
         "type": "event",
+        "title": "Museo y Tour del Estadio San Siro",
+        "color": "amber",
+        "timezone": "Europe/Rome",
+        "start": "2026-08-11T13:15:00",
+        "end": "2026-08-11T14:45:00",
+        "location": "Stadio Giuseppe Meazza (San Siro), Milán",
+        "coordinates": {
+            "lat": 45.4781,
+            "lng": 9.124
+        },
+        "notes": "🎟️ Reservar Museo y Tour de San Siro (abierto todos los días; abr–oct 9:30–18:00, última entrada/taquilla 18:00). Tour ~60 min: vestuarios del Milan y el Inter, zona mixta y túnel a la cancha. Metro M5 hasta San Siro Stadio. ⭐ Omar (fútbol), divertido aunque no seas hincha"
+    },
+    {
+        "type": "event",
         "title": "Duomo, terrazas y Galería Vittorio Emanuele II",
         "color": "indigo",
         "timezone": "Europe/Rome",
