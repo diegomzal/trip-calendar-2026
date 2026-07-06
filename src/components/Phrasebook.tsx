@@ -14,7 +14,7 @@ const ALL_CATEGORY_ID = "all";
 
 function getCategoryBtnClass(isActive: boolean): string {
     return `shrink-0 px-3 py-1.5 rounded-full text-xs font-medium transition-all ${isActive
-            ? "bg-blue-500/20 text-blue-400 border border-blue-500/30"
+            ? "bg-blue-500/20 text-blue-400 light:text-blue-700 border border-blue-500/30"
             : "bg-white/[0.05] text-white/50 border border-white/[0.08] hover:bg-white/[0.08] hover:text-white/70"
         }`;
 }
@@ -29,7 +29,7 @@ function PhraseCard({ phrase }: { phrase: Phrase }) {
                     <span className="text-base leading-none mt-0.5 shrink-0">🇫🇷</span>
                     <div>
                         <p className="text-sm text-white/70">{phrase.french}</p>
-                        <p className="text-xs text-blue-400/70 italic mt-0.5">
+                        <p className="text-xs text-blue-400/70 light:text-blue-700/80 italic mt-0.5">
                             /{phrase.frenchPronunciation}/
                         </p>
                     </div>
@@ -39,7 +39,7 @@ function PhraseCard({ phrase }: { phrase: Phrase }) {
                     <span className="text-base leading-none mt-0.5 shrink-0">🇳🇱</span>
                     <div>
                         <p className="text-sm text-white/70">{phrase.dutch}</p>
-                        <p className="text-xs text-orange-400/70 italic mt-0.5">
+                        <p className="text-xs text-orange-400/70 light:text-orange-700/80 italic mt-0.5">
                             /{phrase.dutchPronunciation}/
                         </p>
                     </div>
@@ -49,7 +49,7 @@ function PhraseCard({ phrase }: { phrase: Phrase }) {
                     <span className="text-base leading-none mt-0.5 shrink-0">🇮🇹</span>
                     <div>
                         <p className="text-sm text-white/70">{phrase.italian}</p>
-                        <p className="text-xs text-green-400/70 italic mt-0.5">
+                        <p className="text-xs text-green-400/70 light:text-green-700/80 italic mt-0.5">
                             /{phrase.italianPronunciation}/
                         </p>
                     </div>
@@ -91,23 +91,25 @@ export function Phrasebook() {
         <Dialog open={open} onOpenChange={setOpen}>
             <button
                 onClick={() => setOpen(true)}
-                className="p-2 rounded-full hover:bg-white/10 active:bg-white/15 transition-colors"
-                aria-label="Frases útiles"
-                title="Frases útiles"
+                className="shrink-0 flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-medium bg-white/[0.05] text-white/70 border border-white/[0.12] hover:bg-white/[0.1] hover:text-white/90 active:bg-white/15 transition-all"
+                aria-label="Frases de viaje"
+                title="Frases de viaje"
             >
-                <Languages className="w-5 h-5 text-white/70" />
+                <Languages className="w-3.5 h-3.5" />
+                <span className="hidden sm:inline">Frases de viaje</span>
+                <span className="sm:hidden">Frases</span>
             </button>
 
             <DialogContent
                 showCloseButton={false}
-                className="bg-[#1c1c1e]/95 backdrop-blur-2xl border border-white/[0.12] shadow-2xl text-white p-0 overflow-hidden flex flex-col
+                className="bg-surface/95 backdrop-blur-2xl border border-white/[0.12] shadow-2xl text-white p-0 overflow-hidden flex flex-col
                     max-md:!fixed max-md:!inset-0 max-md:!translate-x-0 max-md:!translate-y-0 max-md:!top-0 max-md:!left-0 max-md:!max-w-none max-md:!w-screen max-md:!h-dvh max-md:!rounded-none max-md:!border-0
                     md:rounded-2xl md:max-w-4xl md:w-[90vw] md:max-h-[85vh]"
             >
                 <DialogHeader className="px-5 pt-5 pb-0 shrink-0">
                     <div className="flex items-center justify-between">
                         <DialogTitle className="text-xl font-semibold text-white tracking-tight flex items-center gap-2">
-                            <Languages className="w-5 h-5 text-blue-400" />
+                            <Languages className="w-5 h-5 text-blue-400 light:text-blue-600" />
                             Frases de Viaje
                         </DialogTitle>
                         <button

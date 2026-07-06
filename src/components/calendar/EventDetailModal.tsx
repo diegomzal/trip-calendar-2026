@@ -47,7 +47,7 @@ export function EventDetailModal() {
 
     return (
         <Dialog open={!!event} onOpenChange={(open) => !open && onClose()}>
-            <DialogContent className="bg-[#1c1c1e]/80 backdrop-blur-2xl border border-white/[0.12] shadow-2xl rounded-2xl w-full max-w-md md:max-w-2xl lg:max-w-3xl mx-auto text-white p-0 overflow-hidden md:min-h-[500px] flex flex-col">
+            <DialogContent className="bg-surface/80 backdrop-blur-2xl border border-white/[0.12] shadow-2xl rounded-2xl w-full max-w-md md:max-w-2xl lg:max-w-3xl mx-auto text-white p-0 overflow-hidden md:min-h-[500px] flex flex-col">
                 <DialogHeader className="px-6 pt-6 pb-2">
                     <div className="flex items-center gap-3">
                         <div className={cn("w-3 h-3 rounded-full shrink-0", styles.dot)} />
@@ -98,7 +98,7 @@ export function EventDetailModal() {
                                 href={getGoogleMapsUrl(event.location)}
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="text-sm text-blue-400 hover:text-blue-300 underline underline-offset-2 transition-colors"
+                                className="text-sm text-blue-400 hover:text-blue-300 light:text-blue-600 light:hover:text-blue-700 underline underline-offset-2 transition-colors"
                             >
                                 {event.location}
                             </a>
@@ -136,8 +136,8 @@ export function EventDetailModal() {
                                 rel="noopener noreferrer"
                                 className="flex flex-col items-center justify-center gap-2 p-3 rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 transition-colors group"
                             >
-                                <TrainFront className="w-5 h-5 text-green-500 group-hover:text-green-400 transition-colors" />
-                                <span className="text-xs font-medium text-green-500 group-hover:text-green-400 transition-colors">Citymapper</span>
+                                <TrainFront className="w-5 h-5 text-green-500 group-hover:text-green-400 light:text-green-700 light:group-hover:text-green-800 transition-colors" />
+                                <span className="text-xs font-medium text-green-500 group-hover:text-green-400 light:text-green-700 light:group-hover:text-green-800 transition-colors">Citymapper</span>
                             </a>
                         </div>
                     )}

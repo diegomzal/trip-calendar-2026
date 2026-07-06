@@ -145,6 +145,16 @@ export function useCalendar(initialDate: Date = new Date()) {
     const canGoPrev = state.currentWeekStart.getTime() > getWeekStart(TRIP_START).getTime();
     const canGoNext = new Date(state.currentWeekStart.getTime() + 7 * 24 * 60 * 60 * 1000) <= TRIP_END;
 
+    const WEEK_MS = 7 * 24 * 60 * 60 * 1000;
+    const weekNumber =
+        Math.round(
+            (state.currentWeekStart.getTime() - getWeekStart(TRIP_START).getTime()) / WEEK_MS
+        ) + 1;
+    const totalWeeks =
+        Math.round(
+            (getWeekStart(TRIP_END).getTime() - getWeekStart(TRIP_START).getTime()) / WEEK_MS
+        ) + 1;
+
     return {
         ...state,
         weekDays,
@@ -157,6 +167,8 @@ export function useCalendar(initialDate: Date = new Date()) {
         prevWeek,
         canGoPrev,
         canGoNext,
+        weekNumber,
+        totalWeeks,
         selectDay,
         selectEvent,
         closeEvent,

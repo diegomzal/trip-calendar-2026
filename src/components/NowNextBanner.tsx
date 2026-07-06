@@ -43,7 +43,7 @@ export function NowNextBanner() {
             {current && (
                 <button
                     onClick={() => selectEvent(current)}
-                    className="flex-1 min-w-0 flex items-center gap-2 px-4 py-2 bg-[#0a0a0a] hover:bg-white/[0.04] transition-colors text-left"
+                    className="flex-1 min-w-0 flex items-center gap-2 px-4 py-2 bg-app hover:bg-white/[0.04] transition-colors text-left"
                 >
                     <span className="relative flex h-2 w-2 shrink-0">
                         <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400/70" />
@@ -58,7 +58,7 @@ export function NowNextBanner() {
             {next && (
                 <button
                     onClick={() => selectEvent(next)}
-                    className="flex-1 min-w-0 flex items-center gap-2 px-4 py-2 bg-[#0a0a0a] hover:bg-white/[0.04] transition-colors text-left"
+                    className="flex-1 min-w-0 flex items-center gap-2 px-4 py-2 bg-app hover:bg-white/[0.04] transition-colors text-left"
                 >
                     <span className="text-white/40 uppercase tracking-wider text-[10px] shrink-0">
                         Luego

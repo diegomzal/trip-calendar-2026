@@ -3,6 +3,7 @@
 @import "shadcn/tailwind.css";
 
 @custom-variant dark (&:is(.dark *));
+@custom-variant light (&:is(.light *));
 
 @theme inline {
   --font-sans: "Inter", "SF Pro Display", -apple-system, BlinkMacSystemFont,
@@ -45,10 +46,16 @@
   --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
   --color-sidebar-border: var(--sidebar-border);
   --color-sidebar-ring: var(--sidebar-ring);
+  --color-app: var(--app-bg);
+  --color-surface: var(--surface);
 }
 
 :root {
   --radius: 0.625rem;
+  --app-bg: #0a0a0a;
+  --surface: #1c1c1e;
+  --grid-line: rgba(255, 255, 255, 0.06);
+  color-scheme: dark;
   --background: oklch(0.145 0 0);
   --foreground: oklch(0.985 0 0);
   --card: oklch(0.205 0 0);
@@ -82,18 +89,50 @@
   --sidebar-ring: oklch(0.556 0 0);
 }
 
+/*
+ * Light mode. The app is styled dark-first with white-based utilities
+ * (text-white/70, bg-white/[0.05], ...). Tailwind v4 compiles those to
+ * var(--color-white), so remapping that variable here flips the whole
+ * hierarchy to a dark-ink-on-light scheme in one place. Elements that must
+ * stay literally white in both modes use text-[#fff] instead of text-white.
+ */
+.light {
+  color-scheme: light;
+  --app-bg: #f2f2f7;
+  --surface: #ffffff;
+  --grid-line: rgba(0, 0, 0, 0.08);
+  --color-white: #1d1d1f;
+  --background: oklch(1 0 0);
+  --foreground: oklch(0.145 0 0);
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.145 0 0);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.145 0 0);
+  --primary: oklch(0.205 0 0);
+  --primary-foreground: oklch(0.985 0 0);
+  --secondary: oklch(0.97 0 0);
+  --secondary-foreground: oklch(0.205 0 0);
+  --muted: oklch(0.97 0 0);
+  --muted-foreground: oklch(0.556 0 0);
+  --accent: oklch(0.97 0 0);
+  --accent-foreground: oklch(0.205 0 0);
+  --border: oklch(0 0 0 / 10%);
+  --input: oklch(0 0 0 / 15%);
+  --ring: oklch(0.708 0 0);
+}
+
 @layer base {
   * {
     @apply border-border outline-ring/50;
   }
 
   html {
-    @apply bg-[#0a0a0a] text-white antialiased;
+    @apply bg-app text-white antialiased;
     font-family: var(--font-sans);
   }
 
   body {
-    @apply bg-[#0a0a0a] text-foreground m-0 p-0 overflow-hidden;
+    @apply bg-app text-foreground m-0 p-0 overflow-hidden;
   }
 }
 

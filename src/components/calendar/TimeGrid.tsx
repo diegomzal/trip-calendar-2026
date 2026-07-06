@@ -1,4 +1,4 @@
-import { useMemo } from "react";
+import { useMemo, useRef } from "react";
 import type { CalendarEvent, CalendarMarker } from "@/types/event";
 import { CalendarEventBlock } from "./CalendarEvent";
 import { isSameDayInTz, getFractionalHourInTz, getDatePartsInTz } from "@/lib/timezone";
@@ -47,9 +47,54 @@ function CurrentTimeIndicator({ gutterWidth, currentTimeTop }: { gutterWidth: st
     );
 }
 
+const SWIPE_MIN_X = 48;
+
 export function TimeGrid() {
-    const { weekDays, timedEvents, markers, selectedDayIndex, currentDate, activeTimezone } =
-        useCalendarContext();
+    const {
+        weekDays,
+        timedEvents,
+        markers,
+        selectedDayIndex,
+        currentDate,
+        activeTimezone,
+        selectDay,
+        nextWeek,
+        prevWeek,
+        canGoNext,
+        canGoPrev,
+    } = useCalendarContext();
+
+    const touchStart = useRef<{ x: number; y: number } | null>(null);
+
+    const handleTouchStart = (e: React.TouchEvent) => {
+        touchStart.current = { x: e.touches[0].clientX, y: e.touches[0].clientY };
+    };
+
+    const handleTouchEnd = (e: React.TouchEvent) => {
+        const start = touchStart.current;
+        touchStart.current = null;
+        if (!start) return;
+        const dx = e.changedTouches[0].clientX - start.x;
+        const dy = e.changedTouches[0].clientY - start.y;
+        // Ignore taps and mostly-vertical gestures (the grid scrolls vertically)
+        if (Math.abs(dx) < SWIPE_MIN_X || Math.abs(dx) < Math.abs(dy) * 1.5) return;
+
+        if (dx < 0) {
+            if (selectedDayIndex < 6) {
+                selectDay(selectedDayIndex + 1);
+            } else if (canGoNext) {
+                nextWeek();
+                selectDay(0);
+            }
+        } else {
+            if (selectedDayIndex > 0) {
+                selectDay(selectedDayIndex - 1);
+            } else if (canGoPrev) {
+                prevWeek();
+                selectDay(6);
+            }
+        }
+    };
 
     const hours = useMemo(
         () => Array.from({ length: TOTAL_HOURS }, (_, i) => START_HOUR + i),
@@ -89,7 +134,7 @@ export function TimeGrid() {
 
     const gridBackgroundStyle = {
         height: `${TOTAL_HOURS * HOUR_HEIGHT}px`,
-        backgroundImage: `linear-gradient(to bottom, rgba(255, 255, 255, 0.06) 1px, transparent 1px)`,
+        backgroundImage: `linear-gradient(to bottom, var(--grid-line) 1px, transparent 1px)`,
         backgroundSize: `100% ${HOUR_HEIGHT}px`,
     };
 
@@ -129,6 +174,8 @@ export function TimeGrid() {
             <div
                 className="grid md:hidden grid-cols-[56px_1fr] relative"
                 style={gridBackgroundStyle}
+                onTouchStart={handleTouchStart}
+                onTouchEnd={handleTouchEnd}
             >
                 <HourLabels hours={hours} textClass="text-[10px]" />
 

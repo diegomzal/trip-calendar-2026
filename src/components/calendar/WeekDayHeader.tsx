@@ -22,7 +22,7 @@ export function WeekDayHeader() {
                     return (
                         <div
                             key={i}
-                            className={`flex flex-col items-center py-3 border-r border-white/[0.08] last:border-r-0 ${today ? "text-blue-400" : "text-white/50"
+                            className={`flex flex-col items-center py-3 border-r border-white/[0.08] last:border-r-0 ${today ? "text-blue-400 light:text-blue-600" : "text-white/50"
                                 }`}
                         >
                             <span className="text-xs font-medium uppercase tracking-wider">
@@ -30,7 +30,7 @@ export function WeekDayHeader() {
                             </span>
                             <span
                                 className={`text-xl font-light mt-0.5 ${today
-                                    ? "bg-blue-500 text-white rounded-full w-9 h-9 flex items-center justify-center font-medium"
+                                    ? "bg-blue-500 text-[#fff] rounded-full w-9 h-9 flex items-center justify-center font-medium"
                                     : ""
                                     }`}
                             >
@@ -56,7 +56,7 @@ export function WeekDayHeader() {
                         >
                             <span
                                 className={`text-[10px] font-medium uppercase tracking-wider ${today
-                                    ? "text-blue-400"
+                                    ? "text-blue-400 light:text-blue-600"
                                     : selected
                                         ? "text-white/80"
                                         : "text-white/40"
@@ -66,7 +66,7 @@ export function WeekDayHeader() {
                             </span>
                             <span
                                 className={`text-base mt-0.5 ${today
-                                    ? "bg-blue-500 text-white rounded-full w-7 h-7 flex items-center justify-center font-medium text-sm"
+                                    ? "bg-blue-500 text-[#fff] rounded-full w-7 h-7 flex items-center justify-center font-medium text-sm"
                                     : selected
                                         ? "text-white font-medium"
                                         : "text-white/40 font-light"

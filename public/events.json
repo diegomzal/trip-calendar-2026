@@ -43,8 +43,8 @@
     {
         "type": "event",
         "title": "Atardecer en Sacré-Cœur (Montmartre)",
-        "start": "2026-08-03T18:30:00",
-        "end": "2026-08-03T20:30:00",
+        "start": "2026-08-04T19:00:00",
+        "end": "2026-08-04T21:00:00",
         "color": "indigo",
         "location": "Basílica del Sacré-Cœur, París",
         "coordinates": {
@@ -98,8 +98,8 @@
     {
         "type": "event",
         "title": "Paseo en barco por el Sena (Bateaux-Mouches)",
-        "start": "2026-08-04T20:30:00",
-        "end": "2026-08-04T22:00:00",
+        "start": "2026-08-03T20:30:00",
+        "end": "2026-08-03T22:00:00",
         "color": "cyan",
         "location": "Bateaux-Mouches, París",
         "coordinates": {

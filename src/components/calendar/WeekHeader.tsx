@@ -1,7 +1,7 @@
-import { ChevronLeft, ChevronRight } from "lucide-react";
 import { CountdownTimer } from "@/components/CountdownTimer";
 import { LocalClocks } from "@/components/LocalClocks";
 import { Phrasebook } from "@/components/Phrasebook";
+import { ThemeToggle } from "@/components/ThemeToggle";
 import { useCalendarContext } from "@/context/CalendarContext";
 
 const MONTH_NAMES = [
@@ -10,8 +10,7 @@ const MONTH_NAMES = [
 ];
 
 export function WeekHeader() {
-    const { currentWeekStart, prevWeek, nextWeek, canGoPrev, canGoNext } =
-        useCalendarContext();
+    const { currentWeekStart } = useCalendarContext();
 
     const weekEnd = new Date(currentWeekStart);
     weekEnd.setDate(weekEnd.getDate() + 6);
@@ -62,24 +61,9 @@ export function WeekHeader() {
                 <CountdownTimer />
                 <LocalClocks />
             </div>
-            <div className="flex items-center gap-1">
+            <div className="flex items-center gap-1.5">
                 <Phrasebook />
-                <button
-                    onClick={prevWeek}
-                    disabled={!canGoPrev}
-                    className="p-2 rounded-full hover:bg-white/10 active:bg-white/15 transition-colors disabled:opacity-30 disabled:pointer-events-none"
-                    aria-label="Semana anterior"
-                >
-                    <ChevronLeft className="w-5 h-5 text-white/70" />
-                </button>
-                <button
-                    onClick={nextWeek}
-                    disabled={!canGoNext}
-                    className="p-2 rounded-full hover:bg-white/10 active:bg-white/15 transition-colors disabled:opacity-30 disabled:pointer-events-none"
-                    aria-label="Semana siguiente"
-                >
-                    <ChevronRight className="w-5 h-5 text-white/70" />
-                </button>
+                <ThemeToggle />
             </div>
         </header>
     );

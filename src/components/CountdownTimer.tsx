@@ -47,7 +47,7 @@ export function CountdownTimer({ className }: { className?: string }) {
     return (
         <div className={`flex items-center gap-2 md:gap-4 text-white ${className}`}>
             <div className="hidden md:block text-sm font-medium text-white/50 uppercase tracking-wider">Trip starts in:</div>
-            <div className="flex gap-2 md:gap-4 font-mono text-base md:text-xl text-blue-400">
+            <div className="flex gap-2 md:gap-4 font-mono text-base md:text-xl text-blue-400 light:text-blue-600">
                 <div className="flex flex-col items-center">
                     <span className="leading-none">{timeLeft.days}</span>
                     <span className="text-[8px] md:text-[10px] text-white/40 uppercase mt-0.5">Days</span>
