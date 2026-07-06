@@ -46,16 +46,16 @@ export function CountdownTimer({ className }: { className?: string }) {
 
     return (
         <div className={`flex items-center gap-2 md:gap-4 text-white ${className}`}>
-            <div className="hidden md:block text-sm font-medium text-white/50 uppercase tracking-wider">Trip starts in:</div>
+            <div className="hidden md:block text-sm font-medium text-white/50 uppercase tracking-wider">Viaje empieza en:</div>
             <div className="flex gap-2 md:gap-4 font-mono text-base md:text-xl text-blue-400 light:text-blue-600">
                 <div className="flex flex-col items-center">
                     <span className="leading-none">{timeLeft.days}</span>
-                    <span className="text-[8px] md:text-[10px] text-white/40 uppercase mt-0.5">Days</span>
+                    <span className="text-[8px] md:text-[10px] text-white/40 uppercase mt-0.5">Días</span>
                 </div>
                 <span className="text-white/20">:</span>
                 <div className="flex flex-col items-center">
                     <span className="leading-none">{timeLeft.hours.toString().padStart(2, '0')}</span>
-                    <span className="text-[8px] md:text-[10px] text-white/40 uppercase mt-0.5">Hours</span>
+                    <span className="text-[8px] md:text-[10px] text-white/40 uppercase mt-0.5">Horas</span>
                 </div>
                 <span className="text-white/20 hidden md:block">:</span>
                 <div className="flex flex-col items-center hidden md:flex">
@@ -65,7 +65,7 @@ export function CountdownTimer({ className }: { className?: string }) {
                 <span className="text-white/20 hidden md:block">:</span>
                 <div className="flex flex-col items-center hidden md:flex">
                     <span className="leading-none">{timeLeft.seconds.toString().padStart(2, '0')}</span>
-                    <span className="text-[8px] md:text-[10px] text-white/40 uppercase mt-0.5">Secs</span>
+                    <span className="text-[8px] md:text-[10px] text-white/40 uppercase mt-0.5">Segs</span>
                 </div>
             </div>
         </div>
