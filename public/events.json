@@ -757,17 +757,31 @@
     },
     {
         "type": "event",
-        "title": "Venecia: San Marcos, Palacio Ducal y Rialto",
+        "title": "Venecia: Palacio Ducal y Rialto",
         "color": "indigo",
         "timezone": "Europe/Rome",
         "start": "2026-08-16T10:00:00",
+        "end": "2026-08-16T14:00:00",
+        "location": "Plaza San Marcos, Venecia",
+        "coordinates": {
+            "lat": 45.4341,
+            "lng": 12.3388
+        },
+        "notes": "🎟️ Palacio Ducal. Puente de Rialto, vaporetto por el Gran Canal. ⭐ Yessenia (arte/Murano). Basílica cerrada a turistas por la mañana (misas dominicales) — se visita después de las 14:00."
+    },
+    {
+        "type": "event",
+        "title": "Venecia: Basílica de San Marcos",
+        "color": "indigo",
+        "timezone": "Europe/Rome",
+        "start": "2026-08-16T14:00:00",
         "end": "2026-08-16T17:00:00",
         "location": "Plaza San Marcos, Venecia",
         "coordinates": {
             "lat": 45.4341,
             "lng": 12.3388
         },
-        "notes": "🎟️ Palacio Ducal. Basílica, Puente de Rialto, vaporetto por el Gran Canal. ⭐ Yessenia (arte/Murano). Día tranquilo"
+        "notes": "Abierta a turistas desde las 14:00 (domingo). Día tranquilo"
     },
     {
         "type": "event",
