@@ -8,6 +8,8 @@ export interface CalendarEvent {
     type: "event";
     timezone: string;
     notes?: string;
+    /** true = booked, false = requires booking but pending, undefined = no advance booking needed */
+    confirmed?: boolean;
 }
 
 export interface CalendarMarker {
@@ -19,6 +21,8 @@ export interface CalendarMarker {
     type: "marker";
     timezone: string;
     notes?: string;
+    /** true = booked, false = requires booking but pending, undefined = no advance booking needed */
+    confirmed?: boolean;
 }
 
 export type CalendarItem = CalendarEvent | CalendarMarker;

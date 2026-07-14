@@ -5,7 +5,7 @@ import {
     DialogTitle,
     DialogDescription,
 } from "@/components/ui/dialog";
-import { MapPin, Clock, StickyNote, Map, TrainFront } from "lucide-react";
+import { MapPin, Clock, StickyNote, Map, TrainFront, BadgeCheck, TicketX } from "lucide-react";
 import { formatTimeInTz, formatDateInTz, getTimezoneLabel } from "@/lib/timezone";
 import { EVENT_STYLES } from "@/lib/colors";
 import { cn } from "@/lib/utils";
@@ -61,6 +61,29 @@ export function EventDetailModal() {
                 </DialogHeader>
 
                 <div className="px-6 pb-6 space-y-4">
+
+                    {event.confirmed !== undefined && (
+                        <div
+                            className={cn(
+                                "inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-semibold border",
+                                event.confirmed
+                                    ? "bg-emerald-500/15 text-emerald-400 border-emerald-500/30 light:text-emerald-700"
+                                    : "bg-amber-500/15 text-amber-400 border-amber-500/30 light:text-amber-700"
+                            )}
+                        >
+                            {event.confirmed ? (
+                                <>
+                                    <BadgeCheck className="w-3.5 h-3.5" />
+                                    Reservado
+                                </>
+                            ) : (
+                                <>
+                                    <TicketX className="w-3.5 h-3.5" />
+                                    Pendiente de reserva
+                                </>
+                            )}
+                        </div>
+                    )}
 
                     <div className="flex items-start gap-3 text-white/70">
                         <Clock className="w-4 h-4 mt-0.5 shrink-0 text-white/40" />

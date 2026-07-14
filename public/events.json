@@ -24,7 +24,8 @@
             "lat": 48.8566,
             "lng": 2.3522
         },
-        "timezone": "Europe/Paris"
+        "timezone": "Europe/Paris",
+        "confirmed": false
     },
     {
         "type": "event",
@@ -57,30 +58,32 @@
     {
         "type": "event",
         "title": "Tour del Estadio Roland Garros",
-        "start": "2026-08-04T10:00:00",
-        "end": "2026-08-04T12:00:00",
+        "start": "2026-08-04T13:30:00",
+        "end": "2026-08-04T15:30:00",
         "color": "amber",
         "location": "Stade Roland-Garros, París",
         "coordinates": {
             "lat": 48.8472,
             "lng": 2.2511
         },
-        "notes": "🎟️ Reservar el tour del estadio (no el museo). Canchas Philippe-Chatrier y Lenglen. ⭐ Diego, Omar, Lucy y Adriana (tenis)",
-        "timezone": "Europe/Paris"
+        "notes": "🎟️ Reservar el tour del estadio (no el museo) — turno 13:30, no hay horarios por la mañana. Canchas Philippe-Chatrier y Lenglen. ⭐ Diego, Omar, Lucy y Adriana (tenis)",
+        "timezone": "Europe/Paris",
+        "confirmed": false
     },
     {
         "type": "event",
         "title": "Torre Eiffel, Trocadéro y Campo de Marte",
-        "start": "2026-08-04T13:00:00",
-        "end": "2026-08-04T16:00:00",
+        "start": "2026-08-04T09:30:00",
+        "end": "2026-08-04T12:30:00",
         "color": "indigo",
         "location": "Torre Eiffel, París",
         "coordinates": {
             "lat": 48.8584,
             "lng": 2.2945
         },
-        "notes": "🎟️ Reservar acceso. Fotos en Trocadéro. (El Louvre cierra los martes)",
-        "timezone": "Europe/Paris"
+        "notes": "🎟️ Reservar acceso. Fotos en Trocadéro. Por la mañana para dejar la tarde libre (Roland Garros 13:30). (El Louvre cierra los martes)",
+        "timezone": "Europe/Paris",
+        "confirmed": false
     },
     {
         "type": "event",
@@ -106,7 +109,8 @@
             "lat": 48.8637,
             "lng": 2.3045
         },
-        "timezone": "Europe/Paris"
+        "timezone": "Europe/Paris",
+        "confirmed": false
     },
     {
         "type": "event",
@@ -120,7 +124,8 @@
             "lng": 2.3376
         },
         "notes": "🎟️ Ruta de imprescindibles: Gioconda, Victoria de Samotracia, Venus de Milo. Audioguía en español. ⭐ Yessenia (arte)",
-        "timezone": "Europe/Paris"
+        "timezone": "Europe/Paris",
+        "confirmed": false
     },
     {
         "type": "event",
@@ -162,7 +167,8 @@
             "lng": 2.1204
         },
         "notes": "🎟️ RER C (~40 min). Salón de los Espejos, Jardines (fuentes), Trianón, finca de María Antonieta. ⭐ Omar (historia). Cierra lunes. Ir temprano (alta temporada)",
-        "timezone": "Europe/Paris"
+        "timezone": "Europe/Paris",
+        "confirmed": false
     },
     {
         "type": "event",
@@ -203,20 +209,23 @@
             "lng": 2.3553
         },
         "notes": "🎟️ Eurostar/TGV (~1h25). Llega a Bruxelles-Midi",
-        "timezone": "Europe/Paris"
+        "timezone": "Europe/Paris",
+        "confirmed": false
     },
     {
         "type": "event",
         "title": "Check-in y dejar maletas en Bruselas",
         "color": "green",
         "timezone": "Europe/Brussels",
-        "location": "Bruselas",
+        "location": "Craves Hotel, Bruselas",
         "start": "2026-08-07T09:00:00",
         "end": "2026-08-07T10:00:00",
         "coordinates": {
             "lat": 50.8503,
             "lng": 4.3517
-        }
+        },
+        "confirmed": true,
+        "notes": "✅ Hotel reservado: Craves Hotel"
     },
     {
         "type": "event",
@@ -299,7 +308,8 @@
             "lat": 50.8358,
             "lng": 4.3367
         },
-        "notes": "🎟️ Eurostar/Intercity (~2h)"
+        "notes": "🎟️ Eurostar/Intercity (~2h)",
+        "confirmed": false
     },
     {
         "type": "event",
@@ -308,11 +318,13 @@
         "timezone": "Europe/Amsterdam",
         "start": "2026-08-09T11:30:00",
         "end": "2026-08-09T12:30:00",
-        "location": "Ámsterdam",
+        "location": "Chassé Boutique Hotel, Ámsterdam",
         "coordinates": {
-            "lat": 52.3676,
-            "lng": 4.9041
-        }
+            "lat": 52.3688,
+            "lng": 4.8565
+        },
+        "confirmed": true,
+        "notes": "✅ Hotel reservado: Chassé Boutique Hotel"
     },
     {
         "type": "event",
@@ -353,7 +365,8 @@
             "lat": 52.3752,
             "lng": 4.884
         },
-        "notes": "🎟️ Horario fijo, reservar ~6 semanas antes (se agota en minutos)"
+        "notes": "🎟️ Horario fijo, reservar ~6 semanas antes (se agota en minutos)",
+        "confirmed": false
     },
     {
         "type": "event",
@@ -367,7 +380,8 @@
             "lat": 52.36,
             "lng": 4.8852
         },
-        "notes": "⭐ Yessenia (arte). Pueden hacer los dos (día cargado)"
+        "notes": "⭐ Yessenia (arte). Pueden hacer los dos (día cargado)",
+        "confirmed": false
     },
     {
         "type": "event",
@@ -402,34 +416,36 @@
         "title": "Vuelo Ámsterdam (AMS) → Milán",
         "color": "orange",
         "timezone": "Europe/Amsterdam",
-        "start": "2026-08-11T08:00:00",
-        "end": "2026-08-11T10:00:00",
+        "start": "2026-08-11T10:20:00",
+        "end": "2026-08-11T12:00:00",
         "location": "Aeropuerto de Schiphol (AMS)",
         "coordinates": {
             "lat": 52.3105,
             "lng": 4.7683
         },
-        "notes": "🎟️ KLM/easyJet/ITA. 🛂 Guardar pases de abordar (prueba de ingreso a Italia). Aterrizan Linate o Malpensa"
+        "notes": "✅ Reservado. Sale de Schiphol 10:20, aterriza en Linate (LIN) 12:00. 🛂 Guardar pases de abordar (prueba de ingreso a Italia)",
+        "confirmed": true
     },
     {
         "type": "event",
         "title": "Check-in en Milán",
         "color": "green",
         "timezone": "Europe/Rome",
-        "start": "2026-08-11T12:00:00",
-        "end": "2026-08-11T13:00:00",
+        "start": "2026-08-11T13:00:00",
+        "end": "2026-08-11T14:00:00",
         "location": "Milán",
         "coordinates": {
             "lat": 45.4642,
             "lng": 9.19
-        }
+        },
+        "notes": "Traslado desde Linate (~30 min)"
     },
     {
         "type": "marker",
         "title": "🛂 Inicio del plazo del permesso di soggiorno",
         "color": "blue",
         "timezone": "Europe/Rome",
-        "date": "2026-08-11T13:00:00",
+        "date": "2026-08-11T14:00:00",
         "location": "Milán",
         "coordinates": {
             "lat": 45.4642,
@@ -442,28 +458,30 @@
         "title": "Museo y Tour del Estadio San Siro",
         "color": "amber",
         "timezone": "Europe/Rome",
-        "start": "2026-08-11T13:15:00",
-        "end": "2026-08-11T14:45:00",
+        "start": "2026-08-11T14:30:00",
+        "end": "2026-08-11T16:00:00",
         "location": "Stadio Giuseppe Meazza (San Siro), Milán",
         "coordinates": {
             "lat": 45.4781,
             "lng": 9.124
         },
-        "notes": "🎟️ Reservar Museo y Tour de San Siro (abierto todos los días; abr–oct 9:30–18:00, última entrada/taquilla 18:00). Tour ~60 min: vestuarios del Milan y el Inter, zona mixta y túnel a la cancha. Metro M5 hasta San Siro Stadio. ⭐ Omar (fútbol), divertido aunque no seas hincha"
+        "notes": "🎟️ Reservar Museo y Tour de San Siro (abierto todos los días; abr–oct 9:30–18:00, última entrada/taquilla 18:00). Tour ~60 min: vestuarios del Milan y el Inter, zona mixta y túnel a la cancha. Metro M5 hasta San Siro Stadio. ⭐ Omar (fútbol), divertido aunque no seas hincha",
+        "confirmed": false
     },
     {
         "type": "event",
         "title": "Duomo, terrazas y Galería Vittorio Emanuele II",
         "color": "indigo",
         "timezone": "Europe/Rome",
-        "start": "2026-08-11T15:00:00",
-        "end": "2026-08-11T18:00:00",
+        "start": "2026-08-11T16:30:00",
+        "end": "2026-08-11T18:30:00",
         "location": "Duomo de Milán",
         "coordinates": {
             "lat": 45.4641,
             "lng": 9.1919
         },
-        "notes": "🎟️ Suban a las terrazas del Duomo. Piazza della Scala"
+        "notes": "🎟️ Suban a las terrazas del Duomo. Piazza della Scala",
+        "confirmed": false
     },
     {
         "type": "event",
@@ -477,7 +495,8 @@
             "lat": 45.4642,
             "lng": 9.19
         },
-        "notes": "Al Matarel o Trattoria Milanese (ossobuco + risotto allo zafferano). Reservar. ⭐ Adriana (gastronomía)"
+        "notes": "Al Matarel o Trattoria Milanese (ossobuco + risotto allo zafferano). Reservar. ⭐ Adriana (gastronomía)",
+        "confirmed": false
     },
     {
         "type": "event",
@@ -519,7 +538,8 @@
             "lat": 45.462,
             "lng": 9.1709
         },
-        "notes": "🎟️ El más grande de Italia: máquinas de Leonardo, submarino. ⭐ Diego (tech)"
+        "notes": "🎟️ El más grande de Italia: máquinas de Leonardo, submarino. ⭐ Diego (tech)",
+        "confirmed": false
     },
     {
         "type": "event",
@@ -615,7 +635,8 @@
             "lat": 45.4863,
             "lng": 9.2049
         },
-        "notes": "🎟️ Frecciarossa/Italo (~1h50). Diego y Adriana dejan sus maletas grandes en Milán"
+        "notes": "🎟️ Frecciarossa/Italo (~1h50). Diego y Adriana dejan sus maletas grandes en Milán",
+        "confirmed": false
     },
     {
         "type": "event",
@@ -628,7 +649,8 @@
         "coordinates": {
             "lat": 43.7696,
             "lng": 11.2558
-        }
+        },
+        "confirmed": false
     },
     {
         "type": "event",
@@ -642,7 +664,8 @@
             "lat": 43.7678,
             "lng": 11.2553
         },
-        "notes": "🎟️ Botticelli (El nacimiento de Venus, La primavera), Da Vinci, Caravaggio. ⭐ Yessenia. Cierra lunes"
+        "notes": "🎟️ Botticelli (El nacimiento de Venus, La primavera), Da Vinci, Caravaggio. ⭐ Yessenia. Cierra lunes",
+        "confirmed": false
     },
     {
         "type": "event",
@@ -656,7 +679,8 @@
             "lat": 43.777,
             "lng": 11.2594
         },
-        "notes": "🎟️ El David de Miguel Ángel (~1h). Cierra lunes"
+        "notes": "🎟️ El David de Miguel Ángel (~1h). Cierra lunes",
+        "confirmed": false
     },
     {
         "type": "event",
@@ -753,7 +777,8 @@
             "lat": 43.7766,
             "lng": 11.248
         },
-        "notes": "🎟️ Frecciarossa (~2h–2h15)"
+        "notes": "🎟️ Frecciarossa (~2h–2h15)",
+        "confirmed": false
     },
     {
         "type": "event",
@@ -767,7 +792,8 @@
             "lat": 45.4341,
             "lng": 12.3388
         },
-        "notes": "🎟️ Palacio Ducal. Puente de Rialto, vaporetto por el Gran Canal. ⭐ Yessenia (arte/Murano). Basílica cerrada a turistas por la mañana (misas dominicales) — se visita después de las 14:00."
+        "notes": "🎟️ Palacio Ducal. Puente de Rialto, vaporetto por el Gran Canal. ⭐ Yessenia (arte/Murano). Basílica cerrada a turistas por la mañana (misas dominicales) — se visita después de las 14:00.",
+        "confirmed": false
     },
     {
         "type": "event",
@@ -808,7 +834,8 @@
             "lat": 43.7766,
             "lng": 11.248
         },
-        "notes": "🎟️ Frecciarossa (~1h35). Llegan ~08:40"
+        "notes": "🎟️ Frecciarossa (~1h35). Llegan ~08:40",
+        "confirmed": false
     },
     {
         "type": "event",
@@ -816,8 +843,14 @@
         "start": "2026-08-17T08:45:00",
         "end": "2026-08-17T09:30:00",
         "color": "green",
-        "location": "Roma",
-        "timezone": "Europe/Rome"
+        "location": "Vicolo di Montevecchio 2, Roma",
+        "timezone": "Europe/Rome",
+        "coordinates": {
+            "lat": 41.9003,
+            "lng": 12.4712
+        },
+        "confirmed": true,
+        "notes": "✅ Departamento reservado: Vicolo di Montevecchio, 2 (junto a Piazza Navona)"
     },
     {
         "type": "event",
@@ -831,7 +864,8 @@
             "lng": 12.4922
         },
         "notes": "🎟️ Entrada combinada con horario (reservar). ⭐ Omar (historia). Gorra y agua (agosto pega fuerte)",
-        "timezone": "Europe/Rome"
+        "timezone": "Europe/Rome",
+        "confirmed": false
     },
     {
         "type": "event",
@@ -859,7 +893,8 @@
             "lng": 12.4536
         },
         "notes": "🎟️ Reserva imprescindible, entrar temprano. ⭐ Yessenia (arte)",
-        "timezone": "Europe/Rome"
+        "timezone": "Europe/Rome",
+        "confirmed": false
     },
     {
         "type": "event",
@@ -915,7 +950,8 @@
             "lng": 12.492
         },
         "notes": "🎟️ Reserva obligatoria con horario. Bernini, Caravaggio. ⭐ Yessenia (arte)",
-        "timezone": "Europe/Rome"
+        "timezone": "Europe/Rome",
+        "confirmed": false
     },
     {
         "type": "event",
@@ -957,7 +993,8 @@
             "lng": 12.5018
         },
         "notes": "🎟️ Frecciarossa (~3h). Llegan ~11:00",
-        "timezone": "Europe/Rome"
+        "timezone": "Europe/Rome",
+        "confirmed": false
     },
     {
         "type": "event",
@@ -994,7 +1031,8 @@
             "lng": 8.7281
         },
         "notes": "🎟️ Omar, Lucy y Yessenia (~1h45). Idealmente llega a CDG",
-        "timezone": "Europe/Rome"
+        "timezone": "Europe/Rome",
+        "confirmed": false
     },
     {
         "type": "event",
@@ -1008,7 +1046,8 @@
             "lat": 49.0097,
             "lng": 2.5478
         },
-        "notes": "🏨 Duermen en el hotel dentro de la misma terminal de CDG (no salen del aeropuerto)"
+        "notes": "🏨 Duermen en el hotel dentro de la misma terminal de CDG (no salen del aeropuerto)",
+        "confirmed": false
     },
     {
         "type": "event",
@@ -1022,6 +1061,7 @@
             "lat": 49.0097,
             "lng": 2.5478
         },
-        "notes": "🎟️ Counter ~3:00 AM. Fin del viaje para Omar, Lucy y Yessenia. Diego y Adriana se quedan en Milán 🎉"
+        "notes": "🎟️ Counter ~3:00 AM. Fin del viaje para Omar, Lucy y Yessenia. Diego y Adriana se quedan en Milán 🎉",
+        "confirmed": false
     }
 ]

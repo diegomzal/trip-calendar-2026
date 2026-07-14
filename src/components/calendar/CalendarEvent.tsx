@@ -75,6 +75,7 @@ export function CalendarEventBlock({ event }: CalendarEventBlockProps) {
             {isCompact ? (
                 <div className="px-1.5 md:px-2 h-full flex items-center gap-1.5 overflow-hidden">
                     <span className="text-[8px] md:text-[10px] font-semibold leading-none truncate">
+                        {event.confirmed && "✓ "}
                         {event.title}
                     </span>
                     <span className="text-[7px] md:text-[8px] opacity-60 leading-none whitespace-nowrap shrink-0">
@@ -84,6 +85,7 @@ export function CalendarEventBlock({ event }: CalendarEventBlockProps) {
             ) : (
                 <div className="px-1.5 md:px-2 py-1 h-full flex flex-col">
                     <span className="text-[10px] md:text-xs font-semibold leading-tight truncate">
+                        {event.confirmed && "✓ "}
                         {event.title}
                     </span>
                     {height > 35 && (
