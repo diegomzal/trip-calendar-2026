@@ -216,46 +216,46 @@
     {
         "type": "event",
         "title": "Check-out del Airbnb",
-        "start": "2026-08-07T06:00:00",
-        "end": "2026-08-07T06:30:00",
+        "start": "2026-08-07T08:00:00",
+        "end": "2026-08-07T08:30:00",
         "color": "green",
         "location": "París",
         "coordinates": {
             "lat": 48.8566,
             "lng": 2.3522
         },
-        "notes": "Hasta las 9:00",
+        "notes": "Límite del Airbnb: 9:00. Salir hacia Gare du Nord con las maletas",
         "timezone": "Europe/Paris"
     },
     {
         "type": "event",
         "title": "Tren París → Bruselas",
-        "start": "2026-08-07T07:00:00",
-        "end": "2026-08-07T08:25:00",
+        "start": "2026-08-07T09:15:00",
+        "end": "2026-08-07T10:40:00",
         "color": "orange",
         "location": "Gare du Nord, París",
         "coordinates": {
             "lat": 48.8809,
             "lng": 2.3553
         },
-        "notes": "🎟️ Eurostar/TGV (~1h25). Llega a Bruxelles-Midi",
+        "notes": "🎟️ Eurostar (~1h25). Llega a Bruxelles-Midi ~10:40 — empalma con el check-in de las 11:00",
         "timezone": "Europe/Paris",
         "confirmed": false
     },
     {
         "type": "event",
-        "title": "Check-in y dejar maletas en Bruselas",
+        "title": "Check-in en Craves Hotel",
         "color": "green",
         "timezone": "Europe/Brussels",
         "location": "Craves Hotel, Bruselas",
-        "start": "2026-08-07T09:00:00",
-        "end": "2026-08-07T10:00:00",
+        "start": "2026-08-07T11:15:00",
+        "end": "2026-08-07T12:00:00",
         "coordinates": {
             "lat": 50.8503,
             "lng": 4.3517
         },
         "confirmed": true,
-        "notes": "✅ Hotel reservado: Craves Hotel"
+        "notes": "✅ Hotel reservado: Craves Hotel. Check-in desde las 11:00 — llegando con el tren de las 10:40 entran directo a las habitaciones"
     },
     {
         "type": "event",
@@ -263,13 +263,13 @@
         "color": "indigo",
         "timezone": "Europe/Brussels",
         "location": "Grand-Place, Bruselas",
-        "start": "2026-08-07T10:30:00",
-        "end": "2026-08-07T14:00:00",
+        "start": "2026-08-07T12:15:00",
+        "end": "2026-08-07T14:30:00",
         "coordinates": {
             "lat": 50.8467,
             "lng": 4.3525
         },
-        "notes": "Waffles y chocolate"
+        "notes": "Almuerzo por la zona + waffles y chocolate"
     },
     {
         "type": "event",
@@ -429,18 +429,18 @@
     },
     {
         "type": "event",
-        "title": "Check-in en Ámsterdam",
+        "title": "Check-in en Chassé Boutique Hotel",
         "color": "green",
         "timezone": "Europe/Amsterdam",
-        "start": "2026-08-09T11:30:00",
-        "end": "2026-08-09T12:30:00",
-        "location": "Chassé Boutique Hotel, Ámsterdam",
+        "start": "2026-08-09T12:00:00",
+        "end": "2026-08-09T13:00:00",
+        "location": "Chassé Boutique Hotel, Chasséstraat 62-64, Ámsterdam",
         "coordinates": {
             "lat": 52.3688,
             "lng": 4.8565
         },
         "confirmed": true,
-        "notes": "✅ Hotel reservado: Chassé Boutique Hotel"
+        "notes": "✅ Hotel reservado: Chassé Boutique Hotel (De Baarsjes). Check-in desde las 12:00; si llegan antes pueden dejar las maletas. Tranvía desde Centraal (~25 min)"
     },
     {
         "type": "event",
