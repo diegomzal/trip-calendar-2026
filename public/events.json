@@ -305,34 +305,33 @@
         "color": "orange",
         "timezone": "Europe/Brussels",
         "location": "Bruxelles-Midi",
-        "start": "2026-08-08T09:00:00",
-        "end": "2026-08-08T10:00:00",
+        "start": "2026-08-08T08:30:00",
+        "end": "2026-08-08T09:30:00",
         "coordinates": {
             "lat": 50.8358,
             "lng": 4.3367
         },
-        "notes": "~1h, cada hora, sin reserva"
+        "notes": "~1h, cada hora, sin reserva. Salir temprano: hoy es Brujas + Gante"
     },
     {
         "type": "event",
-        "title": "Markt, Belfort y Basílica de la Santa Sangre",
-        "start": "2026-08-08T10:20:00",
-        "end": "2026-08-08T13:00:00",
+        "title": "Brujas esencial: Markt, Belfort y Basílica de la Santa Sangre",
+        "start": "2026-08-08T09:50:00",
+        "end": "2026-08-08T11:20:00",
         "color": "indigo",
         "location": "Markt, Brujas",
         "coordinates": {
             "lat": 51.2086,
             "lng": 3.2247
         },
-        "notes": "🎟️ Subida al Belfort (366 escalones, entrada con horario, se agota). Basílica de la Santa Sangre gratis, en el Burg. ~20 min a pie desde la estación",
-        "timezone": "Europe/Brussels",
-        "confirmed": false
+        "notes": "Markt y Belfort por fuera (la subida toma 1h+ con cola — se omite para que quepa Gante), Burg y Basílica de la Santa Sangre (gratis). Chocolate en Dumon, junto al Markt. ~20 min a pie desde la estación",
+        "timezone": "Europe/Brussels"
     },
     {
         "type": "event",
         "title": "Paseo en bote por los canales de Brujas",
-        "start": "2026-08-08T13:30:00",
-        "end": "2026-08-08T14:30:00",
+        "start": "2026-08-08T11:30:00",
+        "end": "2026-08-08T12:30:00",
         "color": "cyan",
         "location": "Canales de Brujas",
         "coordinates": {
@@ -344,30 +343,74 @@
     },
     {
         "type": "event",
-        "title": "Begijnhof, Minnewater y chocolate",
-        "start": "2026-08-08T14:45:00",
-        "end": "2026-08-08T17:00:00",
+        "title": "Begijnhof, Minnewater y almuerzo",
+        "start": "2026-08-08T12:30:00",
+        "end": "2026-08-08T13:45:00",
         "color": "indigo",
         "location": "Begijnhof, Brujas",
         "coordinates": {
             "lat": 51.201,
             "lng": 3.224
         },
-        "notes": "Begijnhof, lago Minnewater y chocolate (Dumon, The Chocolate Line). Día tranquilo; camino de vuelta queda hacia la estación",
+        "notes": "Begijnhof y lago Minnewater quedan camino a la estación. Almuerzo rápido (frites/waffle) antes del tren",
         "timezone": "Europe/Brussels"
     },
     {
         "type": "event",
-        "title": "Regreso a Bruselas",
+        "title": "Tren Brujas → Gante",
+        "start": "2026-08-08T14:10:00",
+        "end": "2026-08-08T14:40:00",
         "color": "orange",
-        "timezone": "Europe/Brussels",
-        "location": "Brujas",
-        "start": "2026-08-08T17:30:00",
-        "end": "2026-08-08T18:30:00",
+        "location": "Estación de Brujas",
         "coordinates": {
             "lat": 51.1972,
             "lng": 3.2169
-        }
+        },
+        "notes": "~25 min, IC cada media hora, sin reserva. En Gent-Sint-Pieters: tranvía 1 al centro (~15 min)",
+        "timezone": "Europe/Brussels"
+    },
+    {
+        "type": "event",
+        "title": "Catedral de San Bavón y el Cordero Místico",
+        "start": "2026-08-08T15:15:00",
+        "end": "2026-08-08T16:15:00",
+        "color": "purple",
+        "location": "Catedral de San Bavón, Gante",
+        "coordinates": {
+            "lat": 51.0536,
+            "lng": 3.7264
+        },
+        "notes": "🎟️ La Adoración del Cordero Místico (Van Eyck) requiere entrada; la catedral es gratis. ⭐ Yessenia (arte)",
+        "timezone": "Europe/Brussels",
+        "confirmed": false
+    },
+    {
+        "type": "event",
+        "title": "Gante esencial: Graslei, Korenlei y Gravensteen",
+        "start": "2026-08-08T16:30:00",
+        "end": "2026-08-08T18:30:00",
+        "color": "indigo",
+        "location": "Graslei, Gante",
+        "coordinates": {
+            "lat": 51.0554,
+            "lng": 3.7217
+        },
+        "notes": "Muelles medievales del Graslei/Korenlei, Belfort de Gante y castillo Gravensteen (🎟️ opcional, última entrada ~17:20). Cena ligera junto al agua",
+        "timezone": "Europe/Brussels"
+    },
+    {
+        "type": "event",
+        "title": "Tren Gante → Bruselas",
+        "start": "2026-08-08T18:50:00",
+        "end": "2026-08-08T19:30:00",
+        "color": "orange",
+        "location": "Gent-Sint-Pieters",
+        "coordinates": {
+            "lat": 51.0357,
+            "lng": 3.7107
+        },
+        "notes": "~35 min, salidas cada ~15 min, sin reserva",
+        "timezone": "Europe/Brussels"
     },
     {
         "type": "event",
