@@ -7,9 +7,13 @@ import { HOUR_HEIGHT, START_HOUR } from "@/lib/constants";
 
 interface CalendarEventBlockProps {
     event: CalendarItem;
+    /** Column index when overlapping events render side by side */
+    col?: number;
+    /** Total columns in the overlap cluster */
+    cols?: number;
 }
 
-export function CalendarEventBlock({ event }: CalendarEventBlockProps) {
+export function CalendarEventBlock({ event, col = 0, cols = 1 }: CalendarEventBlockProps) {
     const { selectEvent } = useCalendarContext();
     const styles = EVENT_STYLES[event.color] || EVENT_STYLES.default;
     const tz = event.timezone;
@@ -58,11 +62,13 @@ export function CalendarEventBlock({ event }: CalendarEventBlockProps) {
     const tzLabel = getTimezoneLabel(tz);
     const isCompact = height <= 28;
 
+    const colWidth = 100 / cols;
+
     return (
         <button
             onClick={() => selectEvent(event)}
             className={cn(
-                "absolute left-0.5 right-0.5 md:left-1 md:right-1 rounded-sm overflow-hidden transition-all hover:scale-[1.02] active:scale-[0.98] cursor-pointer backdrop-blur-xl text-left z-10 border-l-[3px]",
+                "absolute rounded-sm overflow-hidden transition-all hover:scale-[1.02] active:scale-[0.98] cursor-pointer backdrop-blur-xl text-left z-10 border-l-[3px]",
                 styles.bg,
                 styles.border,
                 styles.text
@@ -70,6 +76,8 @@ export function CalendarEventBlock({ event }: CalendarEventBlockProps) {
             style={{
                 top: `${top}px`,
                 height: `${height}px`,
+                left: `calc(${col * colWidth}% + 2px)`,
+                width: `calc(${colWidth}% - 4px)`,
             }}
         >
             {isCompact ? (

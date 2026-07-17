@@ -68,7 +68,21 @@
             "lat": 48.8867,
             "lng": 2.3431
         },
-        "notes": "Opcional si hay energía; si no, otro día",
+        "notes": "Omar, Lucy y Yessenia (Diego y Adriana cenan con Alex). Opcional si hay energía",
+        "timezone": "Europe/Paris"
+    },
+    {
+        "type": "event",
+        "title": "(Diego y Adriana) Cena con Alex",
+        "start": "2026-08-04T19:00:00",
+        "end": "2026-08-04T21:00:00",
+        "color": "emerald",
+        "location": "París",
+        "coordinates": {
+            "lat": 48.8566,
+            "lng": 2.3522
+        },
+        "notes": "Solo Diego y Adriana; en paralelo, el resto va al atardecer en Sacré-Cœur. Lugar por definir con Alex",
         "timezone": "Europe/Paris"
     },
     {

@@ -1,9 +1,62 @@
 import { useMemo, useRef } from "react";
 import type { CalendarEvent, CalendarMarker } from "@/types/event";
 import { CalendarEventBlock } from "./CalendarEvent";
-import { isSameDayInTz, getFractionalHourInTz, getDatePartsInTz } from "@/lib/timezone";
+import { isSameDayInTz, getFractionalHourInTz, getDatePartsInTz, getLocalParts } from "@/lib/timezone";
 import { useCalendarContext } from "@/context/CalendarContext";
 import { HOUR_HEIGHT, START_HOUR, END_HOUR, TOTAL_HOURS } from "@/lib/constants";
+
+interface LaidOutEvent {
+    event: CalendarEvent;
+    col: number;
+    cols: number;
+}
+
+/** Assign side-by-side columns to events that overlap in time (Google Calendar style). */
+function layoutDayEvents(events: CalendarEvent[]): LaidOutEvent[] {
+    const sorted = events
+        .map((event) => ({
+            event,
+            start: getLocalParts(event.start, event.timezone).fractional,
+            end: getLocalParts(event.end, event.timezone).fractional,
+            col: 0,
+        }))
+        .sort((a, b) => a.start - b.start);
+
+    const result: LaidOutEvent[] = [];
+    let cluster: typeof sorted = [];
+    let clusterEnd = -Infinity;
+
+    const flush = () => {
+        if (cluster.length === 0) return;
+        const colEnds: number[] = [];
+        for (const item of cluster) {
+            let col = colEnds.findIndex((end) => end <= item.start);
+            if (col === -1) {
+                col = colEnds.length;
+                colEnds.push(item.end);
+            } else {
+                colEnds[col] = item.end;
+            }
+            item.col = col;
+        }
+        for (const item of cluster) {
+            result.push({ event: item.event, col: item.col, cols: colEnds.length });
+        }
+        cluster = [];
+    };
+
+    for (const item of sorted) {
+        if (item.start >= clusterEnd) {
+            flush();
+            clusterEnd = item.end;
+        } else {
+            clusterEnd = Math.max(clusterEnd, item.end);
+        }
+        cluster.push(item);
+    }
+    flush();
+    return result;
+}
 
 function formatHourLabel(hour: number): string {
     const h = hour % 24;
@@ -125,7 +178,7 @@ export function TimeGrid() {
                 return isSameDayInTz(m.date, day, m.timezone);
             }) as CalendarMarker[];
 
-            return { day, dayEvents, dayMarkers };
+            return { day, dayEvents: layoutDayEvents(dayEvents), dayMarkers };
         });
     }, [weekDays, timedEvents, markers]);
 
@@ -151,10 +204,12 @@ export function TimeGrid() {
                         key={colIndex}
                         className="relative border-r border-white/[0.06] last:border-r-0"
                     >
-                        {dayEvents.map((event, j) => (
+                        {dayEvents.map(({ event, col, cols }, j) => (
                             <CalendarEventBlock
                                 key={`e-${j}`}
                                 event={event}
+                                col={col}
+                                cols={cols}
                             />
                         ))}
                         {dayMarkers.map((marker, j) => (
@@ -181,10 +236,12 @@ export function TimeGrid() {
 
                 {mobileDays.map(({ dayEvents, dayMarkers }, colIndex) => (
                     <div key={colIndex} className="relative">
-                        {dayEvents.map((event, j) => (
+                        {dayEvents.map(({ event, col, cols }, j) => (
                             <CalendarEventBlock
                                 key={`e-${j}`}
                                 event={event}
+                                col={col}
+                                cols={cols}
                             />
                         ))}
                         {dayMarkers.map((marker, j) => (
