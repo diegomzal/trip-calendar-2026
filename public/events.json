@@ -1238,9 +1238,9 @@
             "lat": 45.6306,
             "lng": 8.7281
         },
-        "notes": "🎟️ Omar, Lucy y Yessenia (~1h45). Idealmente llega a CDG",
+        "notes": "🎟️ Omar, Lucy y Yessenia (~1h45). Llega a CDG",
         "timezone": "Europe/Rome",
-        "confirmed": false
+        "confirmed": true
     },
     {
         "type": "event",
