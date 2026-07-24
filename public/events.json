@@ -655,7 +655,7 @@
         "color": "blue",
         "timezone": "Europe/Rome",
         "start": "2026-08-12T09:00:00",
-        "end": "2026-08-12T10:30:00",
+        "end": "2026-08-12T10:00:00",
         "location": "Oficina de Correos con Sportello Amico, Milán",
         "coordinates": {
             "lat": 45.4654,
@@ -668,8 +668,8 @@
         "title": "Basílica de Santa Maria delle Grazie",
         "color": "indigo",
         "timezone": "Europe/Rome",
-        "start": "2026-08-12T11:00:00",
-        "end": "2026-08-12T11:30:00",
+        "start": "2026-08-12T10:30:00",
+        "end": "2026-08-12T11:00:00",
         "location": "Santa Maria delle Grazie, Milán",
         "coordinates": {
             "lat": 45.4659,
@@ -682,7 +682,7 @@
         "title": "Museo de la Ciencia y la Tecnología Leonardo da Vinci",
         "color": "purple",
         "timezone": "Europe/Rome",
-        "start": "2026-08-12T11:45:00",
+        "start": "2026-08-12T11:30:00",
         "end": "2026-08-12T13:45:00",
         "location": "Museo Leonardo da Vinci, Milán",
         "coordinates": {
@@ -690,7 +690,7 @@
             "lng": 9.1709
         },
         "notes": "🎟️ El más grande de Italia: máquinas de Leonardo, submarino. ⭐ Diego (tech)",
-        "confirmed": false
+        "confirmed": true
     },
     {
         "type": "event",
